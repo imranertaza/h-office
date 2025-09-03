@@ -244,7 +244,8 @@
                 position: relative;
                 width: 110% !important;
             }
-
+            git config --global user.name "dnationsoft4"
+            git config --global user.email "dnationsoftdm4@gmail.com"
             .slide {
                 list-style: none outside none;
                 margin: 0 !important;
