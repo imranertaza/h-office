@@ -2,7 +2,8 @@
 
 @section('title', 'h office')
 
-@section('body-class', 'home page page-id-439 page-template-default footer-parallax ac_sticky_sidebars navtype-overlay
+@section('body-class',
+    'home page page-id-439 page-template-default footer-parallax ac_sticky_sidebars navtype-overlay
     ac-theme top-navbar ac-transparent-navbar-body wpb-js-composer js-comp-ver-4.3.5 vc_responsive')
 
 @section('styles')
@@ -79,91 +80,92 @@
 
 @section('content')
 
-<div class="overlay-nav">
-    <div class='inner'>
-        <nav class="nav-main" role="navigation">
-            <ul class='nav'>
-                <li class="menu-home"><a title="Home" href="{{ route('home') }}">Home</a></li>
-                <li class="active menu-about active"><a title="About" href="{{ route('about') }}">About</a></li>
-                <li class="menu-portfolio"><a title="Portfolio" href="{{ route('portfolios') }}">Portfolio</a></li>
-                <li class="menu-blog"><a title="Blog" href="{{ route('blogs') }}">Blog</a></li>
-                <li class="menu-contact"><a title="Contact" href="{{ route('contact') }}">Contact</a></li>
+    <div class="overlay-nav">
+        <div class='inner'>
+            <nav class="nav-main" role="navigation">
+                <ul class='nav'>
+                    <li class="menu-home"><a title="Home" href="{{ route('home') }}">Home</a></li>
+                    <li class="active menu-about active"><a title="About" href="{{ route('about') }}">About</a></li>
+                    <li class="menu-portfolio"><a title="Portfolio" href="{{ route('portfolios') }}">Portfolio</a></li>
+                    <li class="menu-blog"><a title="Blog" href="{{ route('blogs') }}">Blog</a></li>
+                    <li class="menu-contact"><a title="Contact" href="{{ route('contact') }}">Contact</a></li>
 
-            </ul>
-        </nav>
-
-    </div>
-</div>
-
-<a id="menu-closer" href="#" class="active">
-    <svg class="menu-closer-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60"
-        xml:space="preserve">
-        <g>
-            <rect x="18" y="28" transform="matrix(0.7071 0.7071 -0.7071 0.7071 30.1464 -12.78)" width="25"
-                height="4"></rect>
-            <rect x="18" y="28" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.28 30.3536)" width="25"
-                height="4"></rect>
-        </g>
-    </svg>
-</a>
-
-<div id="outer-wrap">
-
-
-    <header class="banner navbar navbar-default topnavbar navbar navbar-fixed-top ac-transparent-navbar   fluid"
-        role="banner">
-        <div class="container navbar-outer">
-            <div class="navbar-header">
-                <button type="button" class="mobile navbar-toggle" data-toggle="collapse"
-                    data-target=".nav-main, .nav-extras">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand logo" href="{{ route('home') }}"><img id="site-logo-start" class="site-logo"
-                        src="{{ asset('assets/wp-content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office"><img id="site-logo"
-                        class="site-logo  trans-nav-logo "
-                        src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_2_240x90.png') }}"
-                        alt="h office"></a>
-            </div>
-
-
-            <nav class="nav-main navbar-collapse collapse" role="navigation">
-
-
-                <button type="button" class="desktop navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-
-
-
-
+                </ul>
             </nav>
+
         </div>
-    </header>
-    <a id="page-top" class='jump-pos'></a>
+    </div>
+
+    <a id="menu-closer" href="#" class="active">
+        <svg class="menu-closer-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60"
+            xml:space="preserve">
+            <g>
+                <rect x="18" y="28" transform="matrix(0.7071 0.7071 -0.7071 0.7071 30.1464 -12.78)" width="25"
+                    height="4"></rect>
+                <rect x="18" y="28" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.28 30.3536)" width="25"
+                    height="4"></rect>
+            </g>
+        </svg>
+    </a>
+
+    <div id="outer-wrap">
+
+
+        <header class="banner navbar navbar-default topnavbar navbar navbar-fixed-top ac-transparent-navbar   fluid"
+            role="banner">
+            <div class="container navbar-outer">
+                <div class="navbar-header">
+                    <button type="button" class="mobile navbar-toggle" data-toggle="collapse"
+                        data-target=".nav-main, .nav-extras">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="{{ route('home') }}"><img id="site-logo-start" class="site-logo"
+                            src="{{ asset('assets/wp-content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office"><img
+                            id="site-logo" class="site-logo  trans-nav-logo "
+                            src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_2_240x90.png') }}"
+                            alt="h office"></a>
+                </div>
+
+
+                <nav class="nav-main navbar-collapse collapse" role="navigation">
+
+
+                    <button type="button" class="desktop navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
 
 
 
 
-    <div class='ac-page-hero-img  ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '></div>
-    <div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '></div>
-
-    <div class="wrap main-section container" role="document">
-
-
-        <div class="content">
-            <div class="row bg">
+                </nav>
+            </div>
+        </header>
+        <a id="page-top" class='jump-pos'></a>
 
 
-                <main class="main  no-sidebar  col-sm-12" role="main">
+
+
+
+        <div class='ac-page-hero-img  ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '></div>
+        <div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '></div>
+
+        @yield('header-slider')
+        <div class="wrap main-section container" role="document">
+
+
+            <div class="content">
+                <div class="row bg">
+
+
+                    <main class="main  no-sidebar  col-sm-12" role="main">
 
                         @yield('main-content')
                     </main>
@@ -175,43 +177,43 @@
     <a id="page-bottom"></a>
     <footer class="content-info fluid" role="contentinfo">
 
-		<div class='container'>
-			<div class="row">
-				<div class="col-md-12">
-					<section id="text-1" class=" widget widget_text">
-						<div class="textwidget"><img
-								src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_240x90.png') }}"
-								style="opacity:0.6;"></div>
-					</section>
-				</div>
-			</div>
-		</div>
+        <div class='container'>
+            <div class="row">
+                <div class="col-md-12">
+                    <section id="text-1" class=" widget widget_text">
+                        <div class="textwidget"><img
+                                src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_240x90.png') }}"
+                                style="opacity:0.6;"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
 
 
-		<div id="footer-copyright">
-			<article class="container">
-				<div class='row'>
-					<div id="footer_social_bar" class="col-md-12 col-lg-12">
-						<a href="https://www.facebook.com/headofficecommunication" target="_blank" title="facebook">
-							<span class="icon el-icon-facebook"></span>
-						</a>
-						<a href="https://www.linkedin.com/company/headoffice?trk=top_nav_home" target="_blank"
-							title="linkedin">
-							<span class="icon el-icon-linkedin"></span>
-						</a>
-						<a href="https://twitter.com/headofficebd" target="_blank" title="twitter">
-							<span class="icon el-icon-twitter"></span>
-						</a>
-						<a href="https://www.youtube.com/channel/UCppgkUgt-2Ts1xV1BsLSsQA" target="_blank"
-							title="youtube">
-							<span class="icon el-icon-youtube"></span>
-						</a>
-					</div>
-					<div id="copyright-bar" class="col-md-12 col-lg-12">
-						© 2019 h office. All rights reserved. Developed by <a
-							href="https://www.dnationsoft.com/">DNationSoft</a> </div>
-				</div>
-			</article>
-		</div>
-	</footer>
+        <div id="footer-copyright">
+            <article class="container">
+                <div class='row'>
+                    <div id="footer_social_bar" class="col-md-12 col-lg-12">
+                        <a href="https://www.facebook.com/headofficecommunication" target="_blank" title="facebook">
+                            <span class="icon el-icon-facebook"></span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/headoffice?trk=top_nav_home" target="_blank"
+                            title="linkedin">
+                            <span class="icon el-icon-linkedin"></span>
+                        </a>
+                        <a href="https://twitter.com/headofficebd" target="_blank" title="twitter">
+                            <span class="icon el-icon-twitter"></span>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCppgkUgt-2Ts1xV1BsLSsQA" target="_blank"
+                            title="youtube">
+                            <span class="icon el-icon-youtube"></span>
+                        </a>
+                    </div>
+                    <div id="copyright-bar" class="col-md-12 col-lg-12">
+                        © 2019 h office. All rights reserved. Developed by <a
+                            href="https://www.dnationsoft.com/">DNationSoft</a> </div>
+                </div>
+            </article>
+        </div>
+    </footer>
 @endsection

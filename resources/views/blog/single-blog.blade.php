@@ -109,9 +109,9 @@
             <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'></div>
         @elseif(true)
             <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
-                <div class="ac-royalSlider sliderContainer fullWidth clearfix ac_easy_slider no-caption square" 
-                     data-show-title="1" data-show-excerpt="1" data-slider-size="square" 
-                     data-delay="6000" data-autoplay="true" data-transition="slide" 
+                <div class="ac-royalSlider sliderContainer fullWidth clearfix ac_easy_slider no-caption square"
+                     data-show-title="1" data-show-excerpt="1" data-slider-size="square"
+                     data-delay="6000" data-autoplay="true" data-transition="slide"
                      data-split-nav="" data-auto-height="false">
                     <div class="royalSlider heroSlider rsMinW full-width-slider">
                         <div class="rsContent">
