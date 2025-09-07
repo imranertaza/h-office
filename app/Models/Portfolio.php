@@ -16,9 +16,4 @@ class Portfolio extends Model
         return $this->hasMany(PortfolioImage::class, 'portfolio_id', 'portfolio_id');
     }
 
-    public function getFeaturedImageAttribute()
-    {
-        return $this->images()->where('featured', 1)->get();
-    }
-
 }
