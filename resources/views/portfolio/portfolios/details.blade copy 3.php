@@ -577,6 +577,7 @@
                                     </div>
                                     <div class='text'>
                                         <a href='../jatra/index.html'>
+                                            
                                             <h3 class='ac-grid-title'><strong>Jatra</strong></h3>
                                         </a>
                                         <div class='ac-grid-terms'></div>

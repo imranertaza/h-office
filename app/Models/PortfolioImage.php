@@ -9,10 +9,12 @@ class PortfolioImage extends Model
 {
     use HasFactory;
     protected $table='portfolio_image';
-    protected $guarded=['id'];
+    protected $primaryKey = 'portfolio_image_id';
+    protected $guarded=['portfolio_image_id'];
 
     public function portfolio()
     {
         return $this->belongsTo(Portfolio::class, 'portfolio_id', 'portfolio_id');
     }
+
 }
