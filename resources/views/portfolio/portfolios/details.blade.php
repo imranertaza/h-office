@@ -2,7 +2,9 @@
 
 @section('title', 'Ajo | h office')
 
-@section('body-class', 'ingle single-ac_portfolio postid-66   footer-parallax   ac_sticky_sidebars  navtype-overlay ac-theme top-navbar  ac-transparent-navbar-body  wpb-js-composer js-comp-ver-4.3.5 vc_responsive')
+@section('body-class',
+    'ingle single-ac_portfolio postid-66 footer-parallax ac_sticky_sidebars navtype-overlay ac-theme
+    top-navbar ac-transparent-navbar-body wpb-js-composer js-comp-ver-4.3.5 vc_responsive')
 
 @section('styles')
     #logo-slider-wraper {
@@ -261,250 +263,86 @@
     }
 @endsection
 
-@section('header-slider')
-    <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
-        <div class="ac-royalSlider sliderContainer fullWidth clearfix ac_easy_slider no-caption square" data-show-title="1"
-            data-show-excerpt="1" data-slider-size="square" data-delay="6000" data-autoplay="true" data-transition="slide"
-            data-split-nav="" data-auto-height="false">
-            <div class="royalSlider heroSlider rsMinW full-width-slider">
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7762-1600x900.jpg') }}"
-                        alt="_DSC7762" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC7762</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
+@php
+    $imagepath = 'assets/uploads/portfolios/';
+@endphp
+@if (count($portfolio->sliderImages) > 1)
+    @section('header-slider')
+        <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
+            <div class="ac-royalSlider sliderContainer fullWidth clearfix ac_easy_slider no-caption square"
+                data-show-title="1" data-show-excerpt="1" data-slider-size="square" data-delay="6000" data-autoplay="true"
+                data-transition="slide" data-split-nav="" data-auto-height="false">
+                <div class="royalSlider heroSlider rsMinW full-width-slider">
+                    @foreach ($portfolio->sliderImages as $image)
+                        <div class="rsContent">
+                            <img class="rsImg" src="{{ asset($imagepath . $image->image) }}"
+                                alt="{{ $image->caption ?? 'Portfolio Image' }}" />
+                            <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
+                                data-move-effect="bottom" data-speed="200">
+                                <div class="caption">{{ $image->caption ?? 'Portfolio Image' }}</div>
+                                <div class="description">
+                                    <div class='excerpt'>{{ $image->description ?? '' }}</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7323-1600x1062.jpg') }}"
-                        alt="_DSC7323" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC7323</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
+                <!--Control Bar-->
+                <div class='ac-rs-overlay'></div>
+                <div class="ac-rs-controls-wrapper load-item">
+                    <!-- Caption -->
+                    <div class="slidecaption"></div>
+                    <!-- Description -->
+                    <div class="slidedescription"></div>
                 </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7711-1600x1062.jpg') }}"
-                        alt="_DSC7711" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC7711</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7762-1600x900.jpg') }}"
-                        alt="_DSC7762" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC7762</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7878-1600x1999.jpg') }}"
-                        alt="_DSC7878" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC7878</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC79661-1600x1142.jpg') }}"
-                        alt="_DSC7966" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC7966</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC8000-1600x1066.jpg') }}"
-                        alt="_DSC8000" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC8000</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC8095-1600x1066.jpg') }}"
-                        alt="_DSC8095" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC8095</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC8243-1600x1600.jpg') }}"
-                        alt="_DSC8243" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_DSC8243</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1862-1600x2401.jpg') }}"
-                        alt="_MG_1862" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1862</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1864-1600x1066.jpg') }}"
-                        alt="_MG_1864" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1864</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1867-1600x1066.jpg') }}"
-                        alt="_MG_1867" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1867</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1868-1600x2401.jpg') }}"
-                        alt="_MG_1868" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1868</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1873-1600x1066.jpg') }}"
-                        alt="_MG_1873" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1873</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1883-1600x1066.jpg') }}"
-                        alt="_MG_1883" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1883</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1889-1600x1066.jpg') }}"
-                        alt="_MG_1889" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1889</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1891-1600x2401.jpg') }}"
-                        alt="_MG_1891" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1891</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1899-1600x1066.jpg') }}"
-                        alt="_MG_1899" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">_MG_1899</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/IMG_0737-1600x1066.jpg') }}"
-                        alt="IMG_0737" />
-                    <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
-                        data-move-effect="bottom" data-speed="200">
-                        <div class="caption">IMG_0737</div>
-                        <div class="description">
-                            <div class='excerpt'></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--Control Bar-->
-            <div class='ac-rs-overlay'></div>
-            <div class="ac-rs-controls-wrapper load-item">
-                <!-- Caption -->
-                <div class="slidecaption"></div>
-                <!-- Description -->
-                <div class="slidedescription"></div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection
+@elseif (count($portfolio->sliderImages) == 1)
+    @section('header-slider')
+        <div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '><img
+                class="featured-image" src="{{ asset($imagepath . $portfolio->sliderImages[0]->image) }}"
+                alt='product-display-07' /></div>
+    @endsection
+@endif
 
 @section('main-content')
     <article
         class="post-66 ac_portfolio type-ac_portfolio status-publish has-post-thumbnail hentry top-images ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content row">
+
             <div class='col-sm-12 col-md-9 ac-page-left-side'>
-                <div class='content top-images'>
-                    <h3 class="entry-title">
-                        <strong>GP-House</strong>
-                    </h3>
-                    <p class="entry-subtitle">This is the subtitle</p>
-                    <p>The goal of the GP-House profiling project was to create a unique compilation of contemporary,
-                        dynamic Bangladeshi art that reflects the identity of a nation, a nation that is looking towards a
-                        new horizon of progress. By bringing together different pieces of art from around the country in
-                        one iconic building, Head Office Communication has created a whole new dimension to the idea of
-                        corporate workplace.</p>
+                <div class='post-images'>
+
+                    @foreach ($portfolio->images as $item)
+                        <img src="{{ asset($imagepath . $item->image) }}" alt="{{ @$item->alt ?? 'portfolio-image' }}">
+                    @endforeach
+
+                    {{-- <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-768x1184.jpg') }}" width='768' height='1184' alt='product-display'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-02-768x1152.jpg') }}" width='768' height='1152' alt='product-display-02'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-03-768x1141.jpg') }}" width='768' height='1141' alt='product-display-03'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-04-768x511.jpg') }}" width='768' height='511' alt='product-display-04'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-05-768x511.jpg') }}" width='768' height='511' alt='product-display-05'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-06-768x511.jpg') }}" width='768' height='511' alt='product-display-06'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-07-768x528.jpg') }}" width='768' height='528' alt='product-display-07'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-08-768x511.jpg') }}" width='768' height='511' alt='product-display-08'>
+                    <img src="{{ asset('assets/wp-content/uploads/2015/01/signage-768x1195.jpg') }}" width='768' height='1195' alt='signage'> --}}
                 </div>
+                @if (0)
+                    <div class='content top-images'>
+                        <h3 class="entry-title">
+                            <strong>{{ $portfolio->title }}</strong>
+                        </h3>
+                        <p class="entry-subtitle">This is the subtitle</p>
+                        <p>The goal of the GP-House profiling project was to create a unique compilation of contemporary,
+                            dynamic Bangladeshi art that reflects the identity of a nation, a nation that is looking towards
+                            a
+                            new horizon of progress. By bringing together different pieces of art from around the country in
+                            one iconic building, Head Office Communication has created a whole new dimension to the idea of
+                            corporate workplace.</p>
+                    </div>
+                @endif
+
                 <div class='article-footer'>
                     <div class="clearfix"></div>
                     <div class="btn-group social-share">
@@ -529,70 +367,59 @@
                     <section class='related-projects'>
                         <h3 class='title uppercase margin-bottom-medium'><strong>Related Projects</strong></h3>
                         <div class='ac-grid-posts ac-filter-target row ac-grid-fit-rows'>
-                            <div
-                                class='ac-grid-col post-172 ac_portfolio type-ac_portfolio status-publish has-post-thumbnail hentry ac-hide-until-ready ac-hidden-until-ready col-lg-4 col-md-4 col-sm-6 col-xs-12 all ac-hide-until-ready ac-hidden-until-ready'>
-                                <div class='ac-grid-post'>
-                                    <div class='image'>
-                                        <a href='../google-bus-bangladesh/index.html'>
-                                            <img class="grid-image"
-                                                src="{{ asset('assets/wp-content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}"
-                                                alt="port_Gbus (17)" />
-                                        </a>
-                                    </div>
-                                    <div class='text'>
-                                        <a href='../google-bus-bangladesh/index.html'>
-                                            <h3 class='ac-grid-title'><strong>Google-Bus Bangladesh</strong></h3>
-                                        </a>
-                                        <div class='ac-grid-terms'></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class='ac-grid-col post-191 ac_portfolio type-ac_portfolio status-publish has-post-thumbnail hentry ac-hide-until-ready ac-hidden-until-ready col-lg-4 col-md-4 col-sm-6 col-xs-12 all ac-hide-until-ready ac-hidden-until-ready'>
-                                <div class='ac-grid-post'>
-                                    <div class='image'>
-                                        <a href='../ajo/index.html'>
-                                            <img class="grid-image"
-                                                src="{{ asset('assets/wp-content/uploads/2015/01/6-0011-768x512.jpg') }}"
-                                                alt="6-0011" />
-                                        </a>
-                                    </div>
-                                    <div class='text'>
-                                        <a href='../ajo/index.html'>
-                                            <h3 class='ac-grid-title'><strong>Ajo</strong></h3>
-                                        </a>
-                                        <div class='ac-grid-terms'></div>
+                            @foreach ($related as $item)
+                                <div
+                                    class='ac-grid-col post-172 ac_portfolio type-ac_portfolio status-publish has-post-thumbnail hentry ac-hide-until-ready ac-hidden-until-ready col-lg-4 col-md-4 col-sm-6 col-xs-12 all ac-hide-until-ready ac-hidden-until-ready'>
+                                    <div class='ac-grid-post'>
+                                        <div class='image'>
+                                            <a href='{{ route('portfolios-details', $item->slug) }}'>
+                                                <img class="grid-image"
+                                                    src="{{ asset($imagepath . $item->relatedImage->image) }}"
+                                                    alt="port_Gbus (17)" />
+                                            </a>
+                                        </div>
+                                        <div class='text'>
+                                            <a href='{{ route('portfolios-details', $item->slug) }}'>
+                                                <h3 class='ac-grid-title'><strong>{{ $item->title }}</strong></h3>
+                                            </a>
+                                            <div class='ac-grid-terms'></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div
-                                class='ac-grid-col post-77 ac_portfolio type-ac_portfolio status-publish has-post-thumbnail hentry ac-hide-until-ready ac-hidden-until-ready col-lg-4 col-md-4 col-sm-6 col-xs-12 all ac-hide-until-ready ac-hidden-until-ready'>
-                                <div class='ac-grid-post'>
-                                    <div class='image'>
-                                        <a href='../jatra/index.html'>
-                                            <img class="grid-image"
-                                                src="{{ asset('assets/wp-content/uploads/2015/01/product-display-07-768x528.jpg') }}"
-                                                alt="product-display-07" />
-                                        </a>
-                                    </div>
-                                    <div class='text'>
-                                        <a href='../jatra/index.html'>
-                                            <h3 class='ac-grid-title'><strong>Jatra</strong></h3>
-                                        </a>
-                                        <div class='ac-grid-terms'></div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </section>
                 </div>
             </div>
             <section class='side-meta col-sm-12 col-md-3 ac-page-right-side'>
+                <div class='content side-images'>
+
+                    <h3 class="entry-title>">
+                        <strong>
+                            Jatra </strong>
+                    </h3>
+
+
+                    <p>Jatra, the renowned local handicraft brand has a name, fame and character of
+                        its own. Head Office Communication reflected the distinct character of this
+                        handicraft brand in its outlet in Banani by being playful in its interior
+                        design, while promoting local heritage and yet giving it a global approach.
+                    </p>
+                    <p>&nbsp;</p>
+
+                </div>
                 <ul class='meta-data'>
-                    <li class='portolio-client'><span>Client: </span>Grameen Phone</li>
-                    <li class='portolio-agency'><span>Agency: </span>Head Office Communication</li>
-                    <li><span>Type: </span><a href="../../portfolio-category/experience/index.html"
-                            rel="tag">Experience</a></li>
+                    <li class='portolio-client'><span>Client: </span>{{ $portfolio->client }}</li>
+                    <li class='portolio-agency'><span>Agency: </span>{{ $portfolio->Agency }}</li>
+                    <li><span>Type: </span>
+                        @foreach ($item->categories as $cat)
+                            <a href="" rel="tag">{{ $cat->name }}</a>
+                            @if (!$loop->last)
+                                <br />
+                            @endif
+                        @endforeach
+                    </li>
+
                 </ul>
             </section>
             <div class="clearfix"></div>
