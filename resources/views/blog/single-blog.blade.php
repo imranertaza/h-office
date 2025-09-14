@@ -11,14 +11,14 @@
         #logo-slider { position: relative; width: 990px; height: 120px; margin: 0; padding: 0; overflow: hidden; list-style: none; background: #FFFFFF; }
         .slide { list-style: none; margin: 0 !important; width: 990px !important; }
         .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-        #prev { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right; margin-right: -50px; }
-        #next { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -50px; }
+        #prev { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right; margin-right: -50px; }
+        #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -50px; }
         @media screen and (max-width:320px) {
             #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
             .slider-controls { position: absolute; top: 41px; left: 30px; width: 100% !important; }
             #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position: relative; width: 110% !important; }
             .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-            #next { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -66px !important; }
+            #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -66px !important; }
             .logo-img { margin-left: 32px; }
         }
         @media screen and (min-width:321px) and (max-width:480px) {
@@ -89,8 +89,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand logo" href="{{ route('home') }}">
-                        <img id="site-logo-start" class="site-logo" src="{{ asset('assets/wp-content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office">
-                        <img id="site-logo" class="site-logo trans-nav-logo" src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_2_240x90.png') }}" alt="h office">
+                        <img id="site-logo-start" class="site-logo" src="{{ asset('assets/content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office">
+                        <img id="site-logo" class="site-logo trans-nav-logo" src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_2_240x90.png') }}" alt="h office">
                     </a>
                 </div>
                 <nav class="nav-main navbar-collapse collapse" role="navigation">
@@ -115,35 +115,35 @@
                      data-split-nav="" data-auto-height="false">
                     <div class="royalSlider heroSlider rsMinW full-width-slider">
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MIB_product-1600x1066.jpg') }}" alt="MIB_product" />
+                            <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MIB_product-1600x1066.jpg') }}" alt="MIB_product" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
                                 <div class="caption">MIB Product</div>
                                 <div class="description"><div class='excerpt'></div></div>
                             </div>
                         </div>
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/1781766_753408081400127_8047884723732741814_o-1600x2400.jpg') }}" alt="MIB Image 1" />
+                            <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/1781766_753408081400127_8047884723732741814_o-1600x2400.jpg') }}" alt="MIB Image 1" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
                                 <div class="caption">MIB Image 1</div>
                                 <div class="description"><div class='excerpt'></div></div>
                             </div>
                         </div>
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/10806207_767310316676570_7487871458005622165_n-1600x1067.jpg') }}" alt="MIB Image 2" />
+                            <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/10806207_767310316676570_7487871458005622165_n-1600x1067.jpg') }}" alt="MIB Image 2" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
                                 <div class="caption">MIB Image 2</div>
                                 <div class="description"><div class='excerpt'></div></div>
                             </div>
                         </div>
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/10846236_754985957909006_1180230344411627776_n-1600x1066.jpg') }}" alt="MIB Image 3" />
+                            <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/10846236_754985957909006_1180230344411627776_n-1600x1066.jpg') }}" alt="MIB Image 3" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
                                 <div class="caption">MIB Image 3</div>
                                 <div class="description"><div class='excerpt'></div></div>
                             </div>
                         </div>
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MIB_product-1600x1066.jpg') }}" alt="MIB_product" />
+                            <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MIB_product-1600x1066.jpg') }}" alt="MIB_product" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10" data-move-effect="bottom" data-speed="200">
                                 <div class="caption">MIB Product</div>
                                 <div class="description"><div class='excerpt'></div></div>
@@ -159,7 +159,7 @@
             </div>
         @else
             <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
-                <img class="featured-image" src="{{ asset('assets/wp-content/uploads/2015/01/MIB_product-1600x1066.jpg') }}" alt="MIB Product" />
+                <img class="featured-image" src="{{ asset('assets/content/uploads/2015/01/MIB_product-1600x1066.jpg') }}" alt="MIB Product" />
             </div>
         @endif
 
@@ -262,7 +262,7 @@
                                 <div class='ac-grid-post'>
                                     <div class='image'>
                                         <a href="{{ route('portfolios', 'google-bus-bangladesh') }}">
-                                            <img class="grid-image" src="{{ asset('assets/wp-content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}" alt="port_Gbus (17)" />
+                                            <img class="grid-image" src="{{ asset('assets/content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}" alt="port_Gbus (17)" />
                                         </a>
                                     </div>
                                     <div class='text'>
@@ -286,7 +286,7 @@
                     <div class="col-md-12">
                         <section id="text-1" class="widget widget_text">
                             <div class="textwidget">
-                                <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_240x90.png') }}" style="opacity:0.6;">
+                                <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_240x90.png') }}" style="opacity:0.6;">
                             </div>
                         </section>
                     </div>

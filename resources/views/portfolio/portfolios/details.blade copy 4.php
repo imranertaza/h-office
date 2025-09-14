@@ -43,13 +43,13 @@
     }
 
     #prev {
-    background: url(../../wp-content/plugins/logo-slider/arrows/arrow1.png) no-repeat center;
+    background: url(../../content/plugins/logo-slider/arrows/arrow1.png) no-repeat center;
     float: right;
     margin-right: -50px;
     }
 
     #next {
-    background: url(../../wp-content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
+    background: url(../../content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
     float: left;
     margin-left: -50px
     }
@@ -92,7 +92,7 @@
     }
 
     #next {
-    background: url(../../wp-content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
+    background: url(../../content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
     float: left;
     margin-left: -66px !important;
     }
@@ -318,15 +318,15 @@
                         <img src="{{ asset($imagepath . $item->image) }}" alt="{{ @$item->alt ?? 'portfolio-image' }}">
                     @endforeach
 
-                    {{-- <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-768x1184.jpg') }}" width='768' height='1184' alt='product-display'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-02-768x1152.jpg') }}" width='768' height='1152' alt='product-display-02'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-03-768x1141.jpg') }}" width='768' height='1141' alt='product-display-03'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-04-768x511.jpg') }}" width='768' height='511' alt='product-display-04'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-05-768x511.jpg') }}" width='768' height='511' alt='product-display-05'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-06-768x511.jpg') }}" width='768' height='511' alt='product-display-06'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-07-768x528.jpg') }}" width='768' height='528' alt='product-display-07'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-08-768x511.jpg') }}" width='768' height='511' alt='product-display-08'>
-                    <img src="{{ asset('assets/wp-content/uploads/2015/01/signage-768x1195.jpg') }}" width='768' height='1195' alt='signage'> --}}
+                    {{-- <img src="{{ asset('assets/content/uploads/2015/01/product-display-768x1184.jpg') }}" width='768' height='1184' alt='product-display'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-02-768x1152.jpg') }}" width='768' height='1152' alt='product-display-02'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-03-768x1141.jpg') }}" width='768' height='1141' alt='product-display-03'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-04-768x511.jpg') }}" width='768' height='511' alt='product-display-04'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-05-768x511.jpg') }}" width='768' height='511' alt='product-display-05'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-06-768x511.jpg') }}" width='768' height='511' alt='product-display-06'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-07-768x528.jpg') }}" width='768' height='528' alt='product-display-07'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/product-display-08-768x511.jpg') }}" width='768' height='511' alt='product-display-08'>
+                    <img src="{{ asset('assets/content/uploads/2015/01/signage-768x1195.jpg') }}" width='768' height='1195' alt='signage'> --}}
                 </div>
                 @if (0)
                     <div class='content top-images'>

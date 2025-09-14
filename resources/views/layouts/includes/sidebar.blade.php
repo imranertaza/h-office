@@ -62,7 +62,7 @@
             <div class="ac-grid-post">
                 <div class="image">
                     <a href="../portfolios/google-bus-bangladesh/index.html">
-                        <img class="grid-image" src="{{ asset('/assets/wp-content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}" alt="port_Gbus (17)">
+                        <img class="grid-image" src="{{ asset('/assets/content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}" alt="port_Gbus (17)">
                     </a>
                 </div>
                 <div class="text">

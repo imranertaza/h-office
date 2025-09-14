@@ -40,12 +40,12 @@
             text-indent: -9000px;
         }
         #prev {
-            background: url({{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}) no-repeat center;
+            background: url({{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}) no-repeat center;
             float: right;
             margin-right: -50px;
         }
         #next {
-            background: url({{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}) no-repeat center;
+            background: url({{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}) no-repeat center;
             float: left;
             margin-left: -50px
         }
@@ -77,7 +77,7 @@
                 width: 100% !important;
             }
             #next {
-                background: url({{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}) no-repeat center;
+                background: url({{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}) no-repeat center;
                 float: left;
                 margin-left: -66px !important;
             }
@@ -248,7 +248,7 @@
                                                     <article class="post-1808 post type-post status-publish format-standard hentry category-uncategorized ac-hide-until-ready ac-hidden-until-ready"></article>
                                                     <article class="post-609 post type-post status-publish format-standard has-post-thumbnail hentry category-experience category-food ac-hide-until-ready ac-hidden-until-ready">
                                                         <a href="../ajo-a-cafe-for-all/index.html">
-                                                            <img class="featured-image" src="{{ asset('/assets/wp-content/uploads/2015/03/172816_10150109091892473_509672472_6591341_5029799_o-870x500.jpg') }}" alt="172816_10150109091892473_509672472_6591341_5029799_o">
+                                                            <img class="featured-image" src="{{ asset('/assets/content/uploads/2015/03/172816_10150109091892473_509672472_6591341_5029799_o-870x500.jpg') }}" alt="172816_10150109091892473_509672472_6591341_5029799_o">
                                                         </a>
                                                         <header>
                                                             <h2 class="entry-title"><strong><a href="../the-savings-include-a-us140-a134-stateroom-credit-on/index.html">The savings include a $US140 ($A134) stateroom credit on</a></strong></h2>
@@ -266,7 +266,7 @@
                                                     </article>
                                                     <article class="post-360 post type-post status-publish format-standard has-post-thumbnail hentry category-experience ac-hide-until-ready ac-hidden-until-ready">
                                                         <a href="../googlebuslaunch/index.html">
-                                                            <img class="featured-image" src="{{ asset('/assets/wp-content/uploads/2015/01/port_Gbus-17-870x500.jpg') }}" alt="port_Gbus (17)">
+                                                            <img class="featured-image" src="{{ asset('/assets/content/uploads/2015/01/port_Gbus-17-870x500.jpg') }}" alt="port_Gbus (17)">
                                                         </a>
                                                         <header>
                                                             <h2 class="entry-title"><strong><a href="../googlebuslaunch/index.html">Formal Launch of ‘Google Bus’ in Bangladesh</a></strong></h2>
@@ -284,7 +284,7 @@
                                                     </article>
                                                     <article class="post-352 post type-post status-publish format-standard has-post-thumbnail hentry category-product category-studio tag-bangladesh-accessories tag-bangladesh-products tag-bangladeshi-products tag-fine-products tag-made-in-bangladesh ac-hide-until-ready ac-hidden-until-ready">
                                                         <a href="../madeinbangladesh/index.html">
-                                                            <img class="featured-image" src="{{ asset('/assets/wp-content/uploads/2015/01/MIB_product-870x500.jpg') }}" alt="MIB_product">
+                                                            <img class="featured-image" src="{{ asset('/assets/content/uploads/2015/01/MIB_product-870x500.jpg') }}" alt="MIB_product">
                                                         </a>
                                                         <header>
                                                             <h2 class="entry-title"><strong><a href="../madeinbangladesh/index.html">MIB Spirit MADE IN BANGLADESH</a></strong></h2>

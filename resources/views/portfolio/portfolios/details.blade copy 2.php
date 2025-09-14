@@ -35,12 +35,12 @@
     text-indent:-9000px;
 }
 #prev{
-    background:url(../../wp-content/plugins/logo-slider/arrows/arrow1.png) no-repeat center;
+    background:url(../../content/plugins/logo-slider/arrows/arrow1.png) no-repeat center;
     float:right;
     margin-right:-50px;
 }
 #next{
-    background:url(../../wp-content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
+    background:url(../../content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
     float:left;
     margin-left:-50px
 }
@@ -79,7 +79,7 @@
         width: 100% !important;
     }
     #next{
-        background:url(../../wp-content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
+        background:url(../../content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
         float:left;
         margin-left:-66px !important;
     }
@@ -224,7 +224,7 @@
 }
 @endsection
 @section('header-slider')
-<div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '><img class="featured-image" src="{{asset('assets/wp-content/uploads/2015/01/product-display-07-1200x500.jpg')}}" alt='product-display-07' /></div>
+<div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '><img class="featured-image" src="{{asset('assets/content/uploads/2015/01/product-display-07-1200x500.jpg')}}" alt='product-display-07' /></div>
 
 @endsection
 @section('main-content')
@@ -232,15 +232,15 @@
     <div class="entry-content row">
         <div class='col-sm-12 col-md-8 ac-page-left-side'>
             <div class='post-images'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-768x1184.jpg') }}" width='768' height='1184' alt='product-display'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-02-768x1152.jpg') }}" width='768' height='1152' alt='product-display-02'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-03-768x1141.jpg') }}" width='768' height='1141' alt='product-display-03'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-04-768x511.jpg') }}" width='768' height='511' alt='product-display-04'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-05-768x511.jpg') }}" width='768' height='511' alt='product-display-05'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-06-768x511.jpg') }}" width='768' height='511' alt='product-display-06'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-07-768x528.jpg') }}" width='768' height='528' alt='product-display-07'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/product-display-08-768x511.jpg') }}" width='768' height='511' alt='product-display-08'>
-                <img src="{{ asset('assets/wp-content/uploads/2015/01/signage-768x1195.jpg') }}" width='768' height='1195' alt='signage'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-768x1184.jpg') }}" width='768' height='1184' alt='product-display'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-02-768x1152.jpg') }}" width='768' height='1152' alt='product-display-02'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-03-768x1141.jpg') }}" width='768' height='1141' alt='product-display-03'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-04-768x511.jpg') }}" width='768' height='511' alt='product-display-04'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-05-768x511.jpg') }}" width='768' height='511' alt='product-display-05'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-06-768x511.jpg') }}" width='768' height='511' alt='product-display-06'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-07-768x528.jpg') }}" width='768' height='528' alt='product-display-07'>
+                <img src="{{ asset('assets/content/uploads/2015/01/product-display-08-768x511.jpg') }}" width='768' height='511' alt='product-display-08'>
+                <img src="{{ asset('assets/content/uploads/2015/01/signage-768x1195.jpg') }}" width='768' height='1195' alt='signage'>
             </div>
             <div class='article-footer'>
                 <div class="clearfix"></div>
@@ -261,7 +261,7 @@
                             <div class='ac-grid-post'>
                                 <div class='image'>
                                     <a href="">
-                                        <img class="grid-image" src="{{ asset('assets/wp-content/uploads/2015/01/6-0011-768x512.jpg') }}" alt="6-0011" />
+                                        <img class="grid-image" src="{{ asset('assets/content/uploads/2015/01/6-0011-768x512.jpg') }}" alt="6-0011" />
                                     </a>
                                 </div>
                                 <div class='text'>
@@ -276,7 +276,7 @@
                             <div class='ac-grid-post'>
                                 <div class='image'>
                                     <a href="">
-                                        <img class="grid-image" src="{{ asset('assets/wp-content/uploads/2015/01/n1-768x512.jpg') }}" alt="n1" />
+                                        <img class="grid-image" src="{{ asset('assets/content/uploads/2015/01/n1-768x512.jpg') }}" alt="n1" />
                                     </a>
                                 </div>
                                 <div class='text'>
@@ -291,7 +291,7 @@
                             <div class='ac-grid-post'>
                                 <div class='image'>
                                     <a href="">
-                                        <img class="grid-image" src="{{ asset('assets/wp-content/uploads/2015/01/invitation_jaago-768x802.jpg') }}" alt="invitation_jaago" />
+                                        <img class="grid-image" src="{{ asset('assets/content/uploads/2015/01/invitation_jaago-768x802.jpg') }}" alt="invitation_jaago" />
                                     </a>
                                 </div>
                                 <div class='text'>

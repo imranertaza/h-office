@@ -43,8 +43,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand logo" href="{{ route('home') }}">
-                        <img id="site-logo-start" class="site-logo" src="{{ asset('assets/wp-content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office">
-                        <img id="site-logo" class="site-logo trans-nav-logo" src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_2_240x90.png') }}" alt="h office">
+                        <img id="site-logo-start" class="site-logo" src="{{ asset('assets/content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office">
+                        <img id="site-logo" class="site-logo trans-nav-logo" src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_2_240x90.png') }}" alt="h office">
                     </a>
                 </div>
                 <nav class="nav-main navbar-collapse collapse" role="navigation">
@@ -60,7 +60,7 @@
         <a id="page-top" class='jump-pos'></a>
 
         <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
-            <img class="featured-image" src="{{ asset('assets/wp-content/uploads/2015/01/port_Gbus-17-1200x500.jpg') }}" alt="port_Gbus (17)" />
+            <img class="featured-image" src="{{ asset('assets/content/uploads/2015/01/port_Gbus-17-1200x500.jpg') }}" alt="port_Gbus (17)" />
         </div>
 
         <div class="wrap main-section container" role="document">
@@ -160,7 +160,7 @@
                                 <div class='ac-grid-post'>
                                     <div class='image'>
                                         <a href="{{ route('portfolios', 'google-bus-bangladesh') }}">
-                                            <img class="grid-image" src="{{ asset('assets/wp-content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}" alt="port_Gbus (17)" />
+                                            <img class="grid-image" src="{{ asset('assets/content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}" alt="port_Gbus (17)" />
                                         </a>
                                     </div>
                                     <div class='text'>
@@ -184,7 +184,7 @@
                     <div class="col-md-12">
                         <section id="text-1" class="widget widget_text">
                             <div class="textwidget">
-                                <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_240x90.png') }}" style="opacity:0.6;">
+                                <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_240x90.png') }}" style="opacity:0.6;">
                             </div>
                         </section>
                     </div>
@@ -218,17 +218,17 @@
 @endsection
 
 @section('scripts')
-    <script type='text/javascript' src='{{ asset('assets/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/plugins/contact-form-7/includes/js/jquery.form.min.js') }}'></script>
     <script type='text/javascript'>
-        var _wpcf7 = {"loaderUrl":"{{ asset('assets/wp-content/plugins/contact-form-7/images/ajax-loader.gif') }}","sending":"Sending ..."};
+        var _wpcf7 = {"loaderUrl":"{{ asset('assets/content/plugins/contact-form-7/images/ajax-loader.gif') }}","sending":"Sending ..."};
     </script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/plugins/contact-form-7/includes/js/scripts.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/includes/royalslider/jquery.royalslider.min.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/includes/theme-scripts.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/bootstrap.min.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/main.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/vendor/retina.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/vendor/jquery.fitvids.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/plugins/logo-slider/lgs_jquery.cycle2.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/plugins/contact-form-7/includes/js/scripts.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/includes/royalslider/jquery.royalslider.min.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/includes/theme-scripts.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/bootstrap.min.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/main.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/vendor/retina.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/vendor/jquery.fitvids.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/plugins/logo-slider/lgs_jquery.cycle2.js') }}'></script>
 @endsection

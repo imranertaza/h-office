@@ -41,13 +41,13 @@
     }
 
     #prev {
-    background: url(../../wp-content/plugins/logo-slider/arrows/arrow1.png) no-repeat center;
+    background: url(../../content/plugins/logo-slider/arrows/arrow1.png) no-repeat center;
     float: right;
     margin-right: -50px;
     }
 
     #next {
-    background: url(../../wp-content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
+    background: url(../../content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
     float: left;
     margin-left: -50px
     }
@@ -90,7 +90,7 @@
     }
 
     #next {
-    background: url(../../wp-content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
+    background: url(../../content/plugins/logo-slider/arrows/arrow1-prev.png) no-repeat center;
     float: left;
     margin-left: -66px !important;
     }
@@ -268,7 +268,7 @@
             data-split-nav="" data-auto-height="false">
             <div class="royalSlider heroSlider rsMinW full-width-slider">
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7762-1600x900.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC7762-1600x900.jpg') }}"
                         alt="_DSC7762" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -279,7 +279,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7323-1600x1062.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC7323-1600x1062.jpg') }}"
                         alt="_DSC7323" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -290,7 +290,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7711-1600x1062.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC7711-1600x1062.jpg') }}"
                         alt="_DSC7711" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -301,7 +301,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7762-1600x900.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC7762-1600x900.jpg') }}"
                         alt="_DSC7762" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -312,7 +312,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC7878-1600x1999.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC7878-1600x1999.jpg') }}"
                         alt="_DSC7878" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -323,7 +323,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC79661-1600x1142.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC79661-1600x1142.jpg') }}"
                         alt="_DSC7966" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -334,7 +334,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC8000-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC8000-1600x1066.jpg') }}"
                         alt="_DSC8000" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -345,7 +345,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC8095-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC8095-1600x1066.jpg') }}"
                         alt="_DSC8095" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -356,7 +356,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/DSC8243-1600x1600.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/DSC8243-1600x1600.jpg') }}"
                         alt="_DSC8243" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -367,7 +367,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1862-1600x2401.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1862-1600x2401.jpg') }}"
                         alt="_MG_1862" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -378,7 +378,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1864-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1864-1600x1066.jpg') }}"
                         alt="_MG_1864" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -389,7 +389,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1867-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1867-1600x1066.jpg') }}"
                         alt="_MG_1867" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -400,7 +400,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1868-1600x2401.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1868-1600x2401.jpg') }}"
                         alt="_MG_1868" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -411,7 +411,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1873-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1873-1600x1066.jpg') }}"
                         alt="_MG_1873" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -422,7 +422,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1883-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1883-1600x1066.jpg') }}"
                         alt="_MG_1883" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -433,7 +433,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1889-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1889-1600x1066.jpg') }}"
                         alt="_MG_1889" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -444,7 +444,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1891-1600x2401.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1891-1600x2401.jpg') }}"
                         alt="_MG_1891" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -455,7 +455,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/MG_1899-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/MG_1899-1600x1066.jpg') }}"
                         alt="_MG_1899" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -466,7 +466,7 @@
                     </div>
                 </div>
                 <div class="rsContent">
-                    <img class="rsImg" src="{{ asset('assets/wp-content/uploads/2015/01/IMG_0737-1600x1066.jpg') }}"
+                    <img class="rsImg" src="{{ asset('assets/content/uploads/2015/01/IMG_0737-1600x1066.jpg') }}"
                         alt="IMG_0737" />
                     <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                         data-move-effect="bottom" data-speed="200">
@@ -535,7 +535,7 @@
                                     <div class='image'>
                                         <a href='../google-bus-bangladesh/index.html'>
                                             <img class="grid-image"
-                                                src="{{ asset('assets/wp-content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}"
+                                                src="{{ asset('assets/content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}"
                                                 alt="port_Gbus (17)" />
                                         </a>
                                     </div>
@@ -553,7 +553,7 @@
                                     <div class='image'>
                                         <a href='../ajo/index.html'>
                                             <img class="grid-image"
-                                                src="{{ asset('assets/wp-content/uploads/2015/01/6-0011-768x512.jpg') }}"
+                                                src="{{ asset('assets/content/uploads/2015/01/6-0011-768x512.jpg') }}"
                                                 alt="6-0011" />
                                         </a>
                                     </div>
@@ -571,7 +571,7 @@
                                     <div class='image'>
                                         <a href='../jatra/index.html'>
                                             <img class="grid-image"
-                                                src="{{ asset('assets/wp-content/uploads/2015/01/product-display-07-768x528.jpg') }}"
+                                                src="{{ asset('assets/content/uploads/2015/01/product-display-07-768x528.jpg') }}"
                                                 alt="product-display-07" />
                                         </a>
                                     </div>

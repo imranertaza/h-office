@@ -17,14 +17,14 @@ a.bbp-author-avatar { display: inline-block; }
 #logo-slider { position: relative; width: 990px; height: 120px; margin: 0; padding: 0; overflow: hidden; list-style: none; background: #FFFFFF; }
 .slide { list-style: none; margin: 0 !important; width: 990px !important; }
 .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-#prev { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right; margin-right: -50px; }
-#next { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -50px; }
+#prev { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right; margin-right: -50px; }
+#next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -50px; }
 @media screen and (max-width:320px) {
     #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
     .slider-controls { position: absolute; top: 41px; left: 30px; width: 100% !important; }
     #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position: relative; width: 110% !important; }
     .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-    #next { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -66px !important; }
+    #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -66px !important; }
     .logo-img { margin-left: 32px; }
 }
 @media screen and (min-width:321px) and (max-width:480px) {

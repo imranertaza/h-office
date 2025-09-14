@@ -90,7 +90,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset('/assets/wp-content/uploads/2015/01/product-display-07-768x768.jpg') }}"
+                                                            src="{{ asset('/assets/content/uploads/2015/01/product-display-07-768x768.jpg') }}"
                                                             alt="product-display-07">
                                                     </div>
                                                     <div class="text">
