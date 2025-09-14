@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'h office')
 
 @section('body-class',
     'home page page-id-439 page-template-default footer-parallax ac_sticky_sidebars navtype-overlay

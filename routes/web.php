@@ -4,6 +4,7 @@ use App\Models\Blog;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use App\Models\PortfolioCategoryMap;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])->orderBy('sort_order', 'asc')->get();
+
+    return view('home', compact('portfolios'));
 })->name('home');
 Route::get('/about', function () {
     return view('about');
