@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Formal Launch of ‘Google Bus’ in Bangladesh | h office')
+@section('title', $blog->blog_title)
 
 @section('body-class', 'single single-post postid-360 single-format-standard has-post-thumbnail hentry category-experience footer-parallax ac_sticky_sidebars navtype-overlay ac-theme top-navbar ac-transparent-navbar-body wpb-js-composer js-comp-ver-4.3.5 vc_responsive')
 

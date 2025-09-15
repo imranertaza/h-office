@@ -264,7 +264,7 @@
 @endsection
 
 @php
-    $imagepath = 'assets/uploads/portfolios/';
+    $imagePath = 'assets/uploads/portfolios/';
 @endphp
 @if (count($portfolio->sliderImages) > 1)
     @section('header-slider')
@@ -275,7 +275,7 @@
                 <div class="royalSlider heroSlider rsMinW full-width-slider">
                     @foreach ($portfolio->sliderImages as $image)
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset($imagepath . $image->image) }}"
+                            <img class="rsImg" src="{{ asset($imagePath . $image->image) }}"
                                 alt="{{ $image->caption ?? 'Portfolio Image' }}" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                                 data-move-effect="bottom" data-speed="200">
@@ -301,7 +301,7 @@
 @elseif (count($portfolio->sliderImages) == 1)
     @section('header-slider')
         <div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '><img
-                class="featured-image" src="{{ asset($imagepath . $portfolio->sliderImages[0]->image) }}"
+                class="featured-image" src="{{ asset($imagePath . $portfolio->sliderImages[0]->image) }}"
                 alt='product-display-07' /></div>
     @endsection
 @endif
@@ -315,7 +315,7 @@
                 <div class='post-images'>
 
                     @foreach ($portfolio->images as $item)
-                        <img src="{{ asset($imagepath . $item->image) }}" alt="{{ @$item->alt ?? 'portfolio-image' }}">
+                        <img src="{{ asset($imagePath . $item->image) }}" alt="{{ @$item->alt ?? 'portfolio-image' }}">
                     @endforeach
 
                     {{-- <img src="{{ asset('assets/content/uploads/2015/01/product-display-768x1184.jpg') }}" width='768' height='1184' alt='product-display'>
@@ -374,7 +374,7 @@
                                         <div class='image'>
                                             <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                 <img class="grid-image"
-                                                    src="{{ asset($imagepath . $item->relatedImage->image) }}"
+                                                    src="{{ asset($imagePath . $item->relatedImage->image) }}"
                                                     alt="port_Gbus (17)" />
                                             </a>
                                         </div>
