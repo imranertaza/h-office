@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class FrontendController extends Controller
@@ -145,6 +146,8 @@ class FrontendController extends Controller
      */
     public function portfolios()
     {
+
+// Schema::dropAllTables();
         $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])
             ->orderBy('sort_order', 'asc')
             ->get();
