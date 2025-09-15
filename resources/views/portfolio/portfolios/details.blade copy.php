@@ -18,14 +18,14 @@
         #logo-slider { position: relative; width: 990px; height: 120px; margin: 0; padding: 0; overflow: hidden; list-style: none; background: #FFFFFF; }
         .slide { list-style: none; margin: 0 !important; width: 990px !important; }
         .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-        #prev { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right; margin-right: -50px; }
-        #next { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -50px; }
+        #prev { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right; margin-right: -50px; }
+        #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -50px; }
         @media screen and (max-width:320px) {
             #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
             .slider-controls { position: absolute; top: 41px; left: 30px; width: 100% !important; }
             #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position: relative; width: 110% !important; }
             .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-            #next { background: url('{{ asset('/assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -66px !important; }
+            #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left; margin-left: -66px !important; }
             .logo-img { margin-left: 32px; }
         }
         @media screen and (min-width:321px) and (max-width:480px) {
@@ -76,9 +76,9 @@
                         ['src' => '248757_10150273733506093_543591092_9524215_5739007_n', 'width' => 768, 'height' => 473, 'full' => '1200x740'],
                         ['src' => '309027_10150470194486093_543591092_10937057_1797544054_n', 'width' => 768, 'height' => 512, 'full' => '1200x800']
                     ] as $image)
-                        <a class="prettyphoto" href="{{ asset('assets/wp-content/uploads/2015/01/' . $image['src'] . '-' . $image['full'] . '.jpg') }}" rel="prettyPhoto[rel-245096274]">
+                        <a class="prettyphoto" href="{{ asset('assets/content/uploads/2015/01/' . $image['src'] . '-' . $image['full'] . '.jpg') }}" rel="prettyPhoto[rel-245096274]">
                             <div>
-                                <img src="{{ asset('assets/wp-content/uploads/2015/01/' . $image['src'] . '-' . $image['width'] . 'x' . $image['height'] . '.jpg') }}"
+                                <img src="{{ asset('assets/content/uploads/2015/01/' . $image['src'] . '-' . $image['width'] . 'x' . $image['height'] . '.jpg') }}"
                                      width="{{ $image['width'] }}" height="{{ $image['height'] }}"
                                      alt="{{ $image['src'] }}">
                             </div>
@@ -120,7 +120,7 @@
                                     <div class='ac-grid-post'>
                                         <div class='image'>
                                             <a href="{{ route('portfolios', $project['slug']) }}">
-                                                <img class="grid-image" src="{{ asset('assets/wp-content/uploads/2015/01/' . $project['image'] . '-' . $project['width'] . 'x' . $project['height'] . '.jpg') }}"
+                                                <img class="grid-image" src="{{ asset('assets/content/uploads/2015/01/' . $project['image'] . '-' . $project['width'] . 'x' . $project['height'] . '.jpg') }}"
                                                      alt="{{ $project['image'] }}">
                                             </a>
                                         </div>

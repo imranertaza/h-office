@@ -105,21 +105,21 @@
                                             <li data-transition="slidehorizontal" data-slotamount="7"
                                                 data-fstransition="fade" data-fsmasterspeed="300" data-fsslotamount="7"
                                                 data-saveperformance="off">
-                                                <img src="{{ asset('/assets/wp-content/uploads/2015/02/Slider01.jpg') }}"
+                                                <img src="{{ asset('/assets/content/uploads/2015/02/Slider01.jpg') }}"
                                                     alt="Slider01" data-bgposition="center top" data-bgfit="cover"
                                                     data-bgrepeat="no-repeat">
                                             </li>
                                             <!-- SLIDE  -->
                                             <li data-transition="slidehorizontal" data-slotamount="7"
                                                 data-saveperformance="off">
-                                                <img src="{{ asset('/assets/wp-content/uploads/2015/02/Slider02.jpg') }}"
+                                                <img src="{{ asset('/assets/content/uploads/2015/02/Slider02.jpg') }}"
                                                     alt="Slider02" data-bgposition="center top" data-bgfit="cover"
                                                     data-bgrepeat="no-repeat">
                                             </li>
                                             <!-- SLIDE  -->
                                             <li data-transition="slidehorizontal" data-slotamount="7"
                                                 data-saveperformance="off">
-                                                <img src="{{ asset('/assets/wp-content/uploads/2015/02/Slider03.jpg') }}"
+                                                <img src="{{ asset('/assets/content/uploads/2015/02/Slider03.jpg') }}"
                                                     alt="Slider03" data-bgposition="center top" data-bgfit="cover"
                                                     data-bgrepeat="no-repeat">
                                             </li>
@@ -339,12 +339,12 @@
                 <div class="jump-pos"></div>
                 <div class="vc_col-sm-6 wpb_column vc_column_container vc_custom_1421353296553">
                     <div class="wpb_wrapper">
-                        <a class="prettyphoto" href="{{ asset('/assets/wp-content/uploads/2015/01/team-1200x800.jpg') }}"
+                        <a class="prettyphoto" href="{{ asset('/assets/content/uploads/2015/01/team-1200x800.jpg') }}"
                             rel="prettyPhoto[rel-1492775142]">
                             <div>
                                 <div class="ac_image wpb_content_element vc_align_left ac-block-height-no">
                                     <div class="wpb_wrapper">
-                                        <img src="{{ asset('/assets/wp-content/uploads/2015/01/team-1200x800.jpg') }}"
+                                        <img src="{{ asset('/assets/content/uploads/2015/01/team-1200x800.jpg') }}"
                                             width="1200" height="800" alt="team">
                                     </div>
                                 </div>

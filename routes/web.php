@@ -4,7 +4,9 @@ use App\Models\Blog;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
 use App\Models\PortfolioCategoryMap;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])->orderBy('sort_order', 'asc')->get();
+
+    return view('home', compact('portfolios'));
 })->name('home');
 Route::get('/about', function () {
     return view('about');
@@ -27,12 +31,22 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 Route::get('/blogs', function () {
-    return view('blog.index');
+
+    $blogs = Blog::with(['categories', 'featuredImage'])->orderBy('sort_order', 'asc')->get();
+    return view('blog.index', compact('blogs'));
 })->name('blogs');
 Route::get('/blogs/{slug}', function ($slug) {
-    $blog = Blog::where('slug', $slug)->first();
-    // dd($blog);
-    return view('blog.single-blog', ['blog' => $blog]);
+    $blog = Blog::with(['categories', 'sliderImages'])->where('slug', $slug)->first();
+    $previousBlog = Blog::where('publish_date', '<', $blog->publish_date)
+        ->where('status', '1')
+        ->orderBy('publish_date', 'desc')
+        ->first();
+
+    $nextBlog = Blog::where('publish_date', '>', $blog->publish_date)
+        ->where('status', '1')
+        ->orderBy('publish_date', 'asc')
+        ->first();
+    return view('blog.single-blog', compact('previousBlog', 'nextBlog', 'blog'));
 })->name('blog.show');
 Route::get('/portfolios', function () {
     $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])->orderBy('sort_order', 'asc')->get();
@@ -45,6 +59,6 @@ Route::get('/portfolios/{slug}', function ($slug) {
     $portfolio = Portfolio::where('slug', $slug)
         ->with(['images', 'sliderImages', 'categories'])
         ->firstOrFail();
-        $related = $portfolio->relatedPortfolios();
-    return view('portfolio.portfolios.details', compact('portfolio','related'));
+    $related = $portfolio->relatedPortfolios();
+    return view('portfolio.portfolios.details', compact('portfolio', 'related'));
 })->name('portfolios-details');

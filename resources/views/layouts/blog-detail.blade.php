@@ -78,7 +78,6 @@
 @endsection
 
 @section('content')
-
     <div class="overlay-nav">
         <div class='inner'>
             <nav class="nav-main" role="navigation">
@@ -151,23 +150,15 @@
 
 
 
-
-
-        <div class='ac-page-hero-img  ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '></div>
-        <div class='ac-page-hero-img ac-no-container-padding    ac-hide-until-ready ac-hidden-until-ready '></div>
-
         @yield('header-slider')
+
         <div class="wrap main-section container" role="document">
-
-
             <div class="content">
                 <div class="row bg">
-
-
-                    <main class="main  no-sidebar  col-sm-12" role="main">
-
+                    <main class="main sidebar-1 col-sm-9" role="main">
                         @yield('main-content')
                     </main>
+                    @yield('sidebar')
                 </div>
             </div>
         </div>

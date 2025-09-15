@@ -27,7 +27,7 @@
                         <div class="wpb_single_image wpb_content_element vc_align_left">
                             <div class="wpb_wrapper">
                                 <img width="1140" height="450"
-                                    src="{{ asset('/assets/wp-content/uploads/2014/12/Address_HOC_01.jpg') }}"
+                                    src="{{ asset('/assets/content/uploads/2014/12/Address_HOC_01.jpg') }}"
                                     class="vc_box_border_grey attachment-full" alt="Address_HOC_01">
                             </div>
                         </div>
@@ -75,12 +75,12 @@
                 <div class="jump-pos"></div>
                 <div class="vc_col-sm-6 wpb_column vc_column_container vc_custom_1421353296553">
                     <div class="wpb_wrapper">
-                        <a class="prettyphoto" href="{{ asset('/assets/wp-content/uploads/2015/01/Office-1200x800.jpg') }}"
+                        <a class="prettyphoto" href="{{ asset('/assets/content/uploads/2015/01/Office-1200x800.jpg') }}"
                             rel="prettyPhoto[rel-391625608]">
                             <div>
                                 <div class="ac_image wpb_content_element vc_align_left ac-block-height-no">
                                     <div class="wpb_wrapper">
-                                        <img src="{{ asset('/assets/wp-content/uploads/2015/01/Office-1200x800.jpg') }}"
+                                        <img src="{{ asset('/assets/content/uploads/2015/01/Office-1200x800.jpg') }}"
                                             width="1200" height="800" alt="Office">
                                     </div>
                                 </div>

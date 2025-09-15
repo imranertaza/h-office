@@ -11,8 +11,8 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-  <script src="http://h-office.com/wp-content/themes/bloc/assets/js/vendor/html5shiv.js"></script>
-  <script src="http://h-office.com/wp-content/themes/bloc/assets/js/vendor/respond.min.js"></script>
+  <script src="http://h-office.com/content/themes/bloc/assets/js/vendor/html5shiv.js"></script>
+  <script src="http://h-office.com/content/themes/bloc/assets/js/vendor/respond.min.js"></script>
  <![endif]-->
 
     <link rel="alternate" type="application/rss+xml" title="h office Feed" href="feed/index.html">
@@ -47,10 +47,10 @@
         href="home/feed/index.html" />
 
     <link rel='stylesheet' id='contact-form-7-css'
-        href='{{ asset('assets/wp-content/plugins/contact-form-7/includes/css/styles2f54.css') }}' type='text/css'
+        href='{{ asset('assets/content/plugins/contact-form-7/includes/css/styles2f54.css') }}' type='text/css'
         media='all' />
     <link rel='stylesheet' id='rs-plugin-settings-css'
-        href='{{ asset('assets/wp-content/plugins/revslider/rs-plugin/css/settingsab53.css') }}' type='text/css'
+        href='{{ asset('assets/content/plugins/revslider/rs-plugin/css/settingsab53.css') }}' type='text/css'
         media='all' />
     <style id='rs-plugin-settings-inline-css' type='text/css'>
         .tp-caption a {
@@ -67,16 +67,16 @@
         }
     </style>
     <link rel='stylesheet' id='isotope-css-css'
-        href='{{ asset('assets/wp-content/plugins/js_composer/assets/css/lib/isotope8f76.css') }}' type='text/css'
+        href='{{ asset('assets/content/plugins/js_composer/assets/css/lib/isotope8f76.css') }}' type='text/css'
         media='all' />
     <link rel='stylesheet' id='prettyphoto-css'
-        href='{{ asset('assets/wp-content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto8f76.css') }}'
+        href='{{ asset('assets/content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto8f76.css') }}'
         type='text/css' media='screen' />
     <link rel='stylesheet' id='js_composer_front-css'
-        href='{{ asset('assets/wp-content/plugins/js_composer/assets/css/js_composer8f76.css') }}' type='text/css'
+        href='{{ asset('assets/content/plugins/js_composer/assets/css/js_composer8f76.css') }}' type='text/css'
         media='all' />
     <link rel='stylesheet' id='js_composer_custom_css-css'
-        href='{{ asset('assets/wp-content/uploads/js_composer/custom8f76.css') }}' type='text/css' media='screen' />
+        href='{{ asset('assets/content/uploads/js_composer/custom8f76.css') }}' type='text/css' media='screen' />
     <link rel='stylesheet' id='Raleway-400-latin-css'
         href='http://fonts.googleapis.com/css?family=Raleway%3A400&amp;subset=latin&amp;ver=4.1.28' type='text/css'
         media='all' />
@@ -90,25 +90,25 @@
         href='http://fonts.googleapis.com/css?family=Raleway%3A100&amp;subset=latin&amp;ver=4.1.28' type='text/css'
         media='all' />
     <link rel='stylesheet' id='royalslider-css'
-        href='{{ asset('assets/wp-content/themes/bloc/includes/royalslider/royalslider.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/includes/royalslider/royalslider.css') }}' type='text/css'
         media='screen' />
     <link rel='stylesheet' id='slick-css'
-        href='{{ asset('assets/wp-content/themes/bloc/includes/slick-slide/slickcfbc.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/includes/slick-slide/slickcfbc.css') }}' type='text/css'
         media='all' />
     <link rel='stylesheet' id='ac-fontello-css'
-        href='{{ asset('assets/wp-content/themes/bloc/includes/fonts/css/fontellocfbc.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/includes/fonts/css/fontellocfbc.css') }}' type='text/css'
         media='all' />
     <link rel='stylesheet' id='ac-framework-css'
-        href='{{ asset('assets/wp-content/themes/bloc/ac-framework/ac-framework.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/ac-framework/ac-framework.css') }}' type='text/css'
         media='screen' />
     <link rel='stylesheet' id='ac-vc-plugins-css'
-        href='{{ asset('assets/wp-content/themes/bloc/ac-framework/vc-plugins/ac-vc-plugins.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/ac-framework/vc-plugins/ac-vc-plugins.css') }}' type='text/css'
         media='screen' />
     <link rel='stylesheet' id='ac-theme-styles-css'
-        href='{{ asset('assets/wp-content/themes/bloc/includes/theme-scipts.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/includes/theme-scipts.css') }}' type='text/css'
         media='screen' />
     <link rel='stylesheet' id='shoestrap_css-css'
-        href='{{ asset('assets/wp-content/themes/bloc/assets/css/app.css') }}' type='text/css' media='all' />
+        href='{{ asset('assets/content/themes/bloc/assets/css/app.css') }}' type='text/css' media='all' />
     <style id='shoestrap_css-inline-css' type='text/css'>
         .navbar-static-top {
             margin-top: px !important;
@@ -130,9 +130,9 @@
         }
     </style>
     <link rel='stylesheet' id='ac-alleycat-css'
-        href='{{ asset('assets/wp-content/themes/bloc/assets/css/alleycat.css') }}' type='text/css'
+        href='{{ asset('assets/content/themes/bloc/assets/css/alleycat.css') }}' type='text/css'
         media='screen' />
-    <link rel='stylesheet' id='ac-theme-css' href='{{ asset('assets/wp-content/themes/bloc/style.css') }}'
+    <link rel='stylesheet' id='ac-theme-css' href='{{ asset('assets/content/themes/bloc/style.css') }}'
         type='text/css' media='screen' />
     <style id='ac-theme-inline-css' type='text/css'>
         .main,
@@ -146,18 +146,18 @@
         }
     </style>
 
-    <script src='{{ asset('assets/wp-includes/js/jquery/jquery90f9.js') }}'></script>
-    <script src='{{ asset('assets/wp-includes/js/jquery/jquery-migrate.min1576.js') }}'></script>
-    <script src='{{ asset('assets/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.minab53.js') }}'>
+    <script src='{{ asset('assets/includes/js/jquery/jquery90f9.js') }}'></script>
+    <script src='{{ asset('assets/includes/js/jquery/jquery-migrate.min1576.js') }}'></script>
+    <script src='{{ asset('assets/content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.minab53.js') }}'>
     </script>
-    <script src='{{ asset('assets/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.minab53.js') }}'>
+    <script src='{{ asset('assets/content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.minab53.js') }}'>
     </script>
-    <script src='{{ asset('assets/wp-content/plugins/js_composer/assets/lib/isotope/dist/isotope.pkgd.min8f76.js') }}'>
+    <script src='{{ asset('assets/content/plugins/js_composer/assets/lib/isotope/dist/isotope.pkgd.min8f76.js') }}'>
     </script>
-    <script src='{{ asset('assets/wp-content/themes/bloc/assets/js/vendor/packery-mode.pkgd.mincfbc.js') }}'></script>
-    <script src='{{ asset('assets/wp-content/themes/bloc/includes/slick-slide/slick.mincfbc.js') }}'></script>
-    <script src='{{ asset('assets/wp-content/themes/bloc/ac-framework/ac-frameworkcfbc.js') }}'></script>
-    <script src='{{ asset('assets/wp-content/themes/bloc/assets/js/vendor/modernizr-2.7.0.min.js') }}'></script>
+    <script src='{{ asset('assets/content/themes/bloc/assets/js/vendor/packery-mode.pkgd.mincfbc.js') }}'></script>
+    <script src='{{ asset('assets/content/themes/bloc/includes/slick-slide/slick.mincfbc.js') }}'></script>
+    <script src='{{ asset('assets/content/themes/bloc/ac-framework/ac-frameworkcfbc.js') }}'></script>
+    <script src='{{ asset('assets/content/themes/bloc/assets/js/vendor/modernizr-2.7.0.min.js') }}'></script>
 
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
@@ -203,13 +203,13 @@
         }
 
         #prev {
-            background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center;
+            background: url('{{ asset('assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center;
             float: right;
             margin-right: -50px;
         }
 
         #next {
-            background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+            background: url('{{ asset('assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
             float: left;
             margin-left: -50px
         }
@@ -253,7 +253,7 @@
             }
 
             #next {
-                background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+                background: url('{{ asset('assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
                 float: left;
                 margin-left: -66px !important;
             }
@@ -419,19 +419,19 @@
         }
     </style>
 
-    <link rel="shortcut icon" href="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_browser_logo_32x32.png') }}"
+    <link rel="shortcut icon" href="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_browser_logo_32x32.png') }}"
         type="image/x-icon" /> <!-- For iPhone -->
     <link rel="apple-touch-icon-precomposed"
-        href="../alleycatthemes.com/themes/bloc/demo/wp-content/uploads/2015/01/bloc.html">
+        href="../alleycatthemes.com/themes/bloc/demo/content/uploads/2015/01/bloc.html">
     <!-- For iPhone 4 Retina display -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114"
-        href="../alleycatthemes.com/themes/bloc/demo/wp-content/uploads/2015/01/bloc.html">
+        href="../alleycatthemes.com/themes/bloc/demo/content/uploads/2015/01/bloc.html">
     <!-- For iPad -->
     <link rel="apple-touch-icon-precomposed" sizes="72x72"
-        href="../alleycatthemes.com/themes/bloc/demo/wp-content/uploads/2015/01/bloc.html">
+        href="../alleycatthemes.com/themes/bloc/demo/content/uploads/2015/01/bloc.html">
     <!-- For iPad Retina display -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
-        href="../alleycatthemes.com/themes/bloc/demo/wp-content/uploads/2015/01/bloc.html">
+        href="../alleycatthemes.com/themes/bloc/demo/content/uploads/2015/01/bloc.html">
     <style type="text/css">
         .recentcomments a {
             display: inline !important;
@@ -440,7 +440,7 @@
         }
     </style>
     <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress." />
-    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://h-office.com/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://h-office.com/content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]-->
     <style type="text/css" data-type="vc_shortcodes-custom-css">
         .vc_custom_1421511914623 {
             margin-top: 0px !important;
@@ -557,9 +557,9 @@
                     </button>
                     <a class="navbar-brand logo" href="index.html">
                         <img id="site-logo-start" class="site-logo"
-                            src="{{ asset('assets/wp-content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office">
+                            src="{{ asset('assets/content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office">
                         <img id="site-logo" class="site-logo trans-nav-logo"
-                            src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_2_240x90.png') }}"
+                            src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_2_240x90.png') }}"
                             alt="h office">
                     </a>
                 </div>
@@ -629,7 +629,7 @@
                                                             <a href='portfolios/google-bus-bangladesh/index.html'>
                                                                 <div class='image'>
                                                                     <img class="grid-image"
-                                                                        src="{{ asset('assets/wp-content/uploads/2015/01/port_Gbus-17-1067x1067.jpg') }}"
+                                                                        src="{{ asset('assets/content/uploads/2015/01/port_Gbus-17-1067x1067.jpg') }}"
                                                                         alt="port_Gbus (17)" />
                                                                 </div>
 
@@ -657,7 +657,7 @@
                                                             <a href='portfolios/ajo/index.html'>
                                                                 <div class='image'>
                                                                     <img class="grid-image"
-                                                                        src="{{ asset('assets/wp-content/uploads/2015/01/6-0011-768x768.jpg') }}"
+                                                                        src="{{ asset('assets/content/uploads/2015/01/6-0011-768x768.jpg') }}"
                                                                         alt="6-0011" />
                                                                 </div>
 
@@ -692,7 +692,7 @@
                                                             <a href='portfolios/jatra/index.html'>
                                                                 <div class='image'>
                                                                     <img class="grid-image"
-                                                                        src="{{ asset('assets/wp-content/uploads/2015/01/product-display-07-768x768.jpg') }}"
+                                                                        src="{{ asset('assets/content/uploads/2015/01/product-display-07-768x768.jpg') }}"
                                                                         alt="product-display-07" />
                                                                 </div>
 
@@ -727,7 +727,7 @@
                                                             <a href='portfolios/carefountain/index.html'>
                                                                 <div class='image'>
                                                                     <img class="grid-image"
-                                                                        src="{{ asset('assets/wp-content/uploads/2015/01/n1-768x768.jpg') }}"
+                                                                        src="{{ asset('assets/content/uploads/2015/01/n1-768x768.jpg') }}"
                                                                         alt="n1" />
                                                                 </div>
 
@@ -762,7 +762,7 @@
                                                             <a href='portfolios/gp-house/index.html'>
                                                                 <div class='image'>
                                                                     <img class="grid-image"
-                                                                        src="{{ asset('assets/wp-content/uploads/2015/01/DSC7762-1067x1067.jpg') }}"
+                                                                        src="{{ asset('assets/content/uploads/2015/01/DSC7762-1067x1067.jpg') }}"
                                                                         alt="_DSC7762" />
                                                                 </div>
 
@@ -796,7 +796,7 @@
                                                             <a href='portfolios/jaago/index.html'>
                                                                 <div class='image'>
                                                                     <img class="grid-image"
-                                                                        src="{{ asset('assets/wp-content/uploads/2015/01/invitation_jaago-768x768.jpg') }}"
+                                                                        src="{{ asset('assets/content/uploads/2015/01/invitation_jaago-768x768.jpg') }}"
                                                                         alt="invitation_jaago" />
                                                                 </div>
 
@@ -891,46 +891,46 @@
                                                             data-cycle-speed="600" data-cycle-slides="> li">
                                                             <li class="slide cycle-slide cycle-slide-active"
                                                                 style="position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 1; display: block; visibility: visible;">
-                                                                <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/british.jpg') }}"
+                                                                <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/british.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/citi.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/citi.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/DHL.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/DHL.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/grameen.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/grameen.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/google.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/google.jpg') }}"
                                                                     class="logo-img" alt="">
                                                             </li>
                                                             <li class="slide cycle-slide"
                                                                 style="position: absolute; top: 0px; left: 0px; z-index: 99; visibility: hidden;">
-                                                                <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Grameen-Intel.jpg') }}"
+                                                                <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Grameen-Intel.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Nuvista-pharma.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Nuvista-pharma.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Star-cineplex.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Star-cineplex.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/EMK-center.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/EMK-center.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Care-Bangladesh.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Care-Bangladesh.jpg') }}"
                                                                     class="logo-img" alt="">
                                                             </li>
                                                             <li class="slide cycle-slide"
                                                                 style="position: absolute; top: 0px; left: 0px; z-index: 97; visibility: hidden;">
-                                                                <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Concern-Worldwide.jpg') }}"
+                                                                <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Concern-Worldwide.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Jaago.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Jaago.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/Gtz.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Gtz.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/aarong.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/aarong.jpg') }}"
                                                                     class="logo-img" alt=""><img
-                                                                    src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HSBC.jpg') }}"
+                                                                    src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HSBC.jpg') }}"
                                                                     class="logo-img" alt="">
                                                             </li>
                                                             <li class="slide cycle-slide"
                                                                 style="position: absolute; top: 0px; left: 0px; z-index: 96; visibility: hidden;">
-                                                                <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/chevron.jpg') }}"
+                                                                <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/chevron.jpg') }}"
                                                                     class="logo-img" alt="">
                                                             </li>
                                                         </ul>
@@ -975,7 +975,7 @@
                                                 <div class="wpb_wrapper">
 
                                                     <img width="1140" height="450"
-                                                        src="{{ asset('assets/wp-content/uploads/2014/12/Address_HOC_01.jpg') }}"
+                                                        src="{{ asset('assets/content/uploads/2014/12/Address_HOC_01.jpg') }}"
                                                         class=" vc_box_border_grey attachment-full"
                                                         alt="Address_HOC_01" />
                                                 </div>
@@ -1011,7 +1011,7 @@
                 <div class="col-md-12">
                     <section id="text-1" class=" widget widget_text">
                         <div class="textwidget">
-                            <img src="{{ asset('assets/client/h-office_latest/cms/wp-content/uploads/2015/02/HOC_logo_240x90.png') }}"
+                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_240x90.png') }}"
                                 style="opacity:0.6;">
                         </div>
                     </section>
@@ -1048,35 +1048,35 @@
     </footer>
 
     <script type='text/javascript'
-        src='{{ asset('assets/wp-content/plugins/contact-form-7/includes/js/jquery.form.mind03d.js') }}'></script>
+        src='{{ asset('assets/content/plugins/contact-form-7/includes/js/jquery.form.mind03d.js') }}'></script>
 
     <script type='text/javascript'>
         /* <![CDATA[ */
         var _wpcf7 = {
-            "loaderUrl": "{{ asset('assets/wp-content/plugins/contact-form-7/images/ajax-loader.gif') }}",
+            "loaderUrl": "{{ asset('assets/content/plugins/contact-form-7/images/ajax-loader.gif') }}",
             "sending": "Sending ..."
         };
         /* ]]> */
     </script>
 
     <script type='text/javascript'
-        src='{{ asset('assets/wp-content/plugins/contact-form-7/includes/js/scripts2f54.js') }}'></script>
+        src='{{ asset('assets/content/plugins/contact-form-7/includes/js/scripts2f54.js') }}'></script>
     <script type='text/javascript'
-        src='{{ asset('assets/wp-content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto8f76.js') }}'>
-    </script>
-    <script type='text/javascript'
-        src='{{ asset('assets/wp-content/themes/bloc/includes/royalslider/jquery.royalslider.mincfbc.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/includes/theme-scriptscfbc.js') }}'>
-    </script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/bootstrap.min.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/main.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/vendor/retina.js') }}'></script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/themes/bloc/assets/js/vendor/jquery.fitvids.js') }}'>
-    </script>
-    <script type='text/javascript' src='{{ asset('assets/wp-content/plugins/logo-slider/lgs_jquery.cycle2cfbc.js') }}'>
+        src='{{ asset('assets/content/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto8f76.js') }}'>
     </script>
     <script type='text/javascript'
-        src='{{ asset('assets/wp-content/plugins/js_composer/assets/js/js_composer_front8f76.js') }}'></script>
+        src='{{ asset('assets/content/themes/bloc/includes/royalslider/jquery.royalslider.mincfbc.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/includes/theme-scriptscfbc.js') }}'>
+    </script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/bootstrap.min.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/main.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/vendor/retina.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('assets/content/themes/bloc/assets/js/vendor/jquery.fitvids.js') }}'>
+    </script>
+    <script type='text/javascript' src='{{ asset('assets/content/plugins/logo-slider/lgs_jquery.cycle2cfbc.js') }}'>
+    </script>
+    <script type='text/javascript'
+        src='{{ asset('assets/content/plugins/js_composer/assets/js/js_composer_front8f76.js') }}'></script>
 
 </body>
 

@@ -8,9 +8,11 @@
     none; background: #FFFFFF; }
     .slide { list-style: none; margin: 0 !important; width: 990px !important; }
     .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-    #prev { background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float: right;
+    #prev { background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center;
+    float: right;
     margin-right: -50px; }
-    #next { background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left;
+    #next { background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    float: left;
     margin-left: -50px; }
     @media screen and (max-width:320px) {
     #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
@@ -18,7 +20,8 @@
     #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
     relative; width: 110% !important; }
     .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-    #next { background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center; float: left;
+    #next { background: url('{{ asset('assets/wp-content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    float: left;
     margin-left: -66px !important; }
     .logo-img { margin-left: 32px; }
     }
@@ -74,6 +77,9 @@
     .main, .sidebar { margin-top: 0px !important; }
 @endsection
 @section('main-content')
+@php
+$imagePath = 'assets/uploads/portfolios/';
+@endphp
     <article class="post-439 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1421511914623">
@@ -91,7 +97,34 @@
                         <div class="ac_portfolio wpb_content_element vc_custom_1421350472278 ac-tile-masonry-wrapper">
                             <div class="wpb_wrapper">
                                 <div class='ac-tile-posts ac-filter-target ac-tile-masonry' data-cols='3'>
-                                    <div
+                                    @foreach ($portfolios as $item)
+                                        <div
+                                            class='@if ($item->slug == 'jatra' || $item->slug == 'ajo') ac-tile-col ac-tm-standard-3 all branding experience ac-hide-until-ready ac-hidden-until-ready
+                                        @elseif($item->slug == 'jaago' || $item->slug == 'care-fountain')
+                                        ac-tile-col ac-tm-standard-3 all branding social ac-hide-until-ready ac-hidden-until-ready
+                                        @else
+                                        ac-tile-col ac-tm-large-3 all experience ac-hide-until-ready ac-hidden-until-ready @endif '>
+                                            <a href='{{ route('portfolios-details', $item->slug) }}'>
+                                                <div class='image'>
+                                                    <img class="grid-image"
+                                                        src="{{ asset($imagePath . $item->featuredImage->image) }}"
+                                                        alt="{{ $item->title }} Image" />
+                                                </div>
+                                                <div class='text'>
+                                                    <div class="text-inner">
+                                                        <h3 class='ac-tile-title'>{{ $item->title }}</h3>
+                                                        <div class='ac-tile-footer'>@foreach ($item->categories as $cat)
+                                                            {{ $cat->name }}
+                                                            @if (!$loop->last)
+                                                                ,
+                                                            @endif
+                                                        @endforeach</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                    {{-- <div
                                         class='ac-tile-col ac-tm-large-3 all experience ac-hide-until-ready ac-hidden-until-ready'>
                                         <a href='portfolios/google-bus-bangladesh/index.html'>
                                             <div class='image'>
@@ -144,7 +177,8 @@
                                         <a href='portfolios/carefountain/index.html'>
                                             <div class='image'>
                                                 <img class="grid-image"
-                                                    src="{{ asset('assets/wp-content/uploads/2015/01/n1-768x768.jpg') }}" alt="n1" />
+                                                    src="{{ asset('assets/wp-content/uploads/2015/01/n1-768x768.jpg') }}"
+                                                    alt="n1" />
                                             </div>
                                             <div class='text'>
                                                 <div class="text-inner">
@@ -185,7 +219,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

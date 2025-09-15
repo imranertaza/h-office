@@ -12,7 +12,7 @@
 
 @section('main-content')
     @php
-        $imagepath = 'assets/uploads/portfolios/';
+        $imagePath = 'assets/uploads/portfolios/';
     @endphp
     <article class="post-139 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
@@ -40,7 +40,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset($imagepath . $item->featuredImage->image) }}"
+                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
                                                             alt="port_Gbus (17)">
                                                     </div>
                                                     <div class="text">
@@ -65,7 +65,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset($imagepath . $item->featuredImage->image) }}"
+                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
                                                             alt="6-0011">
                                                     </div>
                                                     <div class="text">
@@ -90,7 +90,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset('/assets/wp-content/uploads/2015/01/product-display-07-768x768.jpg') }}"
+                                                            src="{{ asset('/assets/content/uploads/2015/01/product-display-07-768x768.jpg') }}"
                                                             alt="product-display-07">
                                                     </div>
                                                     <div class="text">
@@ -115,7 +115,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset($imagepath . $item->featuredImage->image) }}"
+                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
                                                             alt="n1">
                                                     </div>
                                                     <div class="text">
@@ -141,7 +141,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset($imagepath . $item->featuredImage->image) }}"
+                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
                                                             alt="invitation_jaago">
                                                     </div>
                                                     <div class="text">
@@ -167,7 +167,7 @@
                                                 <a href="{{ route('portfolios-details', $item->slug) }}">
                                                     <div class="image">
                                                         <img class="grid-image"
-                                                            src="{{ asset($imagepath . $item->featuredImage->image) }}"
+                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
                                                             alt="_DSC7762">
                                                     </div>
                                                     <div class="text">

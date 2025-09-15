@@ -19,7 +19,7 @@ class Portfolio extends Model
     public function featuredImage()
     {
         return $this->hasOne(PortfolioImage::class, 'portfolio_id', 'portfolio_id')
-            ->where('featured', 1);
+            ->where('featured', '1');
         // return $this->hasOne(PortfolioImage::class);
     }
     public function sliderImages()
