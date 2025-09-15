@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @yield('meta')
     <title>@yield('title', 'h office')</title>
 
     <!-- HTML5 shim and Respond.js for IE8 support -->

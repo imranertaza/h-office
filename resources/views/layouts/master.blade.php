@@ -158,16 +158,13 @@
 
         @yield('header-slider')
         <div class="wrap main-section container" role="document">
-
-
             <div class="content">
                 <div class="row bg">
-
-
                     <main class="main  no-sidebar  col-sm-12" role="main">
 
                         @yield('main-content')
                     </main>
+                    @yield('blog-sidebar')
                 </div>
             </div>
         </div>

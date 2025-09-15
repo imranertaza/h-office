@@ -1,7 +1,26 @@
 @extends('layouts.blog-detail')
-
-@section('title', 'MIB Spirit MADE IN BANGLADESH | h office')
-
+@php
+$imagePath = '/assets/uploads/blogs/';
+@endphp
+@section('title', $blog->blog_title . '| h office')
+@section('meta')
+    <meta name="description" content="{{ $blog->meta_description }}">
+    <meta name="keywords" content="{{ $blog->meta_keyword }}">
+    <meta name="author" content="{{ $blog->author->name ?? 'admin' }}">
+    <meta property="og:title" content="{{ $blog->blog_title }}" />
+    <meta property="og:description" content="{{ $blog->meta_description }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ route('blog.show', $blog->slug) }}" />
+    @if ($blog->sliderImages && count($blog->sliderImages) > 0)
+        <meta property="og:image" content="{{ asset($imagePath . $blog->sliderImages[0]->image) }}" />
+    @else
+        <meta property="og:image"
+            content="{{ asset('/assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_browser_logo_32x32.png') }}" />
+    @endif
+    <meta property="og:site_name" content="h office" />
+    <meta property="article:published_time" content="{{ \Carbon\Carbon::parse($blog->publish_date)->toIso8601String() }}" />
+    <meta property="article:author" content="{{ $blog->author->name ?? 'admin' }}" />
+@endsection
 @section('body-class',
     'single single-post postid-352 single-format-standard footer-parallax ac_sticky_sidebars
     navtype-overlay ac-theme top-navbar ac-transparent-navbar-body wpb-js-composer js-comp-ver-4.3.5 vc_responsive')
@@ -322,8 +341,7 @@
                         </a>
                     </span>
                     <span class="categories-links">
-                        <i class="el-icon-folder-open icon"></i> 
-                        {{-- @dd($blog->categories) --}}
+                        <i class="el-icon-folder-open icon"></i>
                         @forelse ($blog->categories as $category)
                             <a href="{{ route('blogs', $category->slug) }}" rel="category tag">
                                 {{ $category->category_name }}
@@ -352,10 +370,37 @@
                     @endif
                 </div>
             </header>
-
+            @php
+            $shareUrl = urlencode(url()->full()); // current full URL
+            $shareTitle = urlencode($portfolio->title ?? $blog->blog_title ?? 'Share'); // fallback title
+        @endphp
             {!! $blog->description !!}
+            <div class="clearfix"></div>
 
-
+            <div class="btn-group social-share">
+                <button class="social-share-main btn btn-default btn-small">Share</button>
+            
+                <a class="social-link btn btn-default btn-small"
+                   href="http://www.facebook.com/sharer.php?u={{ $shareUrl }}&title={{ $shareTitle }}"
+                   target="_blank"><i class="icon el-icon-facebook"></i></a>
+            
+                <a class="social-link btn btn-default btn-small"
+                   href="http://twitter.com/home/?status={{ $shareTitle }}%20-%20{{ $shareUrl }}%20via%20@headofficebd"
+                   target="_blank"><i class="icon el-icon-twitter"></i></a>
+            
+                <a class="social-link btn btn-default btn-small"
+                   href="http://linkedin.com/shareArticle?mini=true&url={{ $shareUrl }}&title={{ $shareTitle }}"
+                   target="_blank"><i class="icon el-icon-linkedin"></i></a>
+            
+                <a class="social-link btn btn-default btn-small"
+                   href="https://plus.google.com/share?url={{ $shareUrl }}"
+                   target="_blank"><i class="icon el-icon-googleplus"></i></a>
+            
+                <a class="social-link btn btn-default btn-small"
+                   href="http://pinterest.com/pin/create/button/?url={{ $shareUrl }}"
+                   target="_blank"><i class="icon el-icon-pinterest"></i></a>
+            </div>
+            
             <div class="clearfix"></div>
 
             <footer>
@@ -381,93 +426,5 @@
     </article>
 @endsection
 @section('sidebar')
-    @php
-        $imagePath = '/assets/uploads/blogs/';
-    @endphp
-    <aside class="sidebar secondary sidebar-1 col-sm-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
-        <section id="search-2" class="widget widget_search">
-            <form role="search" method="get" id="searchform" class="form-inline" action="{{ route('blogs') }}">
-                <input type="search" value="" name="s" id="s" class="form-control"
-                    placeholder="Search h office">
-                <label class="hide" for="s">Search for:</label>
-                <button type="submit" id="searchsubmit" class="btn btn-default searchsubmit"><i
-                        class="entypo-icon-search"></i></button>
-            </form>
-        </section>
-        <section id="recent-posts-2" class="widget widget_recent_entries">
-            <h3 class="widget-title">Recent Posts</h3>
-            <ul>
-                <li><a href="{{ route('blogs', 'the-savings-include-a-us140-a134-stateroom-credit-on') }}">THE
-                        SAVINGS INCLUDE A $US140 ($A134) STATEROOM CREDIT ON</a></li>
-                <li><a href="{{ route('blogs', 'googlebuslaunch') }}">FORMAL LAUNCH OF ‘GOOGLE BUS’ IN
-                        BANGLADESH</a></li>
-                <li><a href="{{ route('blogs', 'madeinbangladesh') }}">MIB SPIRIT MADE IN BANGLADESH</a>
-                </li>
-            </ul>
-        </section>
-        <section id="recent-comments-2" class="widget widget_recent_comments">
-            <h3 class="widget-title">Recent Comments</h3>
-            <ul id="recentcomments"></ul>
-        </section>
-        <section id="archives-2" class="widget widget_archive">
-            <h3 class="widget-title">Archives</h3>
-            <ul>
-                <li><a href="{{ route('home', '2015/11') }}">November 2015</a></li>
-                <li><a href="{{ route('home', '2015/10') }}">October 2015</a></li>
-                <li><a href="{{ route('home', '2015/09') }}">September 2015</a></li>
-                <li><a href="{{ route('home', '2015/08') }}">August 2015</a></li>
-                <li><a href="{{ route('home', '2015/07') }}">July 2015</a></li>
-                <li><a href="{{ route('home', '2015/06') }}">June 2015</a></li>
-                <li><a href="{{ route('home', '2015/05') }}">May 2015</a></li>
-                <li><a href="{{ route('home', '2015/04') }}">April 2015</a></li>
-                <li><a href="{{ route('home', '2015/03') }}">March 2015</a></li>
-                <li><a href="{{ route('home', '2015/02') }}">February 2015</a></li>
-                <li><a href="{{ route('home', '2015/01') }}">January 2015</a></li>
-                <li><a href="{{ route('home', '2014/12') }}">December 2014</a></li>
-                <li><a href="{{ route('home', '2014/11') }}">November 2014</a></li>
-                <li><a href="{{ route('home', '2014/10') }}">October 2014</a></li>
-                <li><a href="{{ route('home', '2014/09') }}">September 2014</a></li>
-                <li><a href="{{ route('home', '2014/08') }}">August 2014</a></li>
-                <li><a href="{{ route('home', '2014/07') }}">July 2014</a></li>
-            </ul>
-        </section>
-        <section id="categories-2" class="widget widget_categories">
-            <h3 class="widget-title">Categories</h3>
-            <ul>
-                <li class="cat-item cat-item-18"><a href="{{ route('home', 'experience') }}">Experience</a></li>
-                <li class="cat-item cat-item-2"><a href="{{ route('home', 'food') }}">Food</a></li>
-                <li class="cat-item cat-item-12"><a href="{{ route('home', 'product') }}">Product</a>
-                </li>
-                <li class="cat-item cat-item-3"><a href="{{ route('home', 'studio') }}">Studio</a></li>
-                <li class="cat-item cat-item-1"><a href="{{ route('home', 'uncategorized') }}">Uncategorized</a></li>
-            </ul>
-        </section>
-        <section id="ac_latest_portfolio-1" class="widget ac-latest-portfolio">
-            <h3 class="widget-title"></h3>
-            <div
-                class='ac-grid-col post-172 ac_portfolio type-ac_portfolio status-publish has-post-thumbnail hentry ac-hide-until-ready ac-hidden-until-ready col-log-3 all experience ac-hide-until-ready ac-hidden-until-ready'>
-                <div class='ac-grid-post'>
-                    <div class='image'>
-                        <a href="{{ route('portfolios', 'google-bus-bangladesh') }}">
-                            <img class="grid-image"
-                                src="{{ asset('assets/content/uploads/2015/01/port_Gbus-17-768x511.jpg') }}"
-                                alt="port_Gbus (17)" />
-                        </a>
-                    </div>
-                    <div class='text'>
-                        <a href="{{ route('portfolios', 'google-bus-bangladesh') }}">
-                            <h3 class='ac-grid-title'><strong>Google-Bus Bangladesh</strong></h3>
-                        </a>
-                        <div class='ac-grid-terms'><a href="{{ route('portfolios', 'experience') }}"
-                                rel="tag">Experience</a></div>
-                        <p class='excerpt'>Google, one of biggest brand in the world, is with the mission
-                            to organize the world's information and make it universally accessible and
-                            useful.</p>
-                        <div class='read-more'><a href="{{ route('portfolios', 'google-bus-bangladesh') }}">Continued</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </aside>
+    @include('layouts.includes.sidebar')
 @endsection
