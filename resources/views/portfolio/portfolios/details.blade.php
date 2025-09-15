@@ -123,11 +123,31 @@ a.bbp-author-avatar { display: inline-block; }
                     <div class="clearfix"></div>
                     <div class="btn-group social-share">
                         <button class="social-share-main btn btn-default btn-small">Share</button>
-                        <a class="social-link btn btn-default btn-small" href="http://www.facebook.com/sharer.php?u={{ urlencode(url('/portfolios/jatra')) }}&title=Jatra" target="_blank"><i class="icon el-icon-facebook"></i></a>
-                        <a class="social-link btn btn-default btn-small" href="http://twitter.com/home/?status=Jatra%20-%20{{ urlencode(url('/portfolios/jatra')) }}%20via%20@headofficebd" target="_blank"><i class="icon el-icon-twitter"></i></a>
-                        <a class="social-link btn btn-default btn-small" href="http://linkedin.com/shareArticle?mini=true&url={{ urlencode(url('/portfolios/jatra')) }}&title=Jatra" target="_blank"><i class="icon el-icon-linkedin"></i></a>
-                        <a class="social-link btn btn-default btn-small" href="https://plus.google.com/share?url={{ urlencode(url('/portfolios/jatra')) }}" target="_blank"><i class="icon el-icon-googleplus"></i></a>
-                        <a class="social-link btn btn-default btn-small" href="http://pinterest.com/pin/create/button/?url={{ urlencode(url('/portfolios/jatra')) }}" target="_blank"><i class="icon el-icon-pinterest"></i></a>
+                    
+                        @php
+                            $encodedUrl = urlencode($shareUrl);
+                            $encodedTitle = urlencode($shareTitle);
+                        @endphp
+                    
+                        <a class="social-link btn btn-default btn-small"
+                           href="http://www.facebook.com/sharer.php?u={{ $encodedUrl }}&title={{ $encodedTitle }}"
+                           target="_blank"><i class="icon el-icon-facebook"></i></a>
+                    
+                        <a class="social-link btn btn-default btn-small"
+                           href="http://twitter.com/home/?status={{ $encodedTitle }}%20-%20{{ $encodedUrl }}%20via%20@headofficebd"
+                           target="_blank"><i class="icon el-icon-twitter"></i></a>
+                    
+                        <a class="social-link btn btn-default btn-small"
+                           href="http://linkedin.com/shareArticle?mini=true&url={{ $encodedUrl }}&title={{ $encodedTitle }}"
+                           target="_blank"><i class="icon el-icon-linkedin"></i></a>
+                    
+                        <a class="social-link btn btn-default btn-small"
+                           href="https://plus.google.com/share?url={{ $encodedUrl }}"
+                           target="_blank"><i class="icon el-icon-googleplus"></i></a>
+                    
+                        <a class="social-link btn btn-default btn-small"
+                           href="http://pinterest.com/pin/create/button/?url={{ $encodedUrl }}"
+                           target="_blank"><i class="icon el-icon-pinterest"></i></a>
                     </div>
                     <div class="clearfix"></div>
     

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @yield('meta')
     <title>@yield('title', 'h office')</title>
 
     <!-- HTML5 shim and Respond.js for IE8 support -->
@@ -18,10 +19,10 @@
     <link rel='stylesheet' href="{{ asset('/assets/content/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto8f76.css') }}" type='text/css' media='screen' />
     <link rel='stylesheet' href="{{ asset('/assets/content/plugins/js_composer/assets/css/js_composer8f76.css') }}" type='text/css' media='all' />
     <link rel='stylesheet' href="{{ asset('/assets/content/uploads/js_composer/custom8f76.css') }}" type='text/css' media='screen' />
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway%3A400&amp;subset=latin&amp;ver=4.1.28' type='text/css' media='all' />
+    {{-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway%3A400&amp;subset=latin&amp;ver=4.1.28' type='text/css' media='all' />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway%3A600&amp;subset=latin&amp;ver=4.1.28' type='text/css' media='all' />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway%3A700&amp;subset=latin&amp;ver=4.1.28' type='text/css' media='all' />
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway%3A100&amp;subset=latin&amp;ver=4.1.28' type='text/css' media='all' />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway%3A100&amp;subset=latin&amp;ver=4.1.28' type='text/css' media='all' /> --}}
     <link rel='stylesheet' href="{{ asset('/assets/content/themes/bloc/includes/royalslider/royalslider.css') }}" type='text/css' media='screen' />
     <link rel='stylesheet' href="{{ asset('/assets/content/themes/bloc/includes/slick-slide/slickcfbc.css') }}" type='text/css' media='all' />
     <link rel='stylesheet' href="{{ asset('/assets/content/themes/bloc/includes/fonts/css/fontellocfbc.css') }}" type='text/css' media='all' />
