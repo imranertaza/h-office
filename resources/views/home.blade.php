@@ -79,7 +79,8 @@
 @section('main-content')
 @php
 $imagePath = 'assets/uploads/portfolios/';
-$f="https://placehold.co/768x768";
+// $f="https://placehold.co/768x768";
+$f=null;
 @endphp
     <article class="post-439 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">

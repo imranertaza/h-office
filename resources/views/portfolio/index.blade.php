@@ -12,7 +12,8 @@
 
 @section('main-content')
 @php
-    $f="https://placehold.co/768x768";
+    // $f="https://placehold.co/768x768";
+    $f=null;
 
 @endphp
     {{-- @dd($portfolios) --}}
