@@ -1,6 +1,6 @@
 @extends('layouts.blog-detail')
 @php
-$imagePath = '/assets/uploads/blogs/';
+    $imagePath = '/assets/uploads/blogs/';
 @endphp
 @section('title', $blog->blog_title . '| h office')
 @section('meta')
@@ -306,72 +306,23 @@ $imagePath = '/assets/uploads/blogs/';
             </div>
         </div>
     @else
-    <div class="ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready">
-        @if (!empty($blog->sliderImages[0]->image))
-            <img class="featured-image" src="{{ asset($imagePath . $blog->sliderImages[0]->image) }}" alt="MIB Product" />
-        @elseif (!empty($blog->sliderImages[0]->video))
-        <style>
-            #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
+        <div class="ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready">
+            @if (!empty($blog->sliderImages[0]->image))
+                <img class="featured-image" src="{{ asset($imagePath . $blog->sliderImages[0]->image) }}"
+                    alt="MIB Product" />
+            @elseif (!empty($blog->sliderImages[0]->video))
+                {{-- <div class="video-blog">
+                    <div class="content">
+                        <button id="myBtn" onclick="myFunction()">Pause</button>
+                    </div>
+                    <video autoplay muted loop id="myVideo">
+                        <source src="{{ asset_path('blog_video', $blog->sliderImages[0]->video) }}" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div> --}}
+            @endif
+        </div>
 
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-
-            </style>
-            
-            <div class="video-blog">            
-            <div class="content">
-                <button id="myBtn" onclick="myFunction()">Pause</button>
-              </div>
-            <video autoplay muted loop id="myVideo">
-                <source src="{{ asset_path('blog_video',$blog->sliderImages[0]->video) }}" type="video/mp4">
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-
-            <script>
-                var video = document.getElementById("myVideo");
-                var btn = document.getElementById("myBtn");
-                
-                function myFunction() {
-                  if (video.paused) {
-                    video.play();
-                    btn.innerHTML = "Pause";
-                  } else {
-                    video.pause();
-                    btn.innerHTML = "Play";
-                  }
-                }
-                </script>
-                      @endif
-    </div>
-    
     @endif
 
 @endsection
@@ -434,36 +385,36 @@ $imagePath = '/assets/uploads/blogs/';
                 </div>
             </header>
             @php
-            $shareUrl = urlencode(url()->full()); // current full URL
-            $shareTitle = urlencode($portfolio->title ?? $blog->blog_title ?? 'Share'); // fallback title
-        @endphp
+                $shareUrl = urlencode(url()->full()); // current full URL
+                $shareTitle = urlencode($portfolio->title ?? ($blog->blog_title ?? 'Share')); // fallback title
+            @endphp
             {!! $blog->description !!}
             <div class="clearfix"></div>
 
             <div class="btn-group social-share">
                 <button class="social-share-main btn btn-default btn-small">Share</button>
-            
+
                 <a class="social-link btn btn-default btn-small"
-                   href="http://www.facebook.com/sharer.php?u={{ $shareUrl }}&title={{ $shareTitle }}"
-                   target="_blank"><i class="icon el-icon-facebook"></i></a>
-            
+                    href="http://www.facebook.com/sharer.php?u={{ $shareUrl }}&title={{ $shareTitle }}"
+                    target="_blank"><i class="icon el-icon-facebook"></i></a>
+
                 <a class="social-link btn btn-default btn-small"
-                   href="http://twitter.com/home/?status={{ $shareTitle }}%20-%20{{ $shareUrl }}%20via%20@headofficebd"
-                   target="_blank"><i class="icon el-icon-twitter"></i></a>
-            
+                    href="http://twitter.com/home/?status={{ $shareTitle }}%20-%20{{ $shareUrl }}%20via%20@headofficebd"
+                    target="_blank"><i class="icon el-icon-twitter"></i></a>
+
                 <a class="social-link btn btn-default btn-small"
-                   href="http://linkedin.com/shareArticle?mini=true&url={{ $shareUrl }}&title={{ $shareTitle }}"
-                   target="_blank"><i class="icon el-icon-linkedin"></i></a>
-            
+                    href="http://linkedin.com/shareArticle?mini=true&url={{ $shareUrl }}&title={{ $shareTitle }}"
+                    target="_blank"><i class="icon el-icon-linkedin"></i></a>
+
                 <a class="social-link btn btn-default btn-small"
-                   href="https://plus.google.com/share?url={{ $shareUrl }}"
-                   target="_blank"><i class="icon el-icon-googleplus"></i></a>
-            
+                    href="https://plus.google.com/share?url={{ $shareUrl }}" target="_blank"><i
+                        class="icon el-icon-googleplus"></i></a>
+
                 <a class="social-link btn btn-default btn-small"
-                   href="http://pinterest.com/pin/create/button/?url={{ $shareUrl }}"
-                   target="_blank"><i class="icon el-icon-pinterest"></i></a>
+                    href="http://pinterest.com/pin/create/button/?url={{ $shareUrl }}" target="_blank"><i
+                        class="icon el-icon-pinterest"></i></a>
             </div>
-            
+
             <div class="clearfix"></div>
 
             <footer>
