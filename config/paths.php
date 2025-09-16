@@ -1,4 +1,4 @@
-<?
+<?php
 return [
     'blog'      => '/assets/uploads/blogs/',
     'portfolio' => '/assets/uploads/portfolios/',
