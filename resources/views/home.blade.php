@@ -79,6 +79,7 @@
 @section('main-content')
 @php
 $imagePath = 'assets/uploads/portfolios/';
+$f="https://placehold.co/768x768";
 @endphp
     <article class="post-439 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
@@ -99,20 +100,20 @@ $imagePath = 'assets/uploads/portfolios/';
                                 <div class='ac-tile-posts ac-filter-target ac-tile-masonry' data-cols='3'>
                                     @foreach ($portfolios as $item)
                                         <div
-                                            class='@if ($item->slug == 'jatra' || $item->slug == 'ajo') ac-tile-col ac-tm-standard-3 all branding experience ac-hide-until-ready ac-hidden-until-ready
-                                        @elseif($item->slug == 'jaago' || $item->slug == 'care-fountain')
-                                        ac-tile-col ac-tm-standard-3 all branding social ac-hide-until-ready ac-hidden-until-ready
+                                            class='@foreach ($item->categories as $cat) {{ $cat->slug.' ' }} @endforeach all @if ($item->sort_order == 2 || $item->sort_order == 3 || $item->sort_order == 8 || $item->sort_order == 9) ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
+                                        @elseif($item->sort_order == 4 || $item->sort_order == 6)
+                                        ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
                                         @else
-                                        ac-tile-col ac-tm-large-3 all experience ac-hide-until-ready ac-hidden-until-ready @endif '>
+                                        ac-tile-col ac-tm-large-3 ac-hide-until-ready ac-hidden-until-ready @endif '>
                                             <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                 <div class='image'>
                                                     <img class="grid-image"
-                                                        src="{{ asset($imagePath . $item->featuredImage->image) }}"
+                                                        src="{{$f??asset_path('portfolio', $item->featuredImage->image) }}"
                                                         alt="{{ $item->title }} Image" />
                                                 </div>
                                                 <div class='text'>
                                                     <div class="text-inner">
-                                                        <h3 class='ac-tile-title'>{{ $item->title }}</h3>
+                                                        <h3 class='ac-tile-title'>{{ $item->short_title }}</h3>
                                                         <div class='ac-tile-footer'>@foreach ($item->categories as $cat)
                                                             {{ $cat->name }}
                                                             @if (!$loop->last)

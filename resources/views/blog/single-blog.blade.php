@@ -306,9 +306,16 @@ $imagePath = '/assets/uploads/blogs/';
             </div>
         </div>
     @else
-        <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
+    <div class="ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready">
+        @if (!empty($blog->sliderImages[0]->image))
             <img class="featured-image" src="{{ asset($imagePath . $blog->sliderImages[0]->image) }}" alt="MIB Product" />
-        </div>
+        @elseif (!empty($blog->sliderImages[0]->video))
+            <div class="video-container">
+                <video class="featured-video" src="{{ asset_path('blog_video',$blog->sliderImages[0]->video) }}" type="video/mp4" width="100%" controls></video>
+            </div>
+        @endif
+    </div>
+    
     @endif
 
 @endsection

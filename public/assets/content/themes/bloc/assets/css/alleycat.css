@@ -1006,7 +1006,8 @@ span.wpb_btn-large {
 }
 #outer-wrap,
 .ac-page-title,
-.ac-page-hero-img {
+.ac-page-hero-img,
+.ac-page-hero-img video {
   position: relative;
   z-index: 1;
 }
@@ -3339,7 +3340,7 @@ h2.entry-title a {
 }
 /* - Featured Images (page header)
 ------------------------------------------ */
-.ac-page-hero-img {
+.ac-page-hero-img, .ac-page-hero-img video {
   background-color: #555;
   -webkit-box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
@@ -3699,6 +3700,9 @@ h2.entry-title a {
   overflow: hidden;
 }
 .single-ac_portfolio .post-images img {
+  margin-bottom: 30px;
+}
+.single-ac_portfolio .post-images video {
   margin-bottom: 30px;
 }
 .single-ac_portfolio .ac-page-title {

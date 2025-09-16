@@ -121,15 +121,9 @@
                 <div class='col-sm-12 col-md-9 ac-page-left-side'>
                     <div class='content top-images'>
                         <h3 class="entry-title">
-                            <strong>GP-House</strong>
+                            <strong>{{$portfolio->title}}</strong>
                         </h3>
-                        <p class="entry-subtitle">This is the subtitle</p>
-                        <p>The goal of the GP-House profiling project was to create a unique compilation of contemporary,
-                            dynamic Bangladeshi art that reflects the identity of a nation, a nation that is looking towards
-                            a
-                            new horizon of progress. By bringing together different pieces of art from around the country in
-                            one iconic building, Head Office Communication has created a whole new dimension to the idea of
-                            corporate workplace.</p>
+                       {!! $portfolio->description !!}
                     </div>
                     <div class='article-footer'>
                         <div class="clearfix"></div>
@@ -202,12 +196,22 @@
                 </section>
             @else
                 <div class='col-sm-12 col-md-8 ac-page-left-side'>
-                    <div class='post-images'>
+                    <div class="post-images">
                         @foreach ($portfolio->images as $item)
-                            <img width='768' src="{{ asset($imagePath . $item->image) }}"
-                                alt="{{ $item->alt ?? 'portfolio-image' }}">
+                            @if ($item->image)
+                                <img width="768" src="{{ asset($imagePath . $item->image) }}"
+                                     alt="{{ $item->alt ?? 'portfolio-image' }}">
+                            @elseif ($item->video)
+                                <div class="video-container">
+                                    <video width="768" controls>
+                                        <source src="{{ asset_path('portfolio_video',$item->video) }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            @endif
                         @endforeach
                     </div>
+                    
                     <div class='article-footer'>
                         <div class="clearfix"></div>
                         <div class="btn-group social-share">

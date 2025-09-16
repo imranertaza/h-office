@@ -11,9 +11,11 @@
 @endsection
 
 @section('main-content')
-    @php
-        $imagePath = 'assets/uploads/portfolios/';
-    @endphp
+@php
+    $f="https://placehold.co/768x768";
+
+@endphp
+    {{-- @dd($portfolios) --}}
     <article class="post-139 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
             <div class="vc_row wpb_row vc_row-fluid">
@@ -28,165 +30,41 @@
                                                 data-filter=".all">All</a></span>
                                         @foreach ($categories as $cat)
                                             <span class="ac-category-filter"><a href="#" class="item"
-                                                    data-filter=".{{ strtolower($cat->name) }}">{{ $cat->name }}</a></span>
+                                                    data-filter=".{{ $cat->slug }}">{{ $cat->name }}</a></span>
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="ac-tile-posts ac-filter-target ac-tile-masonry" data-cols="3">
-                                    @foreach ($portfolios as $item)
-                                        @if ($item->sort_order == 1)
-                                            <div
-                                                class="ac-tile-col ac-tm-large-3 all experience ac-hide-until-ready ac-hidden-until-ready">
-                                                <a href="{{ route('portfolios-details', $item->slug) }}">
-                                                    <div class="image">
-                                                        <img class="grid-image"
-                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
-                                                            alt="port_Gbus (17)">
+                                      @foreach ($portfolios as $item)
+                                        <div
+                                            class='
+                                            @foreach ($item->categories as $cat) {{ $cat->slug.' ' }} @endforeach
+                                            @if ($item->sort_order == 2 || $item->sort_order == 3 || $item->sort_order == 8 || $item->sort_order == 9 || $item->sort_order == 13 || $item->sort_order == 14) ac-tile-col ac-tm-standard-3  ac-hide-until-ready ac-hidden-until-ready
+                                        @elseif($item->sort_order == 4 || $item->sort_order == 6 || $item->sort_order == 10 || $item->sort_order == 12)
+                                        ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
+                                        @else
+                                        ac-tile-col ac-tm-large-3 ac-hide-until-ready ac-hidden-until-ready @endif all '>
+                                            <a href='{{ route('portfolios-details', $item->slug) }}'>
+                                                <div class='image'>
+                                                    <img class="grid-image"
+                                                        src="{{$f??asset_path('portfolio', $item->featuredImage->image) }}"
+                                                        alt="{{ $item->title }} Image" />
+                                                </div>
+                                                <div class='text'>
+                                                    <div class="text-inner">
+                                                        <h3 class='ac-tile-title'>{{ $item->short_title }}</h3>
+                                                        <div class='ac-tile-footer'>@foreach ($item->categories as $cat)
+                                                            {{ $cat->name }}
+                                                            @if (!$loop->last)
+                                                                ,
+                                                            @endif
+                                                        @endforeach</div>
                                                     </div>
-                                                    <div class="text">
-                                                        <div class="text-inner">
-                                                            <h3 class="ac-tile-title">{{ $item->title }}</h3>
-                                                            <div class="ac-tile-footer">
-                                                                @foreach ($item->categories as $cat)
-                                                                    {{ $cat->name }}
-                                                                    @if (!$loop->last)
-                                                                        ,
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        @endif
-                                        @if ($item->sort_order == 2)
-                                            <div
-                                                class="ac-tile-col ac-tm-standard-3 all branding experience ac-hide-until-ready ac-hidden-until-ready">
-                                                <a href="{{ route('portfolios-details', $item->slug) }}">
-                                                    <div class="image">
-                                                        <img class="grid-image"
-                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
-                                                            alt="6-0011">
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="text-inner">
-                                                            <h3 class="ac-tile-title">{{ $item->title }}</h3>
-                                                            <div class="ac-tile-footer">
-                                                                @foreach ($item->categories as $cat)
-                                                                    {{ $cat->name }}
-                                                                    @if (!$loop->last)
-                                                                        ,
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        @endif
-                                        @if ($item->sort_order == 3)
-                                            <div
-                                                class="ac-tile-col ac-tm-standard-3 all branding experience ac-hide-until-ready ac-hidden-until-ready">
-                                                <a href="{{ route('portfolios-details', $item->slug) }}">
-                                                    <div class="image">
-                                                        <img class="grid-image"
-                                                            src="{{ asset('/assets/content/uploads/2015/01/product-display-07-768x768.jpg') }}"
-                                                            alt="product-display-07">
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="text-inner">
-                                                            <h3 class="ac-tile-title">{{ $item->title }}</h3>
-                                                            <div class="ac-tile-footer">
-                                                                @foreach ($item->categories as $cat)
-                                                                    {{ $cat->name }}
-                                                                    @if (!$loop->last)
-                                                                        ,
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        @endif
-                                        @if ($item->sort_order == 4)
-                                            <div
-                                                class="ac-tile-col ac-tm-standard-3 all branding social ac-hide-until-ready ac-hidden-until-ready">
-                                                <a href="{{ route('portfolios-details', $item->slug) }}">
-                                                    <div class="image">
-                                                        <img class="grid-image"
-                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
-                                                            alt="n1">
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="text-inner">
-                                                            <h3 class="ac-tile-title">{{ $item->title }}</h3>
-                                                            <div class="ac-tile-footer">
-                                                                @foreach ($item->categories as $cat)
-                                                                    {{ $cat->name }}
-                                                                    @if (!$loop->last)
-                                                                        ,
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        @endif
-
-                                        @if ($item->sort_order == 6)
-                                            <div
-                                                class="ac-tile-col ac-tm-standard-3 all  branding  social  ac-hide-until-ready">
-                                                <a href="{{ route('portfolios-details', $item->slug) }}">
-                                                    <div class="image">
-                                                        <img class="grid-image"
-                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
-                                                            alt="invitation_jaago">
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="text-inner">
-                                                            <h3 class="ac-tile-title">{{ $item->title }}</h3>
-                                                            <div class="ac-tile-footer">
-                                                                @foreach ($item->categories as $cat)
-                                                                    {{ $cat->name }}
-                                                                    @if (!$loop->last)
-                                                                        ,
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        @endif
-
-                                        @if ($item->sort_order == 5)
-                                            <div
-                                                class="ac-tile-col ac-tm-large-3 all experience ac-hide-until-ready ac-hidden-until-ready">
-                                                <a href="{{ route('portfolios-details', $item->slug) }}">
-                                                    <div class="image">
-                                                        <img class="grid-image"
-                                                            src="{{ asset($imagePath . $item->featuredImage->image) }}"
-                                                            alt="_DSC7762">
-                                                    </div>
-                                                    <div class="text">
-                                                        <div class="text-inner">
-                                                            <h3 class="ac-tile-title">{{ $item->title }}</h3>
-                                                            <div class="ac-tile-footer">
-                                                                @foreach ($item->categories as $cat)
-                                                                    {{ $cat->name }}
-                                                                    @if (!$loop->last)
-                                                                        ,
-                                                                    @endif
-                                                                @endforeach
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        @endif
+                                                </div>
+                                            </a>
+                                        </div>
                                     @endforeach
+                                    
                                 </div>
                             </div>
                         </div>

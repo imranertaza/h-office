@@ -102,7 +102,7 @@
                         </article>
                     </main><!-- /.main -->
 
-                    <aside class="sidebar secondary sidebar-1 col-sm-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
+                    <aside class="sidebar secondary sidebar-1 col-md-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
                         <section id="search-2" class="widget widget_search">
                             <form role="search" method="get" id="searchform" class="form-inline" action="{{ route('blogs') }}">
                                 <input type="search" value="" name="s" id="s" class="form-control" placeholder="Search h office">

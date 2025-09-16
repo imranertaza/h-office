@@ -1,4 +1,4 @@
-<aside class="sidebar secondary sidebar-1 col-sm-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
+<aside class="sidebar secondary sidebar-1 col-md-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
     <section id="recent-posts-2" class="widget widget_recent_entries">
         <h3 class="widget-title">Recent Posts</h3>
         <ul>
