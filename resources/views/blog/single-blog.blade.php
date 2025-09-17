@@ -307,6 +307,7 @@
                     <style>
                         .ac-page-hero-img, .ac-page-hero-img>video{
                             background-color:#f8f8f8 !important;
+                            box-shadow:none !important;
                         }
                         </style>
                     <video autoplay muted loop id="myVideo" width="100%">
