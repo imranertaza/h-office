@@ -72,6 +72,8 @@
     @yield('head')
 </head>
 <body class="@yield('body-class', 'home page')">
+    <x-preloader />
+
     @yield('content')
     
     <!-- Footer Scripts -->

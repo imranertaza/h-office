@@ -310,7 +310,7 @@
                         }
                         </style>
                     <video autoplay muted loop id="myVideo" width="100%">
-                        <source src="{{ "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"??asset_path('blog_video', $blog->sliderImages[0]->video) }}" type="video/mp4">
+                        <source src="{{ null ??asset_path('blog_video', $blog->sliderImages[0]->video) }}" type="video/mp4">
                         Your browser does not support HTML5 video.
                     </video>
             @endif
