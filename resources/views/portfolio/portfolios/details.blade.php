@@ -70,10 +70,6 @@
     }
 @endsection
 
-@php
-    $imagePath = 'assets/uploads/portfolios/';
-@endphp
-
 @if (count($portfolio->sliderImages) > 1)
     @section('header-slider')
         <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
@@ -83,7 +79,7 @@
                 <div class="royalSlider heroSlider rsMinW full-width-slider">
                     @foreach ($portfolio->sliderImages as $image)
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset($imagePath . $image->image) }}"
+                            <img class="rsImg" src="{{ asset_path('portfolio', $image->image) }}"
                                 alt="{{ $image->caption ?? 'Portfolio Image' }}" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                                 data-move-effect="bottom" data-speed="200">
@@ -106,7 +102,7 @@
 @elseif (count($portfolio->sliderImages) == 1)
     @section('header-slider')
         <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
-            <img class="featured-image" src="{{ asset($imagePath . $portfolio->sliderImages[0]->image) }}"
+            <img class="featured-image" src="{{ asset_path('portfolio',$portfolio->sliderImages[0]->image) }}"
                 alt='{{ $portfolio->sliderImages[0]->caption ?? 'portfolio-image' }}' />
         </div>
     @endsection
@@ -168,7 +164,7 @@
                                             <div class='image'>
                                                 <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                     <img class="grid-image"
-                                                        src="{{ asset($imagePath . $item->relatedImage->image) }}"
+                                                        src="{{ asset_path('portfolio', $item->relatedImage->image) }}"
                                                         alt="port_Gbus (17)" />
                                                 </a>
                                             </div>
@@ -199,7 +195,7 @@
                     <div class="post-images">
                         @foreach ($portfolio->images as $item)
                             @if ($item->image)
-                                <img width="768" src="{{ asset($imagePath . $item->image) }}"
+                                <img width="768" src="{{ asset_path('portfolio', $item->image) }}"
                                      alt="{{ $item->alt ?? 'portfolio-image' }}">
                             @elseif ($item->video)
                                 <div class="video-container">
@@ -244,7 +240,7 @@
                                             <div class='image'>
                                                 <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                     <img class="grid-image"
-                                                        src="{{ asset($imagePath . $item->relatedImage->image) }}"
+                                                        src="{{ asset_path('portfolio', $item->relatedImage->image) }}"
                                                         alt="port_Gbus (17)" />
                                                 </a>
                                             </div>

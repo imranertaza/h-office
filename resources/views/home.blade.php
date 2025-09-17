@@ -77,11 +77,8 @@
     .main, .sidebar { margin-top: 0px !important; }
 @endsection
 @section('main-content')
-@php
-$imagePath = 'assets/uploads/portfolios/';
-// $f="https://placehold.co/768x768";
-$f=null;
-@endphp
+
+<x-intent-popup />
     <article class="post-439 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1421511914623">
@@ -109,7 +106,7 @@ $f=null;
                                             <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                 <div class='image'>
                                                     <img class="grid-image"
-                                                        src="{{$f??asset_path('portfolio', $item->featuredImage->image) }}"
+                                                        src="{{asset_path('portfolio', $item->featuredImage->image) }}"
                                                         alt="{{ $item->title }} Image" />
                                                 </div>
                                                 <div class='text'>

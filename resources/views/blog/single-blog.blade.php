@@ -1,7 +1,4 @@
 @extends('layouts.blog-detail')
-@php
-    $imagePath = '/assets/uploads/blogs/';
-@endphp
 @section('title', $blog->blog_title . '| h office')
 @section('meta')
     <meta name="description" content="{{ $blog->meta_description }}">
@@ -12,10 +9,9 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ route('blog.show', $blog->slug) }}" />
     @if ($blog->sliderImages && count($blog->sliderImages) > 0)
-        <meta property="og:image" content="{{ asset($imagePath . $blog->sliderImages[0]->image) }}" />
+        <meta property="og:image" content="{{ asset_path('blog', $blog->sliderImages[0]->image) }}" />
     @else
-        <meta property="og:image"
-            content="{{ asset('/assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_browser_logo_32x32.png') }}" />
+        <meta property="og:image" content="{{ asset_path('blog', $blog->featuredImage->image) }}" />
     @endif
     <meta property="og:site_name" content="h office" />
     <meta property="article:published_time" content="{{ \Carbon\Carbon::parse($blog->publish_date)->toIso8601String() }}" />
@@ -272,9 +268,6 @@
 @endsection
 
 @section('header-slider')
-    @php
-        $imagePath = '/assets/uploads/blogs/';
-    @endphp
     @if (@empty($blog->sliderImages))
         <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'></div>
     @elseif(@count($blog->sliderImages) > 1)
@@ -285,7 +278,7 @@
                 <div class="royalSlider heroSlider rsMinW full-width-slider">
                     @foreach ($blog->sliderImages as $image)
                         <div class="rsContent">
-                            <img class="rsImg" src="{{ asset($imagePath . $image->image) }}"
+                            <img class="rsImg" src="{{ asset_path('blog',$image->image) }}"
                                 alt="{{ $image->caption ?? 'Blog Image' }}" />
                             <div class="infoBlock infoBlockLeftBlack rsABlock" data-fade-effect="" data-move-offset="10"
                                 data-move-effect="bottom" data-speed="200">
@@ -308,18 +301,18 @@
     @else
         <div class="ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready">
             @if (!empty($blog->sliderImages[0]->image))
-                <img class="featured-image" src="{{ asset($imagePath . $blog->sliderImages[0]->image) }}"
+                <img class="featured-image" src="{{ asset_path('blog', $blog->sliderImages[0]->image) }}"
                     alt="MIB Product" />
             @elseif (!empty($blog->sliderImages[0]->video))
-                {{-- <div class="video-blog">
-                    <div class="content">
-                        <button id="myBtn" onclick="myFunction()">Pause</button>
-                    </div>
-                    <video autoplay muted loop id="myVideo">
-                        <source src="{{ asset_path('blog_video', $blog->sliderImages[0]->video) }}" type="video/mp4">
+                    <style>
+                        .ac-page-hero-img, .ac-page-hero-img>video{
+                            background-color:#f8f8f8 !important;
+                        }
+                        </style>
+                    <video autoplay muted loop id="myVideo" width="100%">
+                        <source src="{{ "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"??asset_path('blog_video', $blog->sliderImages[0]->video) }}" type="video/mp4">
                         Your browser does not support HTML5 video.
                     </video>
-                </div> --}}
             @endif
         </div>
 
@@ -328,9 +321,6 @@
 @endsection
 
 @section('main-content')
-    @php
-        $imagePath = '/assets/uploads/blogs/';
-    @endphp
     <article
         class="post-352 post type-post status-publish format-standard has-post-thumbnail hentry category-product category-studio tag-bangladesh-accessories tag-bangladesh-products tag-bangladeshi-products tag-fine-products tag-made-in-bangladesh ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
@@ -437,6 +427,44 @@
                 </div>
             </footer>
         </div>
+
+							<!-- comment form start -->
+							{{-- <div id="respond" class="comment-respond">
+								<h3 id="reply-title" class="comment-reply-title">Something to Say? <small><a
+											rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond"
+											style="display:none;">Cancel Reply</a></small></h3>
+								<form action="#" method="get" id="commentform"
+									class="comment-form">
+									<p class="comment-notes">Your email address will not be published.</p>
+									<div class="row">
+										<div class="form-group col-sm-4">
+											<input type="text" class="form-control" name="author" id="author" value=""
+												size="22" aria-required='true' placeholder="Name">
+										</div>
+										<div class="form-group col-sm-4">
+											<input type="email" class="form-control" name="email" id="email" value=""
+												size="22" aria-required='true' placeholder="Email">
+										</div>
+										<div class="form-group col-sm-4">
+											<input type="url" class="form-control" name="url" id="url" value=""
+												size="22" placeholder="Website">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<textarea name="comment" id="comment" class="form-control" rows="5"
+											aria-required="true" placeholder="Comment"></textarea>
+									</div>
+									<p class="form-submit">
+										<input name="submit" type="submit" id="submit" class="submit"
+											value="Post Comment" />
+										<input type='hidden' name='comment_post_ID' value='609' id='comment_post_ID'>
+										<input type='hidden' name='comment_parent' id='comment_parent' value='0'>
+									</p>
+								</form>
+							</div><!-- #respond --> --}}
+
+							<!-- comment form end -->
     </article>
 @endsection
 @section('sidebar')

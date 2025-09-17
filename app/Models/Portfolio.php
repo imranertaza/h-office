@@ -12,7 +12,6 @@ class Portfolio extends Model
     protected $primaryKey = 'portfolio_id';
     public $timestamps = false; // Disable auto timestamps
     protected $guarded = ['portfolio_id'];
-    const IMAGE_PATH = '/assets/uploads/portfolio/';
     public function images()
     {
         return $this->hasMany(PortfolioImage::class, 'portfolio_id', 'portfolio_id')->where('featured', '0')->orderBy('sort_order', 'asc');

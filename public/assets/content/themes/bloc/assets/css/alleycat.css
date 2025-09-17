@@ -2231,6 +2231,12 @@ footer li > a:hover {
   text-align: center;
   background: #bbb;
 }
+#footer_social_bar a .icon::before{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
 #footer_social_bar a:hover {
   color: #fff !important;
 }
