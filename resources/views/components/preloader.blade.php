@@ -34,9 +34,9 @@
 
   <div class="preloader" role="status" aria-label="Loading site">
     <div class="preloader__logo" aria-hidden="true">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100" height="100">
             <!-- Path for letter H (animates only once) -->
-            <path id="letterH" d="M35 30 V70 M65 30 V70 M35 50 H65" fill="none" stroke="#000" stroke-width="8" stroke-linecap="square" stroke-dasharray="150" stroke-dashoffset="150">
+            <path id="letterH" d="M35 30 V70 M65 30 V70 M35 50 H65" fill="none" stroke="#000" stroke-width="6" stroke-linecap="square" stroke-dasharray="150" stroke-dashoffset="150">
               <animate attributeName="stroke-dashoffset" 
                        from="150" 
                        to="0" 
@@ -54,7 +54,7 @@
             </path>
             
             <!-- Circular loader (starts at top, animates once per loop) -->
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#000" stroke-width="5" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#000" stroke-width="4" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)">
               <animate id="circleAnim" 
                        attributeName="stroke-dashoffset" 
                        from="251.3" 
