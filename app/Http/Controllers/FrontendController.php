@@ -20,7 +20,7 @@ class FrontendController extends Controller
     {
         $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])
             ->orderBy('sort_order', 'asc')
-            ->get();
+            ->take(9)->get();
 
         return view('home', compact('portfolios'));
     }
@@ -149,10 +149,13 @@ class FrontendController extends Controller
 
 // Schema::dropAllTables();
         $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])
-            ->orderBy('sort_order', 'asc')
-            ->get();
-        $categories = PortfolioCategory::all();
-
+            ->orderBy('sort_order', 'asc')->get();
+       // Flatten and deduplicate categories from the portfolios
+$categories = $portfolios->pluck('categories') // returns a collection of collections
+->flatten()                                // flattens to a single collection
+->unique('category_id')
+->values();                                // reindexes the collection
+// dd($categories);
         return view('portfolio.index', compact('portfolios', 'categories'));
     }
 

@@ -1,4 +1,14 @@
-<aside class="sidebar secondary sidebar-1 col-sm-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
+<aside class="sidebar secondary sidebar-1 col-md-3 ac-hide-until-ready ac-hidden-until-ready" role="complementary">
+    {{-- <section id="search-2" class=" widget widget_search">
+        <form role="search" method="get" id="searchform" class="form-inline"
+            action="http://h-office.com/">
+            <input type="search" value="" name="s" id="s" class="form-control"
+                placeholder="Search h office">
+            <label class="hide" for="s">Search for:</label>
+            <button type="submit" id="searchsubmit" class="btn btn-default searchsubmit"><i
+                    class="entypo-icon-search"></i></button>
+        </form>
+    </section> --}}
     <section id="recent-posts-2" class="widget widget_recent_entries">
         <h3 class="widget-title">Recent Posts</h3>
         <ul>
@@ -9,7 +19,32 @@
             @endforeach
         </ul>
     </section>
-
+    {{-- <section id="recent-comments-2" class=" widget widget_recent_comments">
+        <h3 class="widget-title">Recent Comments</h3>
+        <ul id="recentcomments"></ul>
+    </section>
+    <section id="archives-2" class=" widget widget_archive">
+        <h3 class="widget-title">Archives</h3>
+        <ul>
+            <li><a href='../2015/11/index.html'>November 2015</a></li>
+            <li><a href='../2015/10/index.html'>October 2015</a></li>
+            <li><a href='../2015/09/index.html'>September 2015</a></li>
+            <li><a href='../2015/08/index.html'>August 2015</a></li>
+            <li><a href='../2015/07/index.html'>July 2015</a></li>
+            <li><a href='../2015/06/index.html'>June 2015</a></li>
+            <li><a href='../2015/05/index.html'>May 2015</a></li>
+            <li><a href='../2015/04/index.html'>April 2015</a></li>
+            <li><a href='../2015/03/index.html'>March 2015</a></li>
+            <li><a href='../2015/02/index.html'>February 2015</a></li>
+            <li><a href='../2015/01/index.html'>January 2015</a></li>
+            <li><a href='../2014/12/index.html'>December 2014</a></li>
+            <li><a href='../2014/11/index.html'>November 2014</a></li>
+            <li><a href='../2014/10/index.html'>October 2014</a></li>
+            <li><a href='../2014/09/index.html'>September 2014</a></li>
+            <li><a href='../2014/08/index.html'>August 2014</a></li>
+            <li><a href='../2014/07/index.html'>July 2014</a></li>
+        </ul>
+    </section> --}}
     <section id="categories-2" class="widget widget_categories">
         <h3 class="widget-title">Categories</h3>
         <ul>

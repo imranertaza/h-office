@@ -155,7 +155,7 @@
         <div class="wrap main-section container" role="document">
             <div class="content">
                 <div class="row bg">
-                    <main class="main sidebar-1 col-sm-9" role="main">
+                    <main class="main sidebar-1 col-md-9" role="main">
                         @yield('main-content')
                     </main>
                     @yield('sidebar')

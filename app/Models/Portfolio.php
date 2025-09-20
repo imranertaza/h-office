@@ -12,10 +12,9 @@ class Portfolio extends Model
     protected $primaryKey = 'portfolio_id';
     public $timestamps = false; // Disable auto timestamps
     protected $guarded = ['portfolio_id'];
-    const IMAGE_PATH = '/assets/uploads/portfolio/';
     public function images()
     {
-        return $this->hasMany(PortfolioImage::class, 'portfolio_id', 'portfolio_id')->where('featured', '0');
+        return $this->hasMany(PortfolioImage::class, 'portfolio_id', 'portfolio_id')->where('featured', '0')->orderBy('sort_order', 'asc');
     }
     public function featuredImage()
     {
@@ -41,8 +40,8 @@ class Portfolio extends Model
         return $this->belongsToMany(
             PortfolioCategory::class,
             'portfolio_category_map',
-            'portfolio_id',     // FK on pivot pointing to this model
-            'category_id'       // FK on pivot pointing to PortfolioCategory
+            'portfolio_id',
+            'category_id'
         );
     }
     public function relatedPortfolios()
@@ -51,6 +50,6 @@ class Portfolio extends Model
             ->whereHas('categories', function ($query) {
                 $query->whereIn('portfolio_category_map.category_id', $this->categories->pluck('category_id'));
             })
-            ->where('portfolio_id', '!=', $this->portfolio_id)->paginate(3);
+            ->where('portfolio_id', '!=', $this->portfolio_id)->take(3)->get();
     }
 }
