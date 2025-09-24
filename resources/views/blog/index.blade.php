@@ -49,13 +49,13 @@
     }
 
     #prev {
-    background: url({{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}) no-repeat center;
+    background: url({{ asset('/assets/images/arrow1.png') }}) no-repeat center;
     float: right;
     margin-right: -50px;
     }
 
     #next {
-    background: url({{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}) no-repeat center;
+    background: url({{ asset('/assets/images/arrow1-prev.png') }}) no-repeat center;
     float: left;
     margin-left: -50px
     }
@@ -92,7 +92,7 @@
     }
 
     #next {
-    background: url({{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}) no-repeat center;
+    background: url({{ asset('/assets/images/arrow1-prev.png') }}) no-repeat center;
     float: left;
     margin-left: -66px !important;
     }
@@ -257,8 +257,8 @@
     }
     }
     .main, .sidebar {
-        padding-top:0px !important;
-        margin-top:0px !important;
+    padding-top:0px !important;
+    margin-top:0px !important;
     }
 @endsection
 @section('header-slider')
@@ -298,7 +298,7 @@
                                             @if (!empty($blog->featured_image))
                                                 <a href="{{ route('blog.show', $blog->slug) }}">
                                                     <img class="featured-image"
-                                                        src="{{ asset_path('blog',$blog->featuredImage->image) }}"
+                                                        src="{{ asset_path('blog', $blog->featuredImage->image) }}"
                                                         alt="{{ $blog->blog_title }}">
                                                 </a>
                                             @endif
@@ -378,35 +378,39 @@
                 <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
-            
+
             @php
-    $currentUrl = urlencode(url()->current());
-    $pageTitle = urlencode($blog->title ?? 'Blog');
-@endphp
+                $currentUrl = urlencode(url()->current());
+                $pageTitle = urlencode($blog->title ?? 'Blog');
+            @endphp
 
-<div class="btn-group social-share">
-    <button class="social-share-main btn btn-default btn-small">Share</button>
+            <div class="btn-group social-share">
+                <button class="social-share-main btn btn-default btn-small">Share</button>
 
-    <a class="social-link btn btn-default btn-small"
-       href="https://www.facebook.com/sharer.php?u={{ $currentUrl }}&title={{ $pageTitle }}" target="_blank">
-        <i class="icon el-icon-facebook"></i>
-    </a>
+                <a class="social-link btn btn-default btn-small"
+                    href="https://www.facebook.com/sharer.php?u={{ $currentUrl }}&title={{ $pageTitle }}"
+                    target="_blank">
+                    <i class="icon el-icon-facebook"></i>
+                </a>
 
-    <a class="social-link btn btn-default btn-small"
-       href="https://twitter.com/intent/tweet?text={{ $pageTitle }}&url={{ $currentUrl }}&via=headofficebd" target="_blank">
-        <i class="icon el-icon-twitter"></i>
-    </a>
+                <a class="social-link btn btn-default btn-small"
+                    href="https://twitter.com/intent/tweet?text={{ $pageTitle }}&url={{ $currentUrl }}&via=headofficebd"
+                    target="_blank">
+                    <i class="icon el-icon-twitter"></i>
+                </a>
 
-    <a class="social-link btn btn-default btn-small"
-       href="https://www.linkedin.com/shareArticle?mini=true&url={{ $currentUrl }}&title={{ $pageTitle }}" target="_blank">
-        <i class="icon el-icon-linkedin"></i>
-    </a>
+                <a class="social-link btn btn-default btn-small"
+                    href="https://www.linkedin.com/shareArticle?mini=true&url={{ $currentUrl }}&title={{ $pageTitle }}"
+                    target="_blank">
+                    <i class="icon el-icon-linkedin"></i>
+                </a>
 
-    <a class="social-link btn btn-default btn-small"
-       href="https://pinterest.com/pin/create/button/?url={{ $currentUrl }}&description={{ $pageTitle }}" target="_blank">
-        <i class="icon el-icon-pinterest"></i>
-    </a>
-</div>
+                <a class="social-link btn btn-default btn-small"
+                    href="https://pinterest.com/pin/create/button/?url={{ $currentUrl }}&description={{ $pageTitle }}"
+                    target="_blank">
+                    <i class="icon el-icon-pinterest"></i>
+                </a>
+            </div>
 
             <div class="clearfix"></div>
     </article>

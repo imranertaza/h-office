@@ -12,9 +12,9 @@
     none; background: #FFFFFF; }
     .slide { list-style: none; margin: 0 !important; width: 990px !important; }
     .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-    #prev { background: url('assets/content/plugins/logo-slider/arrows/arrow1.png') no-repeat center; float: right;
+    #prev { background: url('assets/images/arrow1.png') no-repeat center; float: right;
     margin-right: -50px; }
-    #next { background: url('assets/content/plugins/logo-slider/arrows/arrow1-prev.png') no-repeat center; float: left;
+    #next { background: url('assets/images/arrow1-prev.png') no-repeat center; float: left;
     margin-left: -50px; }
     @media screen and (max-width:320px) {
     #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
@@ -22,7 +22,7 @@
     #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
     relative; width: 110% !important; }
     .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-    #next { background: url('assets/content/plugins/logo-slider/arrows/arrow1-prev.png') no-repeat center; float: left;
+    #next { background: url('assets/images/arrow1-prev.png') no-repeat center; float: left;
     margin-left: -66px !important; }
     .logo-img { margin-left: 32px; }
     }
@@ -122,9 +122,8 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand logo" href="{{ route('home') }}"><img id="site-logo-start" class="site-logo"
-                            src="{{ asset('assets/content/uploads/2018/04/logo_1-240x90.png') }}" alt="h office"><img
-                            id="site-logo" class="site-logo  trans-nav-logo "
-                            src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_2_240x90.png') }}"
+                            src="{{ asset('assets/images/logo_1-240x90.png') }}" alt="h office"><img id="site-logo"
+                            class="site-logo  trans-nav-logo " src="{{ asset('assets/images/HOC_logo_2_240x90.png') }}"
                             alt="h office"></a>
                 </div>
 
@@ -138,10 +137,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
-
-
-
 
                 </nav>
             </div>
@@ -171,8 +166,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <section id="text-1" class=" widget widget_text">
-                        <div class="textwidget"><img
-                                src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HOC_logo_240x90.png') }}"
+                        <div class="textwidget"><img src="{{ asset('assets/images/HOC_logo_240x90.png') }}" alt="h office"
                                 style="opacity:0.6;"></div>
                     </section>
                 </div>
@@ -200,7 +194,7 @@
                         </a>
                     </div>
                     <div id="copyright-bar" class="col-md-12 col-lg-12">
-                        © 2019 h office. All rights reserved. Developed by <a
+                        © 2019 h office. All rights reserved. Developed by <a target="_blank"
                             href="https://www.dnationsoft.com/">DNationSoft</a> </div>
                 </div>
             </article>

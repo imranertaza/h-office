@@ -8,10 +8,10 @@
     none; background: #FFFFFF; }
     .slide { list-style: none; margin: 0 !important; width: 990px !important; }
     .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-    #prev { background: url('{{ asset('assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center;
+    #prev { background: url('{{ asset('assets/images/arrow1.png') }}') no-repeat center;
     float: right;
     margin-right: -50px; }
-    #next { background: url('{{ asset('assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    #next { background: url('{{ asset('assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left;
     margin-left: -50px; }
     @media screen and (max-width:320px) {
@@ -20,7 +20,7 @@
     #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
     relative; width: 110% !important; }
     .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-    #next { background: url('{{ asset('assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    #next { background: url('{{ asset('assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left;
     margin-left: -66px !important; }
     .logo-img { margin-left: 32px; }
@@ -77,8 +77,7 @@
     .main, .sidebar { margin-top: 0px !important; }
 @endsection
 @section('main-content')
-
-<x-intent-popup />
+    <x-intent-popup />
     <article class="post-439 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
             <div class="vc_row wpb_row vc_row-fluid vc_custom_1421511914623">
@@ -98,7 +97,7 @@
                                 <div class='ac-tile-posts ac-filter-target ac-tile-masonry' data-cols='3'>
                                     @foreach ($portfolios as $item)
                                         <div
-                                            class='@foreach ($item->categories as $cat) {{ $cat->slug.' ' }} @endforeach all @if ($item->sort_order == 2 || $item->sort_order == 3 || $item->sort_order == 8 || $item->sort_order == 9) ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
+                                            class='@foreach ($item->categories as $cat) {{ $cat->slug . ' ' }} @endforeach all @if ($item->sort_order == 2 || $item->sort_order == 3 || $item->sort_order == 8 || $item->sort_order == 9) ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
                                         @elseif($item->sort_order == 4 || $item->sort_order == 6)
                                         ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
                                         @else
@@ -106,24 +105,26 @@
                                             <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                 <div class='image'>
                                                     <img class="grid-image"
-                                                        src="{{asset_path('portfolio', $item->featuredImage->image) }}"
+                                                        src="{{ asset_path('portfolio', $item->featuredImage->image) }}"
                                                         alt="{{ $item->title }} Image" />
                                                 </div>
                                                 <div class='text'>
                                                     <div class="text-inner">
                                                         <h3 class='ac-tile-title'>{{ $item->short_title }}</h3>
-                                                        <div class='ac-tile-footer'>@foreach ($item->categories as $cat)
-                                                            {{ $cat->name }}
-                                                            @if (!$loop->last)
-                                                                ,
-                                                            @endif
-                                                        @endforeach</div>
+                                                        <div class='ac-tile-footer'>
+                                                            @foreach ($item->categories as $cat)
+                                                                {{ $cat->name }}
+                                                                @if (!$loop->last)
+                                                                    ,
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
                                     @endforeach
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -171,47 +172,47 @@
                                         data-cycle-speed="600" data-cycle-slides="> li">
                                         <li class="slide cycle-slide cycle-slide-active"
                                             style="position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 1; display: block; visibility: visible;">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/british.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/citi.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/DHL.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/grameen.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/google.jpg') }}"
-                                                class="logo-img" alt="">
+                                            <img src="{{ asset('assets/images/british.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/citi.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/DHL.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/grameen.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/google.jpg') }}" class="logo-img"
+                                                alt="">
                                         </li>
                                         <li class="slide cycle-slide"
                                             style="position: absolute; top: 0px; left: 0px; z-index: 99; visibility: hidden;">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Grameen-Intel.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Nuvista-pharma.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Star-cineplex.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/EMK-center.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Care-Bangladesh.jpg') }}"
-                                                class="logo-img" alt="">
+                                            <img src="{{ asset('assets/images/Grameen-Intel.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/Nuvista-pharma.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/Star-cineplex.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/EMK-center.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/Care-Bangladesh.jpg') }}" class="logo-img"
+                                                alt="">
                                         </li>
                                         <li class="slide cycle-slide"
                                             style="position: absolute; top: 0px; left: 0px; z-index: 97; visibility: hidden;">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Concern-Worldwide.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Jaago.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/Gtz.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/aarong.jpg') }}"
-                                                class="logo-img" alt="">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/HSBC.jpg') }}"
-                                                class="logo-img" alt="">
+                                            <img src="{{ asset('assets/images/Concern-Worldwide.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/Jaago.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/Gtz.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/aarong.jpg') }}" class="logo-img"
+                                                alt="">
+                                            <img src="{{ asset('assets/images/HSBC.jpg') }}" class="logo-img"
+                                                alt="">
                                         </li>
                                         <li class="slide cycle-slide"
                                             style="position: absolute; top: 0px; left: 0px; z-index: 96; visibility: hidden;">
-                                            <img src="{{ asset('assets/client/h-office_latest/cms/content/uploads/2015/02/chevron.jpg') }}"
-                                                class="logo-img" alt="">
+                                            <img src="{{ asset('assets/images/chevron.jpg') }}" class="logo-img"
+                                                alt="">
                                         </li>
                                     </ul>
                                     <div class="slider-controls"><a href="#" id="prev">&lt;</a> <a
@@ -243,8 +244,7 @@
                     <div class="wpb_wrapper">
                         <div class="wpb_single_image wpb_content_element vc_align_left">
                             <div class="wpb_wrapper">
-                                <img width="1140" height="450"
-                                    src="{{ asset('assets/content/uploads/2014/12/Address_HOC_01.jpg') }}"
+                                <img width="1140" height="450" src="{{ asset('assets/images/Address_HOC_01.jpg') }}"
                                     class="vc_box_border_grey attachment-full" alt="Address_HOC_01" />
                             </div>
                         </div>
