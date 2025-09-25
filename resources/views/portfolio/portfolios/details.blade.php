@@ -19,9 +19,9 @@
     none; background: #FFFFFF; }
     .slide { list-style: none; margin: 0 !important; width: 990px !important; }
     .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-    #prev { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center; float:
+    #prev { background: url('{{ asset('/assets/images/arrow1.png') }}') no-repeat center; float:
     right; margin-right: -50px; }
-    #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    #next { background: url('{{ asset('/assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left; margin-left: -50px; }
     @media screen and (max-width:320px) {
     #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
@@ -29,7 +29,7 @@
     #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
     relative; width: 110% !important; }
     .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-    #next { background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    #next { background: url('{{ asset('/assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left; margin-left: -66px !important; }
     .logo-img { margin-left: 32px; }
     }

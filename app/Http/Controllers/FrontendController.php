@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\Portfolio;
-use App\Models\PortfolioCategory;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class FrontendController extends Controller
 {
+    /**
+     * Cache duration in minutes.
+     */
+    private const CACHE_TTL = 6000;
+
     /**
      * Display the home page with portfolios.
      *
@@ -18,11 +23,19 @@ class FrontendController extends Controller
      */
     public function home()
     {
-        $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])
-            ->orderBy('sort_order', 'asc')
-            ->take(9)->get();
+        try {
+            $portfolios = Cache::remember('home_portfolios', self::CACHE_TTL, function () {
+                return Portfolio::with(['images', 'featuredImage', 'categories'])
+                    ->orderBy('sort_order', 'asc')
+                    ->take(9)
+                    ->get();
+            });
 
-        return view('home', compact('portfolios'));
+            return view('home', compact('portfolios'));
+        } catch (\Exception $e) {
+            Log::error('Error fetching home portfolios: ' . $e->getMessage());
+            return redirect()->route('home')->with('error', 'Unable to load portfolios. Please try again later.');
+        }
     }
 
     /**
@@ -46,30 +59,37 @@ class FrontendController extends Controller
     }
 
     /**
-     * Display the blog listing page.
+     * Display the blog listing page with optional category filter.
      *
+     * @param int|null $cat_id
      * @return \Illuminate\View\View
      */
-    public function blogs($cat_id = null)
+    public function blogs(?int $cat_id = null)
     {
-        $query = Blog::with(['categories', 'featuredImage'])
-            ->orderBy('sort_order', 'asc');
+        try {
+            $cacheKey = $cat_id ? "blogs_category_{$cat_id}" : 'blogs_all';
+            $blogs = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($cat_id) {
+                $query = Blog::with(['categories', 'featuredImage'])
+                    ->orderBy('sort_order', 'asc');
 
-        if ($cat_id) {
-            $query->whereHas('categories', function ($q) use ($cat_id) {
-                $q->where('cat_id', $cat_id);
+                if ($cat_id) {
+                    $query->whereHas('categories', fn ($q) => $q->where('cat_id', $cat_id));
+                }
+
+                return $query->paginate(10); // Paginate for scalability
             });
+
+            $categories = Cache::remember('blog_categories', self::CACHE_TTL, fn () => 
+                BlogCategory::where('status', 1)->get()
+            );
+
+            $latest_blog = $this->getLatestBlogs();
+
+            return view('blog.index', compact('blogs', 'categories', 'latest_blog'));
+        } catch (\Exception $e) {
+            Log::error('Error fetching blogs: ' . $e->getMessage());
+            return redirect()->route('blogs')->with('error', 'Unable to load blogs. Please try again later.');
         }
-
-        $blogs = $query->get();
-
-        $categories = BlogCategory::where('status', 1)->get();
-        $latest_blog = Blog::select('blog_title', 'slug')
-            ->latest('publish_date')
-            ->take(5)
-            ->get();
-
-        return view('blog.index', compact('blogs', 'categories', 'latest_blog'));
     }
 
     /**
@@ -78,66 +98,97 @@ class FrontendController extends Controller
      * @param string $slug
      * @return \Illuminate\View\View
      */
-    public function showBlog($slug)
+    public function showBlog(string $slug)
     {
-        $blog = Blog::with(['categories', 'sliderImages'])
-            ->where('slug', $slug)
-            ->where('status', '1')
-            ->firstOrFail();
+        try {
+            $blog = Cache::remember("blog_{$slug}", self::CACHE_TTL, function () use ($slug) {
+                return Blog::with(['categories', 'sliderImages'])
+                    ->where('slug', $slug)
+                    ->where('status', '1')
+                    ->firstOrFail();
+            });
 
-        $previousBlog = Blog::where('publish_date', '<', $blog->publish_date)
-            ->where('status', '1')
-            ->orderBy('publish_date', 'desc')
-            ->first();
+            $previousBlog = Cache::remember("blog_prev_{$blog->id}", self::CACHE_TTL, function () use ($blog) {
+                return Blog::where('publish_date', '<', $blog->publish_date)
+                    ->where('status', '1')
+                    ->orderBy('publish_date', 'desc')
+                    ->first();
+            });
 
-        $nextBlog = Blog::where('publish_date', '>', $blog->publish_date)
-            ->where('status', '1')
-            ->orderBy('publish_date', 'asc')
-            ->first();
+            $nextBlog = Cache::remember("blog_next_{$blog->id}", self::CACHE_TTL, function () use ($blog) {
+                return Blog::where('publish_date', '>', $blog->publish_date)
+                    ->where('status', '1')
+                    ->orderBy('publish_date', 'asc')
+                    ->first();
+            });
 
-        $categories = BlogCategory::all();
-        $latest_blog = Blog::select('blog_title', 'slug')
-            ->latest('publish_date')
-            ->take(5)
-            ->get();
+            $categories = Cache::remember('blog_categories', self::CACHE_TTL, fn () => 
+                BlogCategory::where('status', 1)->get()
+            );
 
-        return view('blog.single-blog', compact('blog', 'previousBlog', 'nextBlog', 'categories', 'latest_blog'));
-    }
+            $latest_blog = $this->getLatestBlogs();
 
-    public function blogsByCategory($slug)
-    {
-        $isUncategorised = $slug === 'uncategorised';
-        $blogs = Blog::with(['featuredImage', 'categories'])
-            ->when($isUncategorised, function ($query) {
-                $query->whereDoesntHave('categories');
-            })
-            ->when(!$isUncategorised, function ($query) use (&$category, $slug) {
-                $category = BlogCategory::where('slug', $slug)->where('status', 1)->firstOrFail();
-                $query->whereHas('categories', function ($q) use ($category) {
-                    $q->where('blog_category.cat_id', $category->cat_id);
-                });
-            })
-            ->orderBy('sort_order', 'asc')
-            ->get();
-    
-        // Fallback category object for uncategorised
-        if ($isUncategorised) {
-            $category = (object)[
-                'cat_title' => 'Uncategorised',
-                'slug' => 'uncategorised'
+            // Add meta tags for SEO
+            $meta = [
+                'title' => $blog->meta_title ?? $blog->blog_title,
+                'description' => $blog->short_des,
+                'keywords' => $blog->meta_keyword,
+                'og_url' => url()->current(),
+                'og_title' => $blog->blog_title,
+                'og_description' => $blog->short_des,
+                'og_image' => $blog->featuredImage ? asset($blog->featuredImage->image_path) : null,
             ];
+
+            return view('blog.single-blog', compact('blog', 'previousBlog', 'nextBlog', 'categories', 'latest_blog', 'meta'));
+        } catch (ModelNotFoundException $e) {
+            return redirect()->route('blogs')->with('error', 'Blog post not found.');
+        } catch (\Exception $e) {
+            Log::error('Error fetching blog: ' . $e->getMessage());
+            return redirect()->route('blogs')->with('error', 'Unable to load blog post. Please try again later.');
         }
-    
-        $categories = BlogCategory::where('status', 1)->get();
-    
-        $latest_blog = Blog::select('blog_title', 'slug')
-            ->latest('publish_date')
-            ->take(5)
-            ->get();
-    
-        return view('blog.index', compact('blogs', 'categories', 'latest_blog', 'category'));
     }
-    
+
+    /**
+     * Display blogs by category slug.
+     *
+     * @param string $slug
+     * @return \Illuminate\View\View
+     */
+    public function blogsByCategory(string $slug)
+    {
+        try {
+            $isUncategorised = $slug === 'uncategorised';
+            $cacheKey = $isUncategorised ? 'blogs_uncategorised' : "blogs_category_{$slug}";
+
+            $blogs = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($isUncategorised, $slug) {
+                return Blog::with(['featuredImage', 'categories'])
+                    ->when($isUncategorised, fn ($query) => $query->whereDoesntHave('categories'))
+                    ->when(!$isUncategorised, function ($query) use ($slug) {
+                        $category = BlogCategory::where('slug', $slug)->where('status', 1)->firstOrFail();
+                        $query->whereHas('categories', fn ($q) => $q->where('blog_category.cat_id', $category->cat_id));
+                    })
+                    ->orderBy('sort_order', 'asc')
+                    ->paginate(10);
+            });
+
+            $category = $isUncategorised
+                ? (object) ['cat_title' => 'Uncategorised', 'slug' => 'uncategorised']
+                : BlogCategory::where('slug', $slug)->where('status', 1)->firstOrFail();
+
+            $categories = Cache::remember('blog_categories', self::CACHE_TTL, fn () => 
+                BlogCategory::where('status', 1)->get()
+            );
+
+            $latest_blog = $this->getLatestBlogs();
+
+            return view('blog.index', compact('blogs', 'categories', 'latest_blog', 'category'));
+        } catch (ModelNotFoundException $e) {
+            return redirect()->route('blogs')->with('error', 'Category not found.');
+        } catch (\Exception $e) {
+            Log::error('Error fetching blogs by category: ' . $e->getMessage());
+            return redirect()->route('blogs')->with('error', 'Unable to load blogs. Please try again later.');
+        }
+    }
 
     /**
      * Display the portfolio listing page.
@@ -146,17 +197,25 @@ class FrontendController extends Controller
      */
     public function portfolios()
     {
+        try {
+            $portfolios = Cache::remember('portfolios_all', self::CACHE_TTL, function () {
+                return Portfolio::with(['images', 'featuredImage', 'categories'])
+                    ->orderBy('sort_order', 'asc')
+                    ->paginate(12);
+            });
 
-// Schema::dropAllTables();
-        $portfolios = Portfolio::with(['images', 'featuredImage', 'categories'])
-            ->orderBy('sort_order', 'asc')->get();
-       // Flatten and deduplicate categories from the portfolios
-$categories = $portfolios->pluck('categories') // returns a collection of collections
-->flatten()                                // flattens to a single collection
-->unique('category_id')
-->values();                                // reindexes the collection
-// dd($categories);
-        return view('portfolio.index', compact('portfolios', 'categories'));
+            $categories = Cache::remember('portfolio_categories', self::CACHE_TTL, function () use ($portfolios) {
+                return $portfolios->pluck('categories')
+                    ->flatten()
+                    ->unique('category_id')
+                    ->values();
+            });
+
+            return view('portfolio.index', compact('portfolios', 'categories'));
+        } catch (\Exception $e) {
+            Log::error('Error fetching portfolios: ' . $e->getMessage());
+            return redirect()->route('home')->with('error', 'Unable to load portfolios. Please try again later.');
+        }
     }
 
     /**
@@ -165,13 +224,40 @@ $categories = $portfolios->pluck('categories') // returns a collection of collec
      * @param string $slug
      * @return \Illuminate\View\View
      */
-    public function showPortfolio($slug)
+    public function showPortfolio(string $slug)
     {
-        $portfolio = Portfolio::where('slug', $slug)
-            ->with(['images', 'sliderImages', 'categories'])
-            ->firstOrFail();
-        $related = $portfolio->relatedPortfolios();
+        try {
+            $portfolio = Cache::remember("portfolio_{$slug}", self::CACHE_TTL, function () use ($slug) {
+                return Portfolio::with(['images', 'sliderImages', 'categories'])
+                    ->where('slug', $slug)
+                    ->firstOrFail();
+            });
 
-        return view('portfolio.portfolios.details', compact('portfolio', 'related'));
+            $related = Cache::remember("portfolio_related_{$portfolio->id}", self::CACHE_TTL, function () use ($portfolio) {
+                return $portfolio->relatedPortfolios();
+            });
+
+            return view('portfolio.portfolios.details', compact('portfolio', 'related'));
+        } catch (ModelNotFoundException $e) {
+            return redirect()->route('portfolios')->with('error', 'Portfolio not found.');
+        } catch (\Exception $e) {
+            Log::error('Error fetching portfolio: ' . $e->getMessage());
+            return redirect()->route('portfolios')->with('error', 'Unable to load portfolio. Please try again later.');
+        }
+    }
+
+    /**
+     * Get the latest blog posts for sidebar widget.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    private function getLatestBlogs()
+    {
+        return Cache::remember('latest_blogs', self::CACHE_TTL, fn () => 
+            Blog::select('blog_title', 'slug')
+                ->latest('publish_date')
+                ->take(5)
+                ->get()
+        );
     }
 }

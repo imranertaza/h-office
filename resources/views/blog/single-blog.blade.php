@@ -58,13 +58,13 @@
     }
 
     #prev {
-    background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1.png') }}') no-repeat center;
+    background: url('{{ asset('/assets/images/arrow1.png') }}') no-repeat center;
     float: right;
     margin-right: -50px;
     }
 
     #next {
-    background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    background: url('{{ asset('/assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left;
     margin-left: -50px;
     }
@@ -101,7 +101,7 @@
     }
 
     #next {
-    background: url('{{ asset('/assets/content/plugins/logo-slider/arrows/arrow1-prev.png') }}') no-repeat center;
+    background: url('{{ asset('/assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left;
     margin-left: -66px !important;
     }

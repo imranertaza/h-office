@@ -1,41 +1,78 @@
+<!-- Load Raleway font -->
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+
 <style>
-    #preloader {
+  .preloader {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100% - 100px); /* 50px padding on both sides */
+    width: 100%;
     height: 100%;
-    padding: 0 50px;
     background-color: #fff;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     z-index: 9999;
-}
+    transition: opacity 0.7s ease-out, visibility 0.2s ease-out;
+    opacity: 1;
+    visibility: visible;
+  }
 
-.loader-border {
-    width: 60px;
-    height: 60px;
-    border: 6px solid #ccc;
-    border-top: 6px solid #3498db;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-}
+  .preloader__logo {
+    transform: scale(0.7);
+    animation: logoPulse 1.5s ease-in-out infinite alternate;
+  }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+  @keyframes logoPulse {
+    from { transform: scale(0.7); opacity: 0.8; }
+    to { transform: scale(1); opacity: 1; }
+  }
 
+  .preloader--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Apply Raleway to SVG text */
+  .preloader__logo text {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+  }
 </style>
-<div id="preloader">
-    <div class="loader-border"></div>
+
+<div class="preloader" role="status" aria-label="Loading site">
+  <div class="preloader__logo" aria-hidden="true">
+    {{-- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+      <!-- Letter H in Raleway -->
+      <text x="50" y="65" text-anchor="middle" font-size="48" fill="#000">H</text>
+
+      <!-- Circular loader -->
+      <circle cx="50" cy="50" r="40"
+              fill="none"
+              stroke="#000"
+              stroke-width="4"
+              stroke-dasharray="251.3"
+              stroke-dashoffset="251.3"
+              transform="rotate(-90 50 50)">
+        <animate id="circleAnim"
+                 attributeName="stroke-dashoffset"
+                 from="251.3" to="0"
+                 dur="0.6s"
+                 begin="0.4s;circleAnim.end+0.9s"
+                 fill="freeze"/>
+      </circle>
+    </svg> --}}
+    <img src="{{ asset('assets/images/h-office-logo-sm.png') }}" alt="Site Logo" width="100" height="100">
+
+  </div>
 </div>
 
 <script>
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            document.getElementById('preloader').style.display = 'none';
-        }, 50000); // 0.0002s = 0.2ms (rounded for browser compatibility)
-    });
+  window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    setTimeout(() => {
+      preloader.classList.add('preloader--hidden');
+      setTimeout(() => preloader.remove(), 500);
+    }, 1500);
+  });
 </script>
