@@ -96,11 +96,7 @@
                             <div class="wpb_wrapper">
                                 <h3 style="text-align: left;"><span style="color: #ffffff;"><strong>Inspiring
                                             Space</strong></span></h3>
-                                <p><span style="color: #ffffff;">We’re located in a beautiful three storied architecture in
-                                        Dhanmondi, the space constantly inspires us to be imaginative. Unlike traditional
-                                        setting, we are not bound to our chairs and desks, we utilize the common spaces to
-                                        work, meet and brainstorm that help us to thrive and motivate our creations
-                                        to</span></p>
+                                <p><span style="color: #ffffff;">Our office feels more like a welcoming family than a traditional workplace. It’s a place where inspiration flows freely, and creativity thrives. We move beyond desks and chairs, using common spaces to collaborate, brainstorm, and bring ideas to life. Here, the friendly atmosphere fuels our passion to create something truly magical.</span></p>
                                 <p style="color: #ffffff;">Visit our office, you will fall in love!</p>
                             </div>
                         </div>

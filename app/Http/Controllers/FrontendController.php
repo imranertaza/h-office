@@ -14,7 +14,7 @@ class FrontendController extends Controller
     /**
      * Cache duration in minutes.
      */
-    private const CACHE_TTL = 6000;
+    private const CACHE_TTL = 43200;
 
     /**
      * Display the home page with portfolios.
@@ -26,15 +26,17 @@ class FrontendController extends Controller
         try {
             $portfolios = Cache::remember('home_portfolios', self::CACHE_TTL, function () {
                 return Portfolio::with(['images', 'featuredImage', 'categories'])
-                    ->orderBy('sort_order', 'asc')
-                    ->take(9)
-                    ->get();
+                ->orderBy('sort_order', 'asc')
+                ->take(9)
+                ->get();
             });
-
+            
             return view('home', compact('portfolios'));
         } catch (\Exception $e) {
+            dd($e);
+            // dd($portfolios);
             Log::error('Error fetching home portfolios: ' . $e->getMessage());
-            return redirect()->route('home')->with('error', 'Unable to load portfolios. Please try again later.');
+            // return redirect()->route('home')->with('error', 'Unable to load portfolios. Please try again later.');
         }
     }
 
@@ -66,8 +68,10 @@ class FrontendController extends Controller
      */
     public function blogs(?int $cat_id = null)
     {
+        // Cache::flush();
         try {
             $cacheKey = $cat_id ? "blogs_category_{$cat_id}" : 'blogs_all';
+            
             $blogs = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($cat_id) {
                 $query = Blog::with(['categories', 'featuredImage'])
                     ->orderBy('sort_order', 'asc');
@@ -100,6 +104,7 @@ class FrontendController extends Controller
      */
     public function showBlog(string $slug)
     {
+        // Cache::flush();
         try {
             $blog = Cache::remember("blog_{$slug}", self::CACHE_TTL, function () use ($slug) {
                 return Blog::with(['categories', 'sliderImages'])
