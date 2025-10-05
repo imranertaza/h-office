@@ -68,7 +68,6 @@ class FrontendController extends Controller
      */
     public function blogs(?int $cat_id = null)
     {
-        // Cache::flush();
         try {
             $cacheKey = $cat_id ? "blogs_category_{$cat_id}" : 'blogs_all';
             
@@ -104,7 +103,6 @@ class FrontendController extends Controller
      */
     public function showBlog(string $slug)
     {
-        // Cache::flush();
         try {
             $blog = Cache::remember("blog_{$slug}", self::CACHE_TTL, function () use ($slug) {
                 return Blog::with(['categories', 'sliderImages'])
