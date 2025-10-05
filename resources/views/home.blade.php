@@ -2,79 +2,189 @@
 
 
 @section('styles')
-    #logo-slider-wraper { position: relative; }
-    .slider-controls { position: absolute; width: 990px; top: 41px !important; }
-    #logo-slider { position: relative; width: 990px; height: 120px; margin: 0; padding: 0; overflow: hidden; list-style:
-    none; background: #FFFFFF; }
-    .slide { list-style: none; margin: 0 !important; width: 990px !important; }
-    .slider-controls a { height: 40px; width: 40px; display: inline-block; text-indent: -9000px; }
-    #prev { background: url('{{ asset('assets/images/arrow1.png') }}') no-repeat center;
+/* Base styles (unchanged) */
+#logo-slider-wraper {
+    position: relative;
+    width: 990px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    top: 41px !important;
+}
+
+#logo-slider {
+    position: relative;
+    width: 100%;
+    {{-- height: 120px; --}}
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+    background: #FFFFFF;
+}
+
+.slide {
+    list-style: none;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.slider-controls a {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    text-indent: -9000px;
+}
+
+#prev {
+    background: url('{{ asset('assets/images/arrow1.png') }}') no-repeat center;
     float: right;
-    margin-right: -50px; }
-    #next { background: url('{{ asset('assets/images/arrow1-prev.png') }}') no-repeat center;
+    margin-right: -50px;
+}
+
+#next {
+    background: url('{{ asset('assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left;
-    margin-left: -50px; }
-    @media screen and (max-width:320px) {
-    #logo-slider-wraper { position: relative !important; width: 52% !important; left: 42px; }
-    .slider-controls { position: absolute; top: 41px; left: 30px; width: 100% !important; }
-    #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
-    relative; width: 110% !important; }
-    .slide { list-style: none; margin: 0 !important; width: 100% !important; }
-    #next { background: url('{{ asset('assets/images/arrow1-prev.png') }}') no-repeat center;
-    float: left;
-    margin-left: -66px !important; }
-    .logo-img { margin-left: 32px; }
+    margin-left: -50px;
+}
+
+/* Mobile (max-width: 320px) - unchanged */
+@media screen and (max-width: 320px) {
+    #logo-slider-wraper {
+        width: 100%;
+        margin: 0 auto;
     }
-    @media screen and (min-width:321px) and (max-width:480px) {
-    #logo-slider-wraper { position: relative; width: 35% !important; left: 55px !important; }
-    .slider-controls { position: absolute; top: 41px; width: 100% !important; }
-    #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
-    relative; width: 102% !important; }
-    .slide { list-style: none; margin: 0 !important; width: 100% !important; }
+    .slider-controls {
+        left: 0;
     }
-    @media screen and (min-width:321px) and (max-width:360px) {
-    #logo-slider-wraper { position: relative; width: 50% !important; }
-    .slider-controls { position: absolute; top: 41px; width: 100% !important; }
-    #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
-    relative; width: 100% !important; }
-    .slide { list-style: none; margin: 0 !important; width: 100% !important; }
+    #next {
+        margin-left: -66px !important;
     }
-    @media screen and (min-width:481px) and (max-width:640px) {
-    #logo-slider-wraper { position: relative; width: 28% !important; left: 34px !important; }
-    .slider-controls { position: absolute; top: 41px; width: 100% !important; }
-    #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
-    relative; width: 100% !important; }
-    .slide { list-style: none; margin: 0 !important; width: 100% !important; }
+    .logo-img {
+        margin-left: 32px;
     }
-    @media only screen and (min-width:641px) and (max-width:768px) {
-    #logo-slider-wraper { position: relative; width: 78% !important; left: 34px !important; }
-    .slider-controls { position: absolute; top: 41px; width: 100% !important; }
-    #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
-    relative; width: 100% !important; left: -12px; }
-    .slide { list-style: none; margin: 0 !important; width: 100% !important; }
+}
+
+/* Mobile (321px - 480px) - unchanged */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    #logo-slider-wraper {
+        width: 100%;
+        margin: 0 auto;
     }
-    @media only screen and (min-width:770px) {
-    #logo-slider-wraper { position: relative; width: 990px !important; left: 34px !important; }
-    .slider-controls { position: absolute; top: 41px; width: 100% !important; }
-    #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
-    relative; width: 100% !important; }
-    .slide { list-style: none; margin: 0 !important; width: 990px !important; }
+}
+
+/* Mobile & Small Tablets (max-width: 768px) - refined */
+@media screen and (max-width: 768px) {
+    #logo-slider-wraper {
+        width: 100%;
+        margin: 0 auto;
     }
-    .vc_custom_1421511914623 { margin-top: 0px !important; }
-    .vc_custom_1421512082437 { margin-top: 0px !important; margin-bottom: 15px !important; }
-    .vc_custom_1421665387576 { margin-top: 15px !important; margin-right: 15px !important; margin-left: 15px !important;
-    background-color: #ffffff !important; }
-    .vc_custom_1421502190195 { margin-bottom: 0px !important; }
-    .vc_custom_1421350592477 { margin-top: 0px !important; padding-top: 0px !important; }
-    .vc_custom_1421511707675 { padding-top: 0px !important; padding-bottom: 0px !important; }
-    .vc_custom_1421512134514 { padding-top: 0px !important; }
-    .vc_custom_1421350472278 { padding-bottom: 0px !important; }
-    .vc_custom_1423927800318 { background-color: #ffffff !important; }
-    .vc_custom_1424531679528 { background-color: #ffffff !important; }
-    .vc_custom_1421665478418 { padding-bottom: 100px !important; }
-    .vc_custom_1541417066060 { margin-top: 0px !important; }
-    .vc_custom_1418920482842 { margin-top: 0px !important; padding-top: 0px !important; }
-    .main, .sidebar { margin-top: 0px !important; }
+    .logo-img {
+        display: block;
+        margin: 0 auto;
+        max-width: 50%; /* Ensure images don't overflow */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .slider-controls {
+        top: 50% !important;
+        transform: translateY(-50%);
+        {{-- top: 20px !important; /* Adjust control position for better fit */ --}}
+    }
+    #prev, #next {
+        margin-right: -20px; /* Reduce margin for smaller screens */
+        margin-left: -20px;
+    }
+}
+
+/* Tablets (769px - 1024px) - new media query */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #logo-slider-wraper {
+        width: 90%; /* Use percentage for flexibility */
+        max-width: 900px; /* Prevent it from getting too wide */
+        margin: 0 auto;
+    }
+    #logo-slider {
+        width: 100%;
+        height: 100px; /* Slightly reduce height for tablets */
+        left: 0;
+    }
+    .slide {
+        width: 100% !important;
+        text-align: center; /* Center slide content */
+    }
+    .logo-img {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%; /* Scale images to fit better */
+        height: auto;
+    }
+    .slider-controls {
+        top: 30px !important; /* Adjust control position */
+        width: 100%;
+    }
+    #prev, #next {
+        margin-right: -30px; /* Adjust button positioning */
+        margin-left: -30px;
+        background-size: 30px; /* Scale arrows for tablets */
+    }
+}
+
+/* Larger screens (min-width: 1025px) */
+@media screen and (min-width: 1025px) {
+    #logo-slider-wraper {
+        width: 990px; /* Restore original width */
+        margin: 0 auto;
+    }
+    .slide {
+        width: 100% !important;
+    }
+    .logo-img {
+        max-width: 100%; /* Ensure images fit within slide */
+        height: auto;
+    }
+}
+
+/* Clean up redundant media queries */
+@media screen and (min-width: 481px) and (max-width: 640px) {
+    #logo-slider-wraper {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+    #logo-slider-wraper {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #logo-slider {
+        left: 0;
+    }
+}
+
+/* Custom VC Classes (unchanged) */
+.vc_custom_1421511914623 { margin-top: 0px !important; }
+.vc_custom_1421512082437 { margin-top: 0px !important; margin-bottom: 15px !important; }
+.vc_custom_1421665387576 {
+    margin-top: 15px !important;
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+    background-color: #ffffff !important;
+}
+.vc_custom_1421502190195 { margin-bottom: 0px !important; }
+.vc_custom_1421350592477 { margin-top: 0px !important; padding-top: 0px !important; }
+.vc_custom_1421511707675 { padding-top: 0px !important; padding-bottom: 0px !important; }
+.vc_custom_1421512134514 { padding-top: 0px !important; }
+.vc_custom_1421350472278 { padding-bottom: 0px !important; }
+.vc_custom_1423927800318 { background-color: #ffffff !important; }
+.vc_custom_1424531679528 { background-color: #ffffff !important; }
+.vc_custom_1421665478418 { padding-bottom: 100px !important; }
+.vc_custom_1541417066060 { margin-top: 0px !important; }
+.vc_custom_1418920482842 { margin-top: 0px !important; padding-top: 0px !important; }
+.main, .sidebar { margin-top: 0px !important; }
 @endsection
 @section('main-content')
     <x-intent-popup />
@@ -161,7 +271,7 @@
                     <div class="wpb_wrapper"></div>
                 </div>
                 <div class="vc_col-sm-10 wpb_column vc_column_container">
-                    <div class="wpb_wrapper">
+                    <div class="wpb_wrapper" style="position:relative">
                         <div class="wpb_text_column wpb_content_element client_logo_area vc_custom_1424531679528">
                             <div class="wpb_wrapper">
                                 <h5 style="text-align: center;">Some of the Brands</h5>
