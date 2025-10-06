@@ -14,7 +14,7 @@ class FrontendController extends Controller
     /**
      * Cache duration in minutes.
      */
-    private const CACHE_TTL = 6000;
+    private const CACHE_TTL = 43200;
 
     /**
      * Display the home page with portfolios.
@@ -68,18 +68,22 @@ class FrontendController extends Controller
     {
         try {
             $cacheKey = $cat_id ? "blogs_category_{$cat_id}" : 'blogs_all';
+
             $blogs = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($cat_id) {
                 $query = Blog::with(['categories', 'featuredImage'])
                     ->orderBy('sort_order', 'asc');
 
                 if ($cat_id) {
-                    $query->whereHas('categories', fn ($q) => $q->where('cat_id', $cat_id));
+                    $query->whereHas('categories', fn($q) => $q->where('cat_id', $cat_id));
                 }
 
                 return $query->paginate(10); // Paginate for scalability
             });
 
-            $categories = Cache::remember('blog_categories', self::CACHE_TTL, fn () => 
+            $categories = Cache::remember(
+                'blog_categories',
+                self::CACHE_TTL,
+                fn() =>
                 BlogCategory::where('status', 1)->get()
             );
 
@@ -122,7 +126,10 @@ class FrontendController extends Controller
                     ->first();
             });
 
-            $categories = Cache::remember('blog_categories', self::CACHE_TTL, fn () => 
+            $categories = Cache::remember(
+                'blog_categories',
+                self::CACHE_TTL,
+                fn() =>
                 BlogCategory::where('status', 1)->get()
             );
 
@@ -162,10 +169,10 @@ class FrontendController extends Controller
 
             $blogs = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($isUncategorised, $slug) {
                 return Blog::with(['featuredImage', 'categories'])
-                    ->when($isUncategorised, fn ($query) => $query->whereDoesntHave('categories'))
+                    ->when($isUncategorised, fn($query) => $query->whereDoesntHave('categories'))
                     ->when(!$isUncategorised, function ($query) use ($slug) {
                         $category = BlogCategory::where('slug', $slug)->where('status', 1)->firstOrFail();
-                        $query->whereHas('categories', fn ($q) => $q->where('blog_category.cat_id', $category->cat_id));
+                        $query->whereHas('categories', fn($q) => $q->where('blog_category.cat_id', $category->cat_id));
                     })
                     ->orderBy('sort_order', 'asc')
                     ->paginate(10);
@@ -175,7 +182,10 @@ class FrontendController extends Controller
                 ? (object) ['cat_title' => 'Uncategorised', 'slug' => 'uncategorised']
                 : BlogCategory::where('slug', $slug)->where('status', 1)->firstOrFail();
 
-            $categories = Cache::remember('blog_categories', self::CACHE_TTL, fn () => 
+            $categories = Cache::remember(
+                'blog_categories',
+                self::CACHE_TTL,
+                fn() =>
                 BlogCategory::where('status', 1)->get()
             );
 
@@ -253,7 +263,10 @@ class FrontendController extends Controller
      */
     private function getLatestBlogs()
     {
-        return Cache::remember('latest_blogs', self::CACHE_TTL, fn () => 
+        return Cache::remember(
+            'latest_blogs',
+            self::CACHE_TTL,
+            fn() =>
             Blog::select('blog_title', 'slug')
                 ->latest('publish_date')
                 ->take(5)

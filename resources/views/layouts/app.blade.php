@@ -14,24 +14,8 @@
     [endif] --}}
 
     {{-- Core Styles --}}
-    
-    @vite([
-        'resources/assets/css/styles2f54.css',
-        'resources/assets/css/settingsab53.css',
-        'resources/assets/css/isotope8f76.css',
-        'resources/assets/css/prettyPhoto8f76.css',
-        'resources/assets/css/js_composer8f76.css',
-        'resources/assets/css/custom8f76.css',
-        'resources/assets/css/royalslider.css',
-        'resources/assets/css/slickcfbc.css',
-        'resources/assets/css/fontellocfbc.css',
-        'resources/assets/css/ac-framework.css',
-        'resources/assets/css/ac-vc-plugins.css',
-        'resources/assets/css/theme-scipts.css',
-        'resources/assets/css/app.css',
-        'resources/assets/css/alleycat.css',
-        'resources/assets/css/style.css',
-    ])
+
+    @vite(['resources/assets/css/styles2f54.css', 'resources/assets/css/settingsab53.css', 'resources/assets/css/isotope8f76.css', 'resources/assets/css/prettyPhoto8f76.css', 'resources/assets/css/js_composer8f76.css', 'resources/assets/css/custom8f76.css', 'resources/assets/css/royalslider.css', 'resources/assets/css/slickcfbc.css', 'resources/assets/css/fontellocfbc.css', 'resources/assets/css/ac-framework.css', 'resources/assets/css/ac-vc-plugins.css', 'resources/assets/css/theme-scipts.css', 'resources/assets/css/app.css', 'resources/assets/css/alleycat.css', 'resources/assets/css/style.css'])
 
     {{-- External Google Fonts --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400&subset=latin&ver=4.1.28" />
@@ -43,7 +27,6 @@
     {{-- Inline Styles --}}
 
     <style type="text/css">
-
         a.bbp-author-avatar {
             display: inline-block;
         }
@@ -109,21 +92,22 @@
             margin: 0 !important;
         }
 
+        @media (max-width: 767px) {
+            .navbar a.navbar-brand.logo img {
+                max-height: 99%;
+                width: auto;
+            }
+        }
+
         @yield('styles');
     </style>
 
     {{-- Favicons --}}
-    <link rel="shortcut icon"
-        href="{{ asset('/assets/images/HOC_browser_logo_32x32.png') }}"
-        type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed"
-        href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-        href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-        href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-        href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
+    <link rel="shortcut icon" href="{{ asset('/assets/images/HOC_browser_logo_32x32.png') }}" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('/assets/images/h-office-logo-sm.png') }}">
 
     {{-- Core Scripts --}}
 
@@ -140,7 +124,7 @@
     @yield('head')
 </head>
 
-<body class="@yield('body-class', 'home page')">
+<body class="@yield('body-class', 'home page');">
     <x-preloader />
 
     @yield('content')
@@ -163,7 +147,7 @@
     <script src="{{ asset('/assets/js/jquery.fitvids.js') }}"></script>
     <script src="{{ asset('/assets/js/lgs_jquery.cycle2cfbc.js') }}"></script>
     <script src="{{ asset('/assets/js/js_composer_front8f76.js') }}"></script>
-    @yield('scripts')
+    @yield('scripts');
 </body>
 
 </html>
