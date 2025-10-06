@@ -2,20 +2,20 @@
 
 
 @section('styles')
-/* Base styles (unchanged) */
-#logo-slider-wraper {
+    /* Base styles (unchanged) */
+    #logo-slider-wraper {
     position: relative;
     width: 990px;
     margin: 0 auto; /* Center horizontally */
-}
+    }
 
-.slider-controls {
+    .slider-controls {
     position: absolute;
     width: 100%;
     top: 41px !important;
-}
+    }
 
-#logo-slider {
+    #logo-slider {
     position: relative;
     width: 100%;
     {{-- height: 120px; --}}
@@ -24,169 +24,227 @@
     overflow: hidden;
     list-style: none;
     background: #FFFFFF;
-}
+    }
 
-.slide {
+    .slide {
     list-style: none;
     margin: 0 !important;
     width: 100% !important;
-}
+    }
 
-.slider-controls a {
+    .slider-controls a {
     height: 40px;
     width: 40px;
     display: inline-block;
     text-indent: -9000px;
-}
+    }
 
-#prev {
+    #prev {
     background: url('{{ asset('assets/images/arrow1.png') }}') no-repeat center;
     float: right;
     margin-right: -50px;
-}
+    }
 
-#next {
+    #next {
     background: url('{{ asset('assets/images/arrow1-prev.png') }}') no-repeat center;
     float: left;
     margin-left: -50px;
-}
+    }
 
-/* Mobile (max-width: 320px) - unchanged */
-@media screen and (max-width: 320px) {
+    /* Mobile (max-width: 320px) - unchanged */
+    @media screen and (max-width: 320px) {
     #logo-slider-wraper {
-        width: 100%;
-        margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
     }
     .slider-controls {
-        left: 0;
+    left: 0;
     }
     #next {
-        margin-left: -66px !important;
+    margin-left: -66px !important;
+    }
+    {{-- .logo-img {
+    margin-left: 32px;
+    } --}}
+    }
+
+    /* Mobile (321px - 480px) - unchanged */
+    @media screen and (min-width: 321px) and (max-width: 480px) {
+    #logo-slider-wraper {
+    width: 100%;
+    margin: 0 auto;
+    }
+    }
+
+    /* Mobile & Small Tablets (max-width: 768px) - refined */
+    @media screen and (max-width: 768px) {
+    #logo-slider-wraper {
+    width: 100%;
+    margin: 0 auto;
     }
     .logo-img {
-        margin-left: 32px;
-    }
-}
-
-/* Mobile (321px - 480px) - unchanged */
-@media screen and (min-width: 321px) and (max-width: 480px) {
-    #logo-slider-wraper {
-        width: 100%;
-        margin: 0 auto;
-    }
-}
-
-/* Mobile & Small Tablets (max-width: 768px) - refined */
-@media screen and (max-width: 768px) {
-    #logo-slider-wraper {
-        width: 100%;
-        margin: 0 auto;
-    }
-    .logo-img {
-        display: block;
-        margin: 0 auto;
-        max-width: 50%; /* Ensure images don't overflow */
-        height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+    {{-- max-width: 50%; /* Ensure images don't overflow */ --}}
+    height: auto; /* Maintain aspect ratio */
     }
     .slider-controls {
-        top: 50% !important;
-        transform: translateY(-50%);
-        {{-- top: 20px !important; /* Adjust control position for better fit */ --}}
+    top: 50% !important;
+    transform: translateY(-50%);
+    {{-- top: 20px !important; /* Adjust control position for better fit */ --}}
     }
     #prev, #next {
-        margin-right: -20px; /* Reduce margin for smaller screens */
-        margin-left: -20px;
+    margin-right: -20px; /* Reduce margin for smaller screens */
+    margin-left: -20px;
     }
-}
+    }
 
-/* Tablets (769px - 1024px) - new media query */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Tablets (769px - 1024px) - new media query */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
     #logo-slider-wraper {
-        width: 90%; /* Use percentage for flexibility */
-        max-width: 900px; /* Prevent it from getting too wide */
-        margin: 0 auto;
+    width: 90%; /* Use percentage for flexibility */
+    max-width: 900px; /* Prevent it from getting too wide */
+    margin: 0 auto;
     }
     #logo-slider {
-        width: 100%;
-        height: 100px; /* Slightly reduce height for tablets */
-        left: 0;
+    width: 100%;
+    height: 100px; /* Slightly reduce height for tablets */
+    left: 0;
     }
     .slide {
-        width: 100% !important;
-        text-align: center; /* Center slide content */
+    width: 100% !important;
+    text-align: center; /* Center slide content */
     }
     .logo-img {
-        display: block;
-        margin: 0 auto;
-        max-width: 80%; /* Scale images to fit better */
-        height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 80%; /* Scale images to fit better */
+    height: auto;
     }
     .slider-controls {
-        top: 30px !important; /* Adjust control position */
-        width: 100%;
+    top: 30px !important; /* Adjust control position */
+    width: 100%;
     }
     #prev, #next {
-        margin-right: -30px; /* Adjust button positioning */
-        margin-left: -30px;
-        background-size: 30px; /* Scale arrows for tablets */
+    margin-right: -30px; /* Adjust button positioning */
+    margin-left: -30px;
+    background-size: 30px; /* Scale arrows for tablets */
     }
-}
+    }
 
-/* Larger screens (min-width: 1025px) */
-@media screen and (min-width: 1025px) {
+    /* Larger screens (min-width: 1025px) */
+    @media screen and (min-width: 1025px) {
     #logo-slider-wraper {
-        width: 990px; /* Restore original width */
-        margin: 0 auto;
+    width: 990px; /* Restore original width */
+    margin: 0 auto;
     }
     .slide {
-        width: 100% !important;
+    width: 100% !important;
     }
-    .logo-img {
-        max-width: 100%; /* Ensure images fit within slide */
-        height: auto;
+    {{-- .logo-img {
+    max-width: 100%; /* Ensure images fit within slide */
+    height: auto;
+    } --}}
     }
-}
 
-/* Clean up redundant media queries */
-@media screen and (min-width: 481px) and (max-width: 640px) {
+    /* Clean up redundant media queries */
+    @media screen and (min-width: 481px) and (max-width: 640px) {
     #logo-slider-wraper {
-        width: 100%;
-        margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
     }
-}
+    }
 
-@media screen and (min-width: 641px) and (max-width: 768px) {
+    @media screen and (min-width: 641px) and (max-width: 768px) {
     #logo-slider-wraper {
-        width: 100%;
-        margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
     }
     #logo-slider {
-        left: 0;
+    left: 0;
     }
-}
+    }
 
-/* Custom VC Classes (unchanged) */
-.vc_custom_1421511914623 { margin-top: 0px !important; }
-.vc_custom_1421512082437 { margin-top: 0px !important; margin-bottom: 15px !important; }
-.vc_custom_1421665387576 {
+    /* Custom VC Classes (unchanged) */
+    .vc_custom_1421511914623 { margin-top: 0px !important; }
+    .vc_custom_1421512082437 { margin-top: 0px !important; margin-bottom: 15px !important; }
+    .vc_custom_1421665387576 {
     margin-top: 15px !important;
     margin-right: 15px !important;
     margin-left: 15px !important;
     background-color: #ffffff !important;
-}
-.vc_custom_1421502190195 { margin-bottom: 0px !important; }
-.vc_custom_1421350592477 { margin-top: 0px !important; padding-top: 0px !important; }
-.vc_custom_1421511707675 { padding-top: 0px !important; padding-bottom: 0px !important; }
-.vc_custom_1421512134514 { padding-top: 0px !important; }
-.vc_custom_1421350472278 { padding-bottom: 0px !important; }
-.vc_custom_1423927800318 { background-color: #ffffff !important; }
-.vc_custom_1424531679528 { background-color: #ffffff !important; }
-.vc_custom_1421665478418 { padding-bottom: 100px !important; }
-.vc_custom_1541417066060 { margin-top: 0px !important; }
-.vc_custom_1418920482842 { margin-top: 0px !important; padding-top: 0px !important; }
-.main, .sidebar { margin-top: 0px !important; }
+    }
+    .vc_custom_1421502190195 { margin-bottom: 0px !important; }
+    .vc_custom_1421350592477 { margin-top: 0px !important; padding-top: 0px !important; }
+    .vc_custom_1421511707675 { padding-top: 0px !important; padding-bottom: 0px !important; }
+    .vc_custom_1421512134514 { padding-top: 0px !important; }
+    .vc_custom_1421350472278 { padding-bottom: 0px !important; }
+    .vc_custom_1423927800318 { background-color: #ffffff !important; }
+    .vc_custom_1424531679528 { background-color: #ffffff !important; }
+    .vc_custom_1421665478418 { padding-bottom: 100px !important; }
+    .vc_custom_1541417066060 { margin-top: 0px !important; }
+    .vc_custom_1418920482842 { margin-top: 0px !important; padding-top: 0px !important; }
+    .main, .sidebar { margin-top: 0px !important; }
+    .logo-img {
+    max-width:none !important;
+    min-width:150px;
+    }
+
 @endsection
 @section('main-content')
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        .client-slider-section {
+            /* background-color: #f9f9f9; */
+
+            .swiper {
+                padding:0 42px; 
+            }
+
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* height: 80px; */
+                /* border-radius: 8px; */
+                /* box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05); */
+                /* transition: transform 0.3s ease; */
+
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: #444;
+                font-size: 32px!important;
+                height: 32px !important;
+                width: 32px !important;
+                margin-top: -16px !important;
+            }
+            .swiper-button-next:after, .swiper-button-prev:after
+            {
+                color: #444;
+                font-size: 32px !important;
+                top: 16px !important;
+
+            }
+            @media screen and (max-width: 768px) {
+                .swiper-button-next:after, .swiper-button-prev:after
+                {
+                    font-size: 24px !important;
+                    top: 12px !important;
+                }
+            }
+
+            .swiper-button-prev {
+                left: 0;
+            }
+            .swiper-button-next {
+                right: 0;
+            }
+        }
+        
+    </style>
     <x-intent-popup />
     <article class="post-439 page type-page status-publish hentry ac-hide-until-ready ac-hidden-until-ready">
         <div class="entry-content">
@@ -270,64 +328,74 @@
                 <div class="vc_col-sm-1 ac_grid_alt wpb_column vc_column_container">
                     <div class="wpb_wrapper"></div>
                 </div>
-                <div class="vc_col-sm-10 wpb_column vc_column_container">
+                <div class="vc_col-sm-12 wpb_column vc_column_container">
                     <div class="wpb_wrapper" style="position:relative">
                         <div class="wpb_text_column wpb_content_element client_logo_area vc_custom_1424531679528">
                             <div class="wpb_wrapper">
                                 <h5 style="text-align: center;">Some of the Brands</h5>
                                 <h3 style="text-align: center;"><strong>WE’VE WORKED WITH</strong></h3>
-                                <div id="logo-slider-wraper">
-                                    <ul id="logo-slider" class="cycle-slideshow" data-cycle-fx="scrollHorz"
-                                        data-cycle-timeout="0" data-cycle-next="#prev" data-cycle-prev="#next"
-                                        data-cycle-speed="600" data-cycle-slides="> li">
-                                        <li class="slide cycle-slide cycle-slide-active"
-                                            style="position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 1; display: block; visibility: visible;">
-                                            <img src="{{ asset('assets/images/british.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/citi.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/DHL.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/grameen.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/google.jpg') }}" class="logo-img"
-                                                alt="">
-                                        </li>
-                                        <li class="slide cycle-slide"
-                                            style="position: absolute; top: 0px; left: 0px; z-index: 99; visibility: hidden;">
-                                            <img src="{{ asset('assets/images/Grameen-Intel.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/Nuvista-pharma.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/Star-cineplex.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/EMK-center.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/Care-Bangladesh.jpg') }}" class="logo-img"
-                                                alt="">
-                                        </li>
-                                        <li class="slide cycle-slide"
-                                            style="position: absolute; top: 0px; left: 0px; z-index: 97; visibility: hidden;">
-                                            <img src="{{ asset('assets/images/Concern-Worldwide.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/Jaago.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/Gtz.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/aarong.jpg') }}" class="logo-img"
-                                                alt="">
-                                            <img src="{{ asset('assets/images/HSBC.jpg') }}" class="logo-img"
-                                                alt="">
-                                        </li>
-                                        <li class="slide cycle-slide"
-                                            style="position: absolute; top: 0px; left: 0px; z-index: 96; visibility: hidden;">
-                                            <img src="{{ asset('assets/images/chevron.jpg') }}" class="logo-img"
-                                                alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="slider-controls"><a href="#" id="prev">&lt;</a> <a
-                                            href="#" id="next">&gt;</a></div>
-                                </div>
+                                <section class="client-slider-section">
+                                    <div class="position-relative">
+                                        <!-- Swiper -->
+                                        <div class="swiper clientSwiper">
+                                            <div class="swiper-wrapper">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/british.jpg') }}" class="logo-img" alt="">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/citi.jpg') }}" class="logo-img" alt="">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/DHL.jpg') }}" class="logo-img" alt="">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/grameen.jpg') }}" class="logo-img" alt="">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/google.jpg') }}" class="logo-img" alt="">
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Grameen-Intel.jpg') }}" class="logo-img img-fluid" alt="Grameen Intel">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Nuvista-pharma.jpg') }}" class="logo-img img-fluid" alt="Nuvista Pharma">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Star-cineplex.jpg') }}" class="logo-img img-fluid" alt="Star Cineplex">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/EMK-center.jpg') }}" class="logo-img img-fluid" alt="EMK Center">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Care-Bangladesh.jpg') }}" class="logo-img img-fluid" alt="Care Bangladesh">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Concern-Worldwide.jpg') }}" class="logo-img img-fluid" alt="Concern Worldwide">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Jaago.jpg') }}" class="logo-img img-fluid" alt="Jaago">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/Gtz.jpg') }}" class="logo-img img-fluid" alt="GTZ">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/aarong.jpg') }}" class="logo-img img-fluid" alt="Aarong">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/HSBC.jpg') }}" class="logo-img img-fluid" alt="HSBC">
+                                                  </div>
+                                                  <div class="swiper-slide">
+                                                    <img src="{{ asset('assets/images/chevron.jpg') }}" class="logo-img img-fluid" alt="Chevron">
+                                                  </div>
+                                            </div>
+                        
+                                            <!-- Navigation Arrows -->
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </div>
@@ -348,7 +416,7 @@
                     </div>
                 </div>
             </div>
-            <div class="vc_row wpb_row vc_row-fluid vc_custom_1421350592477">
+            <div class="vc_row wpb_row vc_row-fluid vc_custom_1421350592477" style="margin:0px !important">
                 <div class="jump-pos"></div>
                 <div class="vc_col-sm-12 wpb_column vc_column_container vc_custom_1418920482842">
                     <div class="wpb_wrapper">
@@ -365,4 +433,34 @@
         </div>
         <div class="clearfix"></div>
     </article>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".clientSwiper", {
+            slidesPerGroup: 1,
+            slidesPerView: 1,
+            spaceBetween: 130,
+            speed: 1200,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,
+                    spaceBetween: 30,
+            speed: 2000,
+                },
+                992: {
+                    slidesPerView: 5,
+                    slidesPerGroup: 5,
+                    spaceBetween: 30,
+                    speed: 2000,
+                }
+            }
+        });
+    </script>
 @endsection

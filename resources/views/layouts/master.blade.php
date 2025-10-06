@@ -55,11 +55,13 @@
     .slide { list-style: none; margin: 0 !important; width: 100% !important; }
     }
     @media only screen and (min-width:770px) {
+
     #logo-slider-wraper { position: relative; width: 990px !important; left: 34px !important; }
     .slider-controls { position: absolute; top: 41px; width: 100% !important; }
     #logo-slider { background: #FFFFFF; height: 120px; list-style: none; margin: 0; overflow: hidden; padding: 0; position:
     relative; width: 100% !important; }
     .slide { list-style: none; margin: 0 !important; width: 990px !important; }
+
     }
     .vc_custom_1421511914623 { margin-top: 0px !important; }
     .vc_custom_1421512082437 { margin-top: 0px !important; margin-bottom: 15px !important; }
@@ -75,6 +77,8 @@
     .vc_custom_1421665478418 { padding-bottom: 100px !important; }
     .vc_custom_1541417066060 { margin-top: 0px !important; }
     .vc_custom_1418920482842 { margin-top: 0px !important; padding-top: 0px !important; }
+    
+
 @endsection
 
 @section('content')

@@ -7707,7 +7707,7 @@ li.wpmenucartli a.wpmenucart-contents span.cartcontents {
 
 
 .client_logo_area {
-  margin-left: -45px;
+  /* margin-left: -45px; */
 	padding:70px 0;
 }
 @media screen and (max-width:1200px) {
@@ -7718,4 +7718,4 @@ li.wpmenucartli a.wpmenucart-contents span.cartcontents {
   
 }
 
-.logo-img { padding: 0 22px; }
+/* .logo-img { padding: 0 22px; } */
