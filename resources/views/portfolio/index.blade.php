@@ -8,7 +8,7 @@
 
 @section('styles')
     .vc_custom_1421324479207 { padding-top: 0px !important; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
         .ac-category-filters .ac-category-filter {
           margin-bottom: 10px !important;
         }
