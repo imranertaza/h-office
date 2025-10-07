@@ -207,13 +207,13 @@ class FrontendController extends Controller
      */
     public function portfolios()
     {
+        Cache::flush(); // Clear cache to ensure fresh data
         try {
             $portfolios = Cache::remember('portfolios_all', self::CACHE_TTL, function () {
                 return Portfolio::with(['images', 'featuredImage', 'categories'])
                     ->orderBy('sort_order', 'asc')
-                    ->paginate(12);
+                    ->get();
             });
-
             $categories = Cache::remember('portfolio_categories', self::CACHE_TTL, function () use ($portfolios) {
                 return $portfolios->pluck('categories')
                     ->flatten()

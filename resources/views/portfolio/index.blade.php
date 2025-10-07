@@ -30,11 +30,17 @@
                                     </div>
                                 </div>
                                 <div class="ac-tile-posts ac-filter-target ac-tile-masonry" data-cols="3">
-                                      @foreach ($portfolios as $item)
+                                    @foreach ($portfolios as $item)
                                         <div
                                             class='
-                                            @foreach ($item->categories as $cat) {{ $cat->slug.' ' }} @endforeach
-                                            @if ($item->sort_order == 2 || $item->sort_order == 3 || $item->sort_order == 8 || $item->sort_order == 9 || $item->sort_order == 13 || $item->sort_order == 14) ac-tile-col ac-tm-standard-3  ac-hide-until-ready ac-hidden-until-ready
+                                            @foreach ($item->categories as $cat) {{ $cat->slug . ' ' }} @endforeach
+                                            @if (
+                                                $item->sort_order == 2 ||
+                                                    $item->sort_order == 3 ||
+                                                    $item->sort_order == 8 ||
+                                                    $item->sort_order == 9 ||
+                                                    $item->sort_order == 13 ||
+                                                    $item->sort_order == 14) ac-tile-col ac-tm-standard-3  ac-hide-until-ready ac-hidden-until-ready
                                         @elseif($item->sort_order == 4 || $item->sort_order == 6 || $item->sort_order == 10 || $item->sort_order == 12)
                                         ac-tile-col ac-tm-standard-3 ac-hide-until-ready ac-hidden-until-ready
                                         @else
@@ -42,24 +48,26 @@
                                             <a href='{{ route('portfolios-details', $item->slug) }}'>
                                                 <div class='image'>
                                                     <img class="grid-image"
-                                                        src="{{asset_path('portfolio', $item->featuredImage->image) }}"
+                                                        src="{{ asset_path('portfolio', $item->featuredImage->image) }}"
                                                         alt="{{ $item->title }} Image" />
                                                 </div>
                                                 <div class='text'>
                                                     <div class="text-inner">
                                                         <h3 class='ac-tile-title'>{{ $item->short_title }}</h3>
-                                                        <div class='ac-tile-footer'>@foreach ($item->categories as $cat)
-                                                            {{ $cat->name }}
-                                                            @if (!$loop->last)
-                                                                ,
-                                                            @endif
-                                                        @endforeach</div>
+                                                        <div class='ac-tile-footer'>
+                                                            @foreach ($item->categories as $cat)
+                                                                {{ $cat->name }}
+                                                                @if (!$loop->last)
+                                                                    ,
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
                                     @endforeach
-                                    
+
                                 </div>
                             </div>
                         </div>
