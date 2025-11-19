@@ -102,7 +102,7 @@
 @elseif (count($portfolio->sliderImages) == 1)
     @section('header-slider')
         <div class='ac-page-hero-img ac-no-container-padding ac-hide-until-ready ac-hidden-until-ready'>
-            <img class="featured-image" src="{{ asset_path('portfolio',$portfolio->sliderImages[0]->image) }}"
+            <img class="featured-image" src="{{ asset_path('portfolio', $portfolio->sliderImages[0]->image) }}"
                 alt='{{ $portfolio->sliderImages[0]->caption ?? 'portfolio-image' }}' />
         </div>
     @endsection
@@ -117,9 +117,9 @@
                 <div class='col-sm-12 col-md-9 ac-page-left-side'>
                     <div class='content top-images'>
                         <h3 class="entry-title">
-                            <strong>{{$portfolio->title}}</strong>
+                            <strong>{{ $portfolio->title }}</strong>
                         </h3>
-                       {!! $portfolio->description !!}
+                        {!! $portfolio->description !!}
                     </div>
                     <div class='article-footer'>
                         <div class="clearfix"></div>
@@ -185,9 +185,15 @@
                     <ul class='meta-data'>
                         <li class='portolio-client'><span>Client: </span>{{ $portfolio->client }}</li>
                         <li class='portolio-agency'><span>Agency: </span>{{ $portfolio->agency }}</li>
-                        @foreach ($portfolio->categories as $category)
-                            <li><span>Type: </span><a href="#" rel="tag">{{ $category->name }}</a></li>
-                        @endforeach
+                        <li>
+                            <span>Type: </span>
+                            @foreach ($portfolio->categories as $index => $category)
+                                <a href="{{ route('portfolios') }}#{{ $category->slug }}" rel="tag">{{ $category->name }}</a>
+                                @if (!$loop->last)
+                                    <br>
+                                @endif
+                            @endforeach
+                        </li>
                     </ul>
                 </section>
             @else
@@ -196,18 +202,18 @@
                         @foreach ($portfolio->images as $item)
                             @if ($item->image)
                                 <img width="768" src="{{ asset_path('portfolio', $item->image) }}"
-                                     alt="{{ $item->alt ?? 'portfolio-image' }}">
+                                    alt="{{ $item->alt ?? 'portfolio-image' }}">
                             @elseif ($item->video)
                                 <div class="video-container">
                                     <video width="768" controls>
-                                        <source src="{{ asset_path('portfolio_video',$item->video) }}" type="video/mp4">
+                                        <source src="{{ asset_path('portfolio_video', $item->video) }}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
                             @endif
                         @endforeach
                     </div>
-                    
+
                     <div class='article-footer'>
                         <div class="clearfix"></div>
                         <div class="btn-group social-share">
@@ -269,9 +275,19 @@
                     <ul class='meta-data'>
                         <li class='portolio-client'><span>Client: </span>{{ $portfolio->client }}</li>
                         <li class='portolio-agency'><span>Agency: </span>{{ $portfolio->agency }}</li>
-                        @foreach ($portfolio->categories as $category)
-                            <li><span>Type: </span><a href="#" rel="tag">{{ $category->name }}</a></li>
-                        @endforeach
+                        <li>
+                            <span>Type: </span>
+                            @foreach ($portfolio->categories as $index => $category)
+                                <a href="{{ route('portfolios') }}#{{ $category->slug }}" rel="tag">{{ $category->name }}</a>
+                                @if (!$loop->last)
+                                    <br>
+                                @endif
+                            @endforeach
+                        </li>
+                        @if ($portfolio->portfolio_id == 14)
+                            <li class='portolio-link'><span>Link: </span><a id="portfolio-link"
+                                    href='http://jaago.com.bd/' target='_blank'>View Project</a></li>
+                        @endif
                     </ul>
                 </section>
             @endif

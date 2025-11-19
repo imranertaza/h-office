@@ -84,15 +84,54 @@ var acTopNavbarHadTrans = null;
 			}
 			
 			// Isotope grid filter
-			$('.ac-category-filters span').on('click', 'a', function(e) {
-				e.preventDefault();
-				$(this).parent().parent().find('span').removeClass('selected');
-				$(this).parent().addClass('selected');
-				var selector = $(this).data('filter');
-				var $isotope = $(this).parent().parent().parent().parent().find('.ac-filter-target');
-				$isotope.isotope({ filter: selector });	
-				return false;
-			});
+			// $('.ac-category-filters span').on('click', 'a', function(e) {
+			// 	e.preventDefault();
+			// 	$(this).parent().parent().find('span').removeClass('selected');
+			// 	$(this).parent().addClass('selected');
+			// 	var selector = $(this).data('filter');
+			// 	var $isotope = $(this).parent().parent().parent().parent().find('.ac-filter-target');
+			// 	$isotope.isotope({ filter: selector });	
+			// 	return false;
+			// });
+            $(".ac-category-filters span").on("click", "a", function (e) {
+                e.preventDefault();
+                $(this).parent().parent().find("span").removeClass("selected");
+                $(this).parent().addClass("selected");
+                var selector = $(this).data("filter");
+                var hash = window.location.hash.replace("#", "");
+                if (hash) {
+                    var cleaned = selector.substring(1); // removes first character
+                    window.location.hash = cleaned;
+                }
+                var $isotope = $(this)
+                    .parent()
+                    .parent()
+                    .parent()
+                    .parent()
+                    .find(".ac-filter-target");
+                $isotope.isotope({ filter: selector });
+                return false;
+            });
+
+            var hash = window.location.hash.replace("#", "");
+            if (hash) {
+                var dataFilter = "." + hash;
+                var matchedItems = $('.item[data-filter="' + dataFilter + '"]');
+                $(matchedItems)
+                    .parent()
+                    .parent()
+                    .find("span")
+                    .removeClass("selected");
+                $(matchedItems).parent().addClass("selected");
+                var selector = $(matchedItems).data("filter");
+                var $isotope = $(matchedItems)
+                    .parent()
+                    .parent()
+                    .parent()
+                    .parent()
+                    .find(".ac-filter-target");
+                $isotope.isotope({ filter: selector });
+            }
 			
 			// Masonry Tiles
 			$('.ac-tile-masonry').each( function () {
